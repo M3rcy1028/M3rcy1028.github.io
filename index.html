@@ -1,12 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹 호스팅</title>
+    <title>Naryun Woo - Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #37352f; }
+        .tag { padding: 2px 6px; border-radius: 4px; font-size: 12px; font-weight: 500; }
+        .project-row:hover { background-color: #f7f6f3; transition: 0.2s; }
+    </style>
 </head>
-<body>
-    git pages 입니다.
+<body class="max-w-5xl mx-auto p-8 md:p-16">
+
+    <header class="flex flex-col md:flex-row gap-8 mb-12">
+        <div class="w-full md:w-1/4">
+            <img src="https://github.com/사용자아이디.png" alt="Profile" class="w-full rounded-lg mb-4 grayscale hover:grayscale-0 transition duration-500">
+            <h1 class="text-2xl font-bold mb-1">Naryun Woo (우 나륜)</h1>
+            <p class="text-sm text-gray-500 mb-4">@mercy1234</p>
+            
+            <div class="space-y-2 text-sm">
+                <p>📧 mercy1234@kw.ac.kr</p>
+                <p>🎓 Kwangwoon Univ. (2025.08 졸업 예정)</p>
+                <p>🔗 <a href="#" class="underline">LinkedIn</a> / <a href="#" class="underline">GitHub</a></p>
+            </div>
+        </div>
+
+        <div class="w-full md:w-3/4">
+            <div class="bg-orange-50 p-4 rounded-md border-l-4 border-orange-200 mb-8">
+                <p class="text-sm">✨ Hi, I'm senior in department of Computer Information Engineering. I'm interested in <b>Cryptography, Cyber Security and Database.</b></p>
+            </div>
+
+            <section class="mb-10">
+                <h2 class="text-xl font-bold border-b pb-2 mb-4">Education</h2>
+                <div class="mb-4">
+                    <p class="font-semibold">🎓 MS in Computer Engineering</p>
+                    <p class="text-sm text-gray-600">Kwangwoon University (2025.09 - current) | GPA - / 4.5</p>
+                </div>
+                <div>
+                    <p class="font-semibold">🎓 B.S in Computer Information Engineering</p>
+                    <p class="text-sm text-gray-600">Kwangwoon University (2022.03 - 2025.08) | GPA 3.98 / 4.5</p>
+                </div>
+            </section>
+
+            <section class="mb-10">
+                <h2 class="text-xl font-bold border-b pb-2 mb-4">Projects</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm">
+                        <thead>
+                            <tr class="text-gray-400 border-b">
+                                <th class="py-2 font-medium">Title</th>
+                                <th class="py-2 font-medium text-right">Tech & Period</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr class="project-row">
+                                <td class="py-3 font-medium">Green Market: 중고장터 웹 서비스</td>
+                                <td class="py-3 text-right">
+                                    <span class="tag bg-blue-100 text-blue-700">JS</span>
+                                    <span class="tag bg-green-100 text-green-700">SQL</span>
+                                    <span class="text-gray-400 ml-2 text-xs">2024.11 - 2024.12</span>
+                                </td>
+                            </tr>
+                            <tr class="project-row">
+                                <td class="py-3 font-medium">XAI 기반 수익률 예측 모델</td>
+                                <td class="py-3 text-right">
+                                    <span class="tag bg-yellow-100 text-yellow-700">Python</span>
+                                    <span class="text-gray-400 ml-2 text-xs">2024.11 - 2024.12</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold border-b pb-2 mb-4">Publications</h2>
+                <div class="space-y-4">
+                    <div class="group">
+                        <p class="text-sm font-semibold group-hover:text-blue-600">Enhanced Lightweight Medical Sensor Networks Authentication...</p>
+                        <p class="text-xs text-gray-500 italic">Taewoong Kang, Naryun Woo, Jihyeon Ryu*</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </header>
+
 </body>
 </html>
-출처: https://devyihyun.tistory.com/203 [이롭게 현명하게:티스토리]
