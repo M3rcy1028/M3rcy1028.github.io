@@ -3,88 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naryun Woo - Resume</title>
+    <title>Naryun Woo | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #37352f; }
-        .tag { padding: 2px 6px; border-radius: 4px; font-size: 12px; font-weight: 500; }
-        .project-row:hover { background-color: #f7f6f3; transition: 0.2s; }
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap');
+        body { font-family: 'Pretendard', sans-serif; background-color: #0f172a; color: #f8fafc; }
+        .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); transition: transform 0.3s ease; }
+        .glass-card:hover { transform: translateY(-5px); border-color: #38bdf8; }
+        .skill-tag { background: #334155; padding: 4px 10px; border-radius: 6px; font-size: 12px; color: #38bdf8; font-weight: 600; }
     </style>
 </head>
-<body class="max-w-5xl mx-auto p-8 md:p-16">
+<body class="selection:bg-sky-500 selection:text-white">
 
-    <header class="flex flex-col md:flex-row gap-8 mb-12">
-        <div class="w-full md:w-1/4">
-            <img src="https://github.com/사용자아이디.png" alt="Profile" class="w-full rounded-lg mb-4 grayscale hover:grayscale-0 transition duration-500">
-            <h1 class="text-2xl font-bold mb-1">Naryun Woo (우 나륜)</h1>
-            <p class="text-sm text-gray-500 mb-4">@mercy1234</p>
-            
-            <div class="space-y-2 text-sm">
-                <p>📧 mercy1234@kw.ac.kr</p>
-                <p>🎓 Kwangwoon Univ. (2025.08 졸업 예정)</p>
-                <p>🔗 <a href="#" class="underline">LinkedIn</a> / <a href="#" class="underline">GitHub</a></p>
-            </div>
+    <section class="min-h-screen flex flex-col items-center justify-center px-6 text-center">
+        <div class="mb-8 relative">
+            <img src="https://github.com/사용자아이디.png" class="w-40 h-40 rounded-full border-4 border-sky-500 p-1 object-cover">
+            <span class="absolute bottom-2 right-2 bg-green-500 w-5 h-5 rounded-full border-4 border-slate-900"></span>
         </div>
+        <h1 class="text-5xl md:text-7xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-emerald-400">
+            Naryun Woo
+        </h1>
+        <p class="text-xl text-slate-400 max-w-2xl mb-8">
+            Computer Information Engineering & Cryptography Researcher.
+            <br><span class="text-slate-500 text-lg">Focusing on Cyber Security, Blockchain, and Database Systems.</span>
+        </p>
+        <div class="flex gap-4">
+            <a href="https://github.com/M3rcy1228" class="bg-sky-500 hover:bg-sky-600 px-6 py-3 rounded-full font-bold transition">View GitHub</a>
+            <a href="#projects" class="border border-slate-700 hover:border-sky-500 px-6 py-3 rounded-full font-bold transition">Projects</a>
+        </div>
+    </section>
 
-        <div class="w-full md:w-3/4">
-            <div class="bg-orange-50 p-4 rounded-md border-l-4 border-orange-200 mb-8">
-                <p class="text-sm">✨ Hi, I'm senior in department of Computer Information Engineering. I'm interested in <b>Cryptography, Cyber Security and Database.</b></p>
-            </div>
-
-            <section class="mb-10">
-                <h2 class="text-xl font-bold border-b pb-2 mb-4">Education</h2>
-                <div class="mb-4">
-                    <p class="font-semibold">🎓 MS in Computer Engineering</p>
-                    <p class="text-sm text-gray-600">Kwangwoon University (2025.09 - current) | GPA - / 4.5</p>
-                </div>
-                <div>
-                    <p class="font-semibold">🎓 B.S in Computer Information Engineering</p>
-                    <p class="text-sm text-gray-600">Kwangwoon University (2022.03 - 2025.08) | GPA 3.98 / 4.5</p>
-                </div>
-            </section>
-
-            <section class="mb-10">
-                <h2 class="text-xl font-bold border-b pb-2 mb-4">Projects</h2>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left text-sm">
-                        <thead>
-                            <tr class="text-gray-400 border-b">
-                                <th class="py-2 font-medium">Title</th>
-                                <th class="py-2 font-medium text-right">Tech & Period</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-100">
-                            <tr class="project-row">
-                                <td class="py-3 font-medium">Green Market: 중고장터 웹 서비스</td>
-                                <td class="py-3 text-right">
-                                    <span class="tag bg-blue-100 text-blue-700">JS</span>
-                                    <span class="tag bg-green-100 text-green-700">SQL</span>
-                                    <span class="text-gray-400 ml-2 text-xs">2024.11 - 2024.12</span>
-                                </td>
-                            </tr>
-                            <tr class="project-row">
-                                <td class="py-3 font-medium">XAI 기반 수익률 예측 모델</td>
-                                <td class="py-3 text-right">
-                                    <span class="tag bg-yellow-100 text-yellow-700">Python</span>
-                                    <span class="text-gray-400 ml-2 text-xs">2024.11 - 2024.12</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
-            <section>
-                <h2 class="text-xl font-bold border-b pb-2 mb-4">Publications</h2>
-                <div class="space-y-4">
-                    <div class="group">
-                        <p class="text-sm font-semibold group-hover:text-blue-600">Enhanced Lightweight Medical Sensor Networks Authentication...</p>
-                        <p class="text-xs text-gray-500 italic">Taewoong Kang, Naryun Woo, Jihyeon Ryu*</p>
+    <main class="max-w-6xl mx-auto px-6 pb-20 space-y-32">
+        
+        <section id="about" class="grid md:grid-cols-2 gap-12">
+            <div>
+                <h2 class="text-3xl font-bold mb-6 flex items-center gap-2">
+                    <i class="fa-solid fa-graduation-cap text-sky-500"></i> Education
+                </h2>
+                <div class="space-y-6">
+                    <div class="border-l-2 border-sky-500 pl-6">
+                        <h3 class="text-xl font-semibold">MS in Computer Engineering</h3>
+                        <p class="text-slate-400 italic">Kwangwoon University | 2025.09 - Present</p>
+                    </div>
+                    <div class="border-l-2 border-slate-700 pl-6">
+                        <h3 class="text-xl font-semibold text-slate-300">BS in Computer Info Engineering</h3>
+                        <p class="text-slate-400 italic">Kwangwoon University | 2022.03 - 2025.08</p>
+                        <p class="text-sky-500 font-mono mt-1">GPA 3.98 / 4.5</p>
                     </div>
                 </div>
-            </section>
-        </div>
-    </header>
+            </div>
+            
+            <div>
+                <h2 class="text-3xl font-bold mb-6 flex items-center gap-2">
+                    <i class="fa-solid fa-flask text-emerald-500"></i> Publications
+                </h2>
+                <div class="space-y-4">
+                    <div class="glass-card p-4 rounded-xl">
+                        <span class="text-xs text-emerald-400 font-bold uppercase">SCI(E) Journal</span>
+                        <p class="mt-1 font-medium leading-snug">Enhanced Lightweight Medical Sensor Networks Authentication Scheme Based on Blockchain</p>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl">
+                        <span class="text-xs text-emerald-400 font-bold uppercase">SCI(E) Journal</span>
+                        <p class="mt-1 font-medium leading-snug">CESA: Chebyshev-Polynomials-Based Efficient and Secure Access Authentication...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="text-3xl font-bold mb-10 text-center">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="glass-card p-6 rounded-2xl flex flex-col">
+                    <h3 class="text-xl font-bold mb-2">Green Market</h3>
+                    <p class="text-slate-400 text-sm mb-4 flex-grow">중고장터 웹 애플리케이션 개발. 데이터베이스 설계 및 풀스택 연동.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">EJS</span>
+                    </div>
+                    <span class="text-xs text-slate-500">2024.11 - 2024.12</span>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl flex flex-col">
+                    <h3 class="text-xl font-bold mb-2">XAI Financial Model</h3>
+                    <p class="text-slate-400 text-sm mb-4 flex-grow">재무제표 기반 수익률 예측 및 설명 가능한 AI 모델 구현.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">XAI</span>
+                    </div>
+                    <span class="text-xs text-slate-500">2024.11 - 2024.12</span>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl flex flex-col">
+                    <h3 class="text-xl font-bold mb-2">DQN Cartpole</h3>
+                    <p class="text-slate-400 text-sm mb-4 flex-grow">강화학습 알고리즘을 활용한 카트폴 제어 시뮬레이션.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">RL</span>
+                    </div>
+                    <span class="text-xs text-slate-500">2024.09 - 2024.10</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-10 text-center text-slate-500 border-t border-slate-800">
+        <p>© 2024 Naryun Woo. Built with Tailwind CSS</p>
+    </footer>
 
 </body>
 </html>
