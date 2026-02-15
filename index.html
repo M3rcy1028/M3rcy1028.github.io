@@ -15,10 +15,6 @@
             color: #94a3b8; 
             padding-top: 80px;
         }
-        /* 포인트 컬러 변수 정의 (Sky Blue) */
-        :root {
-            --accent-color: #38bdf8;
-        }
     </style>
     <script>
         tailwind.config = {
@@ -33,6 +29,8 @@
     </script>
 </head>
 <body class="selection:bg-sky-500 selection:text-white antialiased">
+
+    <div class="fixed inset-0 z-30 pointer-events-none transition duration-300" id="spotlight" style="background: radial-gradient(600px at 50% 50%, rgba(56, 189, 248, 0.15), transparent 80%);"></div>
 
     <nav class="fixed top-0 left-0 w-full bg-sky-500 text-white z-50 shadow-lg h-16 flex items-center">
         <div class="max-w-screen-xl w-full mx-auto px-6 md:px-12 flex justify-between items-center">
@@ -51,7 +49,7 @@
         </div>
     </nav>
 
-    <main class="max-w-3xl mx-auto px-6 py-12 md:py-20 space-y-24">
+    <main class="max-w-3xl mx-auto px-6 py-12 md:py-20 space-y-24 relative z-40">
         
         <section id="home" class="text-center space-y-6 pt-10">
             <h1 class="text-4xl md:text-6xl font-bold text-slate-200 tracking-tight">
@@ -154,5 +152,13 @@
         <p>© 2026 Naryun Woo. Built with Tailwind CSS.</p>
     </footer>
 
+    <script>
+        const spotlight = document.getElementById('spotlight');
+        document.addEventListener('mousemove', (e) => {
+            // 마우스 위치에 따라 radial-gradient의 중심점을 이동시킵니다.
+            // 색상은 하늘색(Sky-400: 56, 189, 248)을 사용하여 테마와 맞췄습니다.
+            spotlight.style.background = `radial-gradient(600px at ${e.clientX}px ${e.clientY}px, rgba(56, 189, 248, 0.15), transparent 80%)`;
+        });
+    </script>
 </body>
 </html>
