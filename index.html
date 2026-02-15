@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naryun Woo | Cryptography Researcher</title>
+    <title>Naryun Woo | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -11,306 +11,148 @@
         
         body { 
             font-family: 'Inter', 'Pretendard', sans-serif; 
-            background-color: #0f172a; /* 요청하신 남색 배경 */
+            background-color: #0f172a; /* 짙은 남색 배경 */
             color: #94a3b8; 
+            padding-top: 80px;
         }
-
-        /* 네비게이션 활성화 상태 스타일 */
-        .nav-link.active span:first-child { width: 4rem; background-color: #f8fafc; }
-        .nav-link.active span:last-child { color: #f8fafc; }
+        /* 포인트 컬러 변수 정의 (Sky Blue) */
+        :root {
+            --accent-color: #38bdf8;
+        }
     </style>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        slate: { 900: '#0f172a', 800: '#1e293b' },
-                        teal: { 300: '#5eead4' } /* 포인트 컬러 */
+                        sky: { 400: '#38bdf8', 500: '#0ea5e9' }
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="selection:bg-teal-300 selection:text-slate-900 leading-relaxed antialiased">
+<body class="selection:bg-sky-500 selection:text-white antialiased">
 
-    <div class="fixed inset-0 z-30 pointer-events-none transition duration-300" id="spotlight" style="background: radial-gradient(600px at 0px 0px, rgba(29, 78, 216, 0.15), transparent 80%);"></div>
+    <nav class="fixed top-0 left-0 w-full bg-sky-500 text-white z-50 shadow-lg h-16 flex items-center">
+        <div class="max-w-screen-xl w-full mx-auto px-6 md:px-12 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-tight hover:opacity-90 transition">
+                Naryun Woo
+            </a>
+            <ul class="hidden md:flex gap-8 text-sm font-semibold">
+                <li><a href="#home" class="hover:text-sky-100 transition">Home</a></li>
+                <li><a href="#projects" class="hover:text-sky-100 transition">Projects</a></li>
+                <li><a href="#publications" class="hover:text-sky-100 transition">Publications</a></li>
+                <li><a href="#education" class="hover:text-sky-100 transition">Education</a></li>
+            </ul>
+            <button class="md:hidden text-white focus:outline-none">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
 
-    <div class="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
-        <div class="lg:flex lg:justify-between lg:gap-4">
-            
-            <header class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
-                <div>
-                    <h1 class="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
-                        <a href="/">Naryun Woo</a>
-                    </h1>
-                    <h2 class="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
-                        Cryptography Researcher
-                    </h2>
-                    <p class="mt-4 max-w-xs leading-normal text-slate-400">
-                        Focusing on Cyber Security, Blockchain, and Database Systems.
-                    </p>
+    <main class="max-w-3xl mx-auto px-6 py-12 md:py-20 space-y-24">
+        
+        <section id="home" class="text-center space-y-6 pt-10">
+            <h1 class="text-4xl md:text-6xl font-bold text-slate-200 tracking-tight">
+                Naryun Woo
+            </h1>
+            <h2 class="text-xl text-sky-400 font-medium">
+                Cryptography Researcher
+            </h2>
+            <p class="max-w-xl mx-auto text-lg leading-relaxed text-slate-400">
+                Focusing on Cyber Security, Blockchain, and Database Systems.<br>
+                현재 <b>Kwangwoon University</b>에서 컴퓨터 정보 공학 석사 과정을 밟으며, 
+                안전하고 효율적인 인증 프로토콜을 연구하고 있습니다.
+            </p>
+            <div class="flex justify-center gap-4 pt-4">
+                <a href="https://github.com/M3rcy1228" target="_blank" class="text-slate-400 hover:text-sky-400 transition transform hover:scale-110">
+                    <i class="fa-brands fa-github fa-2x"></i>
+                </a>
+                <a href="mailto:your_email@example.com" class="text-slate-400 hover:text-sky-400 transition transform hover:scale-110">
+                    <i class="fa-solid fa-envelope fa-2x"></i>
+                </a>
+            </div>
+        </section>
 
-                    <nav class="nav hidden lg:block" aria-label="In-page jump links">
-                        <ul class="mt-16 w-max">
-                            <li>
-                                <a class="nav-link group flex items-center py-3" href="#about">
-                                    <span class="mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200"></span>
-                                    <span class="text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200">About</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="nav-link group flex items-center py-3" href="#education">
-                                    <span class="mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200"></span>
-                                    <span class="text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200">Education</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="nav-link group flex items-center py-3" href="#publications">
-                                    <span class="mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200"></span>
-                                    <span class="text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200">Publications</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="nav-link group flex items-center py-3" href="#projects">
-                                    <span class="mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200"></span>
-                                    <span class="text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200">Projects</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
+        <section id="projects" class="scroll-mt-24">
+            <h3 class="text-2xl font-bold text-slate-200 mb-10 border-l-4 border-sky-500 pl-4">Projects</h3>
+            <div class="space-y-12">
+                <div class="group relative bg-slate-800/50 p-6 rounded-xl hover:bg-slate-800 transition border border-slate-700/50 hover:border-sky-500/50">
+                    <div class="flex justify-between items-baseline mb-2">
+                        <h4 class="text-xl font-bold text-slate-200 group-hover:text-sky-400 transition">Green Market</h4>
+                        <span class="text-xs font-mono text-slate-500">2024.11 — 12</span>
+                    </div>
+                    <p class="text-slate-400 mb-4">중고장터 웹 애플리케이션 개발. 데이터베이스 설계 및 풀스택 연동을 담당하여 사용자 간의 안전한 거래 환경을 구축했습니다.</p>
+                    <div class="flex gap-2 text-xs font-mono text-sky-300">
+                        <span class="bg-sky-500/10 px-2 py-1 rounded">JavaScript</span>
+                        <span class="bg-sky-500/10 px-2 py-1 rounded">SQL</span>
+                        <span class="bg-sky-500/10 px-2 py-1 rounded">EJS</span>
+                    </div>
                 </div>
 
-                <ul class="ml-1 mt-8 flex items-center gap-5 text-slate-400">
-                    <li>
-                        <a class="block hover:text-slate-100 transition" href="https://github.com/M3rcy1228" target="_blank">
-                            <span class="sr-only">GitHub</span>
-                            <i class="fa-brands fa-github fa-xl"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="block hover:text-slate-100 transition" href="mailto:your_email@example.com">
-                            <span class="sr-only">Email</span>
-                            <i class="fa-solid fa-envelope fa-xl"></i>
-                        </a>
-                    </li>
-                </ul>
-            </header>
-
-            <main id="content" class="pt-24 lg:w-1/2 lg:py-24">
-                
-                <section id="about" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
-                    <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-                        <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">About</h2>
+                <div class="group relative bg-slate-800/50 p-6 rounded-xl hover:bg-slate-800 transition border border-slate-700/50 hover:border-sky-500/50">
+                    <div class="flex justify-between items-baseline mb-2">
+                        <h4 class="text-xl font-bold text-slate-200 group-hover:text-sky-400 transition">XAI Financial Model</h4>
+                        <span class="text-xs font-mono text-slate-500">2024.11 — 12</span>
                     </div>
-                    <div class="text-slate-400">
-                        <p class="mb-4">
-                            암호학 및 정보 보호 분야를 연구하는 연구원입니다. 
-                            현재 <b class="font-medium text-slate-200">Kwangwoon University</b>에서 컴퓨터 정보 공학 석사 과정을 밟으며,
-                            안전하고 효율적인 인증 프로토콜과 블록체인 응용 기술에 깊은 관심을 가지고 있습니다.
-                        </p>
-                        <p>
-                            이론적인 보안 모델뿐만 아니라, 실제 시스템에 적용 가능한 
-                            <b class="font-medium text-slate-200">Engineering-based Solution</b>을 만드는 것을 목표로 합니다.
-                        </p>
+                    <p class="text-slate-400 mb-4">재무제표 데이터를 기반으로 기업의 수익률을 예측하고, SHAP 등을 활용하여 AI의 판단 근거를 시각화한 설명 가능한 인공지능 모델 구현.</p>
+                    <div class="flex gap-2 text-xs font-mono text-sky-300">
+                        <span class="bg-sky-500/10 px-2 py-1 rounded">Python</span>
+                        <span class="bg-sky-500/10 px-2 py-1 rounded">XAI</span>
                     </div>
-                </section>
+                </div>
+            </div>
+        </section>
 
-                <section id="education" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
-                    <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-                        <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">Education</h2>
-                    </div>
-                    <ol class="group/list">
-                        <li class="mb-12">
-                            <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                                <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-                                <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">2025.09 — Present</header>
-                                <div class="z-10 sm:col-span-6">
-                                    <h3 class="font-medium leading-snug text-slate-200">
-                                        <div>
-                                            <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link" href="#">
-                                                <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                                                <span>MS in Computer Engineering</span>
-                                            </a>
-                                        </div>
-                                    </h3>
-                                    <p class="mt-2 text-sm leading-normal">Kwangwoon University</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="mb-12">
-                            <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                                <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-                                <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">2022.03 — 2025.08</header>
-                                <div class="z-10 sm:col-span-6">
-                                    <h3 class="font-medium leading-snug text-slate-200">
-                                        <div>
-                                            <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link" href="#">
-                                                <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                                                <span>BS in Computer Info Engineering</span>
-                                            </a>
-                                        </div>
-                                    </h3>
-                                    <p class="mt-2 text-sm leading-normal">Kwangwoon University</p>
-                                    <div class="mt-2 flex flex-wrap">
-                                        <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">GPA 3.98 / 4.5</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ol>
-                </section>
+        <section id="publications" class="scroll-mt-24">
+            <h3 class="text-2xl font-bold text-slate-200 mb-10 border-l-4 border-sky-500 pl-4">Publications</h3>
+            <ul class="space-y-6">
+                <li class="group">
+                    <a href="#" class="block p-6 rounded-xl bg-slate-800/30 hover:bg-slate-800 border border-transparent hover:border-slate-700 transition">
+                        <span class="inline-block px-2 py-0.5 rounded text-xs font-bold bg-sky-500 text-white mb-2">SCI(E)</span>
+                        <h4 class="text-lg font-semibold text-slate-200 group-hover:text-sky-400 transition">
+                            Enhanced Lightweight Medical Sensor Networks Authentication Scheme Based on Blockchain
+                        </h4>
+                        <p class="text-sm text-slate-500 mt-2">IEEE Access, 2024</p>
+                    </a>
+                </li>
+                <li class="group">
+                    <a href="#" class="block p-6 rounded-xl bg-slate-800/30 hover:bg-slate-800 border border-transparent hover:border-slate-700 transition">
+                        <span class="inline-block px-2 py-0.5 rounded text-xs font-bold bg-sky-500 text-white mb-2">SCI(E)</span>
+                        <h4 class="text-lg font-semibold text-slate-200 group-hover:text-sky-400 transition">
+                            CESA: Chebyshev-Polynomials-Based Efficient and Secure Access Authentication
+                        </h4>
+                        <p class="text-sm text-slate-500 mt-2">Sensors, 2023</p>
+                    </a>
+                </li>
+            </ul>
+        </section>
 
-                <section id="publications" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
-                    <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-                        <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">Publications</h2>
-                    </div>
-                    <ul class="group/list">
-                        <li class="mb-12">
-                            <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                                <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-                                <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">SCI(E)</header>
-                                <div class="z-10 sm:col-span-6">
-                                    <h3 class="font-medium leading-snug text-slate-200">
-                                        <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link" href="#">
-                                            <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                                            <span>Enhanced Lightweight Medical Sensor Networks Authentication Scheme Based on Blockchain</span>
-                                        </a>
-                                    </h3>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="mb-12">
-                            <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                                <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-                                <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">SCI(E)</header>
-                                <div class="z-10 sm:col-span-6">
-                                    <h3 class="font-medium leading-snug text-slate-200">
-                                        <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link" href="#">
-                                            <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                                            <span>CESA: Chebyshev-Polynomials-Based Efficient and Secure Access Authentication</span>
-                                        </a>
-                                    </h3>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </section>
+        <section id="education" class="scroll-mt-24 pb-20">
+            <h3 class="text-2xl font-bold text-slate-200 mb-10 border-l-4 border-sky-500 pl-4">Education</h3>
+            <div class="relative border-l border-slate-700 ml-3 space-y-10">
+                <div class="ml-8 relative">
+                    <span class="absolute -left-[41px] top-1.5 h-4 w-4 rounded-full bg-sky-500 border-4 border-slate-900"></span>
+                    <h4 class="text-lg font-bold text-slate-200">MS in Computer Engineering</h4>
+                    <p class="text-slate-400">Kwangwoon University</p>
+                    <span class="text-sm text-slate-500 font-mono">2025.09 — Present</span>
+                </div>
+                <div class="ml-8 relative">
+                    <span class="absolute -left-[41px] top-1.5 h-4 w-4 rounded-full bg-slate-600 border-4 border-slate-900"></span>
+                    <h4 class="text-lg font-bold text-slate-200">BS in Computer Info Engineering</h4>
+                    <p class="text-slate-400">Kwangwoon University</p>
+                    <span class="text-sm text-slate-500 font-mono">2022.03 — 2025.08</span>
+                    <p class="mt-1 text-sky-400 text-sm font-semibold">GPA 3.98 / 4.5</p>
+                </div>
+            </div>
+        </section>
 
-                <section id="projects" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
-                    <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-                        <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">Projects</h2>
-                    </div>
-                    <ul class="group/list">
-                        
-                        <li class="mb-12">
-                            <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                                <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-                                <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">2024.11 — 12</header>
-                                <div class="z-10 sm:col-span-6">
-                                    <h3 class="font-medium leading-snug text-slate-200">
-                                        <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link" href="#">
-                                            <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                                            <span>Green Market</span>
-                                        </a>
-                                    </h3>
-                                    <p class="mt-2 text-sm leading-normal">중고장터 웹 애플리케이션 개발. 데이터베이스 설계 및 풀스택 연동을 담당하여 사용자 간의 안전한 거래 환경을 구축했습니다.</p>
-                                    <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
-                                        <li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">JavaScript</div></li>
-                                        <li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">SQL</div></li>
-                                        <li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">EJS</div></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
+    </main>
 
-                        <li class="mb-12">
-                            <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                                <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-                                <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">2024.11 — 12</header>
-                                <div class="z-10 sm:col-span-6">
-                                    <h3 class="font-medium leading-snug text-slate-200">
-                                        <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link" href="#">
-                                            <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                                            <span>XAI Financial Model</span>
-                                        </a>
-                                    </h3>
-                                    <p class="mt-2 text-sm leading-normal">재무제표 데이터를 기반으로 기업의 수익률을 예측하고, SHAP 등을 활용하여 AI의 판단 근거를 시각화한 설명 가능한 인공지능 모델 구현.</p>
-                                    <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
-                                        <li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">Python</div></li>
-                                        <li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">XAI</div></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
+    <footer class="py-8 text-center text-sm text-slate-600 border-t border-slate-800/50">
+        <p>© 2026 Naryun Woo. Built with Tailwind CSS.</p>
+    </footer>
 
-                        <li class="mb-12">
-                            <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                                <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-                                <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">2024.09 — 10</header>
-                                <div class="z-10 sm:col-span-6">
-                                    <h3 class="font-medium leading-snug text-slate-200">
-                                        <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link" href="#">
-                                            <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                                            <span>DQN Cartpole Control</span>
-                                        </a>
-                                    </h3>
-                                    <p class="mt-2 text-sm leading-normal">Deep Q-Network 강화학습 알고리즘을 활용하여 Cartpole 제어 문제를 해결하는 시뮬레이션 프로젝트.</p>
-                                    <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
-                                        <li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">Python</div></li>
-                                        <li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">RL</div></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    
-                    <div class="mt-12">
-                        <a class="inline-flex items-center font-medium leading-tight text-slate-200 font-semibold group" href="https://github.com/M3rcy1228" target="_blank">
-                            <span class="border-b border-transparent pb-px transition group-hover:border-teal-300 motion-reduce:transition-none">View Full Project Archive</span>
-                            <span class="whitespace-nowrap">
-                                <i class="fa-solid fa-arrow-right ml-1 h-4 w-4 shrink-0 -translate-y-px transition-transform group-hover:translate-x-2 motion-reduce:transition-none"></i>
-                            </span>
-                        </a>
-                    </div>
-                </section>
-                
-                <footer class="max-w-md pb-16 text-sm text-slate-500 sm:pb-0">
-                    <p>Designed loosely based on Nikos Irmpilatze's portfolio.</p>
-                </footer>
-
-            </main>
-        </div>
-    </div>
-
-    <script>
-        // 1. 네비게이션 활성화 로직
-        document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-link');
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const id = entry.target.getAttribute('id');
-                        navLinks.forEach(link => {
-                            link.classList.remove('active');
-                            if (link.getAttribute('href') === `#${id}`) {
-                                link.classList.add('active');
-                            }
-                        });
-                    }
-                });
-            }, { rootMargin: '-30% 0px -70% 0px' }); // 화면의 중간쯤에 왔을 때 활성화
-
-            sections.forEach(section => observer.observe(section));
-        });
-
-        // 2. 마우스 스포트라이트 효과 로직
-        const spotlight = document.getElementById('spotlight');
-        document.addEventListener('mousemove', (e) => {
-            spotlight.style.background = `radial-gradient(600px at ${e.clientX}px ${e.clientY}px, rgba(45, 212, 191, 0.1), transparent 80%)`;
-        });
-    </script>
 </body>
 </html>
