@@ -11,10 +11,14 @@
         
         body { 
             font-family: 'Inter', 'Pretendard', sans-serif; 
-            background-color: #0f172a; /* 짙은 남색 배경 */
+            background-color: #0f172a; 
             color: #94a3b8; 
             padding-top: 80px;
         }
+        
+        /* 토글 애니메이션 부드럽게 */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
     </style>
     <script>
         tailwind.config = {
@@ -48,7 +52,7 @@
         
         <section class="grid md:grid-cols-[300px_1fr] gap-12 items-start">
             
-            <div class="text-center md:text-left flex flex-col items-center md:items-start">
+            <div class="text-center md:text-left flex flex-col items-center md:items-start w-full">
                 <div class="relative w-48 h-48 mb-6 group">
                     <div class="absolute inset-0 bg-sky-500 rounded-full blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
                     <img src="figs/naryun1.jpg" alt="Profile" class="relative w-full h-full object-cover rounded-full border-4 border-slate-800 shadow-2xl">
@@ -58,7 +62,7 @@
                 <p class="text-sky-400 font-medium mt-2">Cryptography Researcher</p>
                 <p class="text-sm text-slate-500 mt-1">Kwangwoon University</p>
 
-                <div class="flex gap-4 mt-6">
+                <div class="flex gap-4 mt-6 mb-8">
                     <a href="mailto:mercy1234@kw.ac.kr" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-sky-500 hover:text-white transition shadow-lg">
                         <i class="fa-solid fa-envelope fa-lg"></i>
                     </a>
@@ -69,6 +73,38 @@
                         <i class="fa-brands fa-linkedin-in fa-lg"></i>
                     </a>
                 </div>
+
+                <details class="group w-full border-t border-slate-800 pt-6">
+                    <summary class="flex justify-between items-center cursor-pointer text-slate-200 font-bold hover:text-sky-400 transition">
+                        <span>Research Interests</span>
+                        <span class="transition-transform group-open:rotate-180">
+                            <i class="fa-solid fa-chevron-down text-sm"></i>
+                        </span>
+                    </summary>
+                    
+                    <ul class="mt-4 space-y-3">
+                        <li class="flex items-center gap-3 text-slate-400 bg-slate-800/30 p-3 rounded-lg border border-slate-700/50 hover:bg-slate-800 transition">
+                            <i class="fa-solid fa-key text-sky-400 w-6 text-center"></i>
+                            <span class="text-xs font-bold">Authentication Protocol</span>
+                        </li>
+                    
+                        <li class="flex items-center gap-3 text-slate-400 bg-slate-800/30 p-3 rounded-lg border border-slate-700/50 hover:bg-slate-800 transition">
+                            <i class="fa-solid fa-atom text-sky-400 w-6 text-center"></i>
+                            <span class="text-xs font-bold">Post-Quantum Cryptography</span>
+                        </li>
+                    
+                        <li class="flex items-center gap-3 text-slate-400 bg-slate-800/30 p-3 rounded-lg border border-slate-700/50 hover:bg-slate-800 transition">
+                            <i class="fa-solid fa-user-shield text-sky-400 w-6 text-center"></i>
+                            <span class="text-xs font-bold">Zero-Trust Architecture</span>
+                        </li>
+                    
+                        <li class="flex items-center gap-3 text-slate-400 bg-slate-800/30 p-3 rounded-lg border border-slate-700/50 hover:bg-slate-800 transition">
+                            <i class="fa-solid fa-database text-sky-400 w-6 text-center"></i>
+                            <span class="text-xs font-bold">Database System</span>
+                        </li>
+                    </ul>
+                </details>
+
             </div>
 
             <div class="space-y-8">
@@ -83,31 +119,6 @@
                             저는 주로 <span class="text-sky-400">Cyber Security</span>, <span class="text-sky-400">Blockchain</span>, 그리고 <span class="text-sky-400">Database Systems</span> 간의 융합 기술에 관심을 가지고 연구를 진행하고 있습니다. 이론적인 보안 모델을 넘어, 실제 시스템에 적용 가능하고 효율적인 인증 프로토콜을 설계하는 것을 목표로 합니다.
                         </p>
                     </div>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-bold text-slate-200 mb-4">Research Interests</h3>
-                    <ul class="grid grid-cols-2 md:grid-cols-4 gap-3">
-                        <li class="flex flex-col items-center justify-center gap-2 text-slate-400 bg-slate-800/50 p-4 rounded-lg border border-slate-700/50 text-center h-full hover:bg-slate-800 transition">
-                            <i class="fa-solid fa-key text-sky-400 text-2xl mb-1"></i>
-                            <span class="text-xs font-bold leading-tight break-words">Authentication Protocol</span>
-                        </li>
-                    
-                        <li class="flex flex-col items-center justify-center gap-2 text-slate-400 bg-slate-800/50 p-4 rounded-lg border border-slate-700/50 text-center h-full hover:bg-slate-800 transition">
-                            <i class="fa-solid fa-atom text-sky-400 text-2xl mb-1"></i>
-                            <span class="text-xs font-bold leading-tight break-words">Post-Quantum Cryptography</span>
-                        </li>
-                    
-                        <li class="flex flex-col items-center justify-center gap-2 text-slate-400 bg-slate-800/50 p-4 rounded-lg border border-slate-700/50 text-center h-full hover:bg-slate-800 transition">
-                            <i class="fa-solid fa-user-shield text-sky-400 text-2xl mb-1"></i>
-                            <span class="text-xs font-bold leading-tight break-words">Zero-Trust Architecture</span>
-                        </li>
-                    
-                        <li class="flex flex-col items-center justify-center gap-2 text-slate-400 bg-slate-800/50 p-4 rounded-lg border border-slate-700/50 text-center h-full hover:bg-slate-800 transition">
-                            <i class="fa-solid fa-database text-sky-400 text-2xl mb-1"></i>
-                            <span class="text-xs font-bold leading-tight break-words">Database System</span>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </section>
