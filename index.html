@@ -31,7 +31,7 @@
 <body class="selection:bg-sky-500 selection:text-white antialiased">
 
     <div class="fixed inset-0 z-30 pointer-events-none transition duration-300" id="spotlight" style="background: radial-gradient(600px at 50% 50%, rgba(56, 189, 248, 0.15), transparent 80%);"></div>
-    <!- Header bar ->
+    
     <nav class="fixed top-0 left-0 w-full bg-[#0f172a]/90 backdrop-blur-md text-white z-50 border-b border-slate-800 h-16 flex items-center">
         <div class="max-w-screen-xl w-full mx-auto px-6 md:px-12 flex justify-between items-center">
             <a href="index.html" class="text-lg font-bold tracking-tight hover:text-sky-400 transition">Naryun Woo</a>
@@ -44,7 +44,7 @@
         </div>
     </nav>
     
-    <main class="max-w-screen-xl mx-auto px-6 md:px-12 py-12 md:py-20 space-y-24 relative z-40">
+    <main class="max-w-screen-xl mx-auto px-6 md:px-12 py-12 md:py-20 space-y-16 relative z-40">
         
         <section class="grid md:grid-cols-[300px_1fr] gap-12 items-start">
             
@@ -58,45 +58,17 @@
                 <p class="text-sky-400 font-medium mt-2">Cryptography Researcher</p>
                 <p class="text-sm text-slate-500 mt-1">Kwangwoon University</p>
 
-                <!- My links ->
                 <div class="flex gap-4 mt-6">
-                    <a href="mercy1234@kw.ac.kr" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-sky-500 hover:text-white transition shadow-lg">
+                    <a href="mailto:mercy1234@kw.ac.kr" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-sky-500 hover:text-white transition shadow-lg">
                         <i class="fa-solid fa-envelope fa-lg"></i>
                     </a>
                     <a href="https://github.com/M3rcy1028" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-sky-500 hover:text-white transition shadow-lg">
                         <i class="fa-brands fa-github fa-lg"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/naryun-woo-217b5a394/" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-sky-500 hover:text-white transition shadow-lg">
+                    <a href="https://www.linkedin.com/in/naryun-woo-217b5a394/" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-sky-500 hover:text-white transition shadow-lg">
                         <i class="fa-brands fa-linkedin-in fa-lg"></i>
                     </a>
                 </div>
-            </div>
-
-            <!- Research Interests ->
-            <div>
-                <h3 class="text-xl font-bold text-slate-200 mb-4">Research Interests</h3>
-                <ul class="grid grid-cols-2 md:grid-cols-4 gap-3">
-                    
-                    <li class="flex flex-col items-center justify-center gap-2 text-slate-400 bg-slate-800/50 p-4 rounded-lg border border-slate-700/50 text-center h-full hover:bg-slate-800 transition">
-                        <i class="fa-solid fa-key text-sky-400 text-2xl mb-1"></i>
-                        <span class="text-xs font-bold leading-tight break-words">Authentication Protocol</span>
-                    </li>
-                
-                    <li class="flex flex-col items-center justify-center gap-2 text-slate-400 bg-slate-800/50 p-4 rounded-lg border border-slate-700/50 text-center h-full hover:bg-slate-800 transition">
-                        <i class="fa-solid fa-atom text-sky-400 text-2xl mb-1"></i>
-                        <span class="text-xs font-bold leading-tight break-words">Post-Quantum Cryptography</span>
-                    </li>
-                
-                    <li class="flex flex-col items-center justify-center gap-2 text-slate-400 bg-slate-800/50 p-4 rounded-lg border border-slate-700/50 text-center h-full hover:bg-slate-800 transition">
-                        <i class="fa-solid fa-user-shield text-sky-400 text-2xl mb-1"></i>
-                        <span class="text-xs font-bold leading-tight break-words">Zero-Trust Architecture</span>
-                    </li>
-                
-                    <li class="flex flex-col items-center justify-center gap-2 text-slate-400 bg-slate-800/50 p-4 rounded-lg border border-slate-700/50 text-center h-full hover:bg-slate-800 transition">
-                        <i class="fa-solid fa-database text-sky-400 text-2xl mb-1"></i>
-                        <span class="text-xs font-bold leading-tight break-words">Database System</span>
-                    </li>
-                </ul>
             </div>
 
             <div class="space-y-8">
@@ -113,8 +85,36 @@
                     </div>
                 </div>
 
-                <!- Education ->
-           <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-xl font-bold text-slate-200 mb-4">Research Interests</h3>
+                    <ul class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        <li class="flex flex-col items-center justify-center gap-2 text-slate-400 bg-slate-800/50 p-4 rounded-lg border border-slate-700/50 text-center h-full hover:bg-slate-800 transition">
+                            <i class="fa-solid fa-key text-sky-400 text-2xl mb-1"></i>
+                            <span class="text-xs font-bold leading-tight break-words">Authentication Protocol</span>
+                        </li>
+                    
+                        <li class="flex flex-col items-center justify-center gap-2 text-slate-400 bg-slate-800/50 p-4 rounded-lg border border-slate-700/50 text-center h-full hover:bg-slate-800 transition">
+                            <i class="fa-solid fa-atom text-sky-400 text-2xl mb-1"></i>
+                            <span class="text-xs font-bold leading-tight break-words">Post-Quantum Cryptography</span>
+                        </li>
+                    
+                        <li class="flex flex-col items-center justify-center gap-2 text-slate-400 bg-slate-800/50 p-4 rounded-lg border border-slate-700/50 text-center h-full hover:bg-slate-800 transition">
+                            <i class="fa-solid fa-user-shield text-sky-400 text-2xl mb-1"></i>
+                            <span class="text-xs font-bold leading-tight break-words">Zero-Trust Architecture</span>
+                        </li>
+                    
+                        <li class="flex flex-col items-center justify-center gap-2 text-slate-400 bg-slate-800/50 p-4 rounded-lg border border-slate-700/50 text-center h-full hover:bg-slate-800 transition">
+                            <i class="fa-solid fa-database text-sky-400 text-2xl mb-1"></i>
+                            <span class="text-xs font-bold leading-tight break-words">Database System</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-slate-800">
+
+        <div class="grid md:grid-cols-2 gap-12">
             
             <section>
                 <h3 class="text-2xl font-bold text-slate-200 border-l-4 border-sky-500 pl-4 mb-8">Education</h3>
@@ -134,7 +134,7 @@
                     </div>
                 </div>
             </section>
-    
+
             <section>
                 <h3 class="text-2xl font-bold text-slate-200 border-l-4 border-sky-500 pl-4 mb-8">Honors & Awards</h3>
                 <div class="space-y-4">
@@ -154,9 +154,8 @@
                     </div>
                 </div>
             </section>
-            
         </div>
-        <hr class="border-slate-800">
+
     </main>
 
     <footer class="py-8 text-center text-sm text-slate-600 border-t border-slate-800/50 mt-20">
