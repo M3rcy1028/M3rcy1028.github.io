@@ -11,12 +11,12 @@
         
         body { 
             font-family: 'Inter', 'Pretendard', sans-serif; 
-            background-color: #ffffff; <!--#0f172a;--> 
-            color: #94a3b8; 
+            background-color: #ffffff; /* 흰색 배경 */
+            color: #475569; /* slate-600 (기본 텍스트) */
             padding-top: 80px;
         }
         
-        /* 토글 화살표 숨기기 및 커스텀 */
+        /* 토글 화살표 숨기기 */
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
     </style>
@@ -25,18 +25,18 @@
             theme: {
                 extend: {
                     colors: {
-                        sky: { 400: '#38bdf8', 500: '#0ea5e9' }
+                        sky: { 400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7' }
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="selection:bg-sky-500 selection:text-white antialiased">
+<body class="selection:bg-sky-200 selection:text-sky-900 antialiased">
 
-    <div class="fixed inset-0 z-30 pointer-events-none transition duration-300" id="spotlight" style="background: radial-gradient(600px at 50% 50%, rgba(56, 189, 248, 0.15), transparent 80%);"></div>
-    <!-- Header bar -->
-    <nav class="fixed top-0 left-0 w-full bg-[#0f172a]/90 backdrop-blur-md text-white z-50 border-b border-slate-800 h-16 flex items-center">
+    <div class="fixed inset-0 z-30 pointer-events-none transition duration-300" id="spotlight" style="background: radial-gradient(600px at 50% 50%, rgba(14, 165, 233, 0.05), transparent 80%);"></div>
+    
+    <nav class="fixed top-0 left-0 w-full bg-[#0f172a]/95 backdrop-blur-md text-white z-50 border-b border-slate-800 h-16 flex items-center shadow-sm">
         <div class="max-w-screen-xl w-full mx-auto px-6 md:px-12 flex justify-between items-center">
             <a href="index.html" class="text-lg font-bold tracking-tight hover:text-sky-400 transition">Naryun Woo</a>
             <ul class="hidden md:flex gap-8 text-sm font-medium text-slate-300">
@@ -44,7 +44,6 @@
                 <li><a href="publications.html" class="hover:text-white transition">Publications</a></li>
                 <li><a href="projects.html" class="hover:text-white transition">Projects</a></li>
                 <li><a href="news.html" class="hover:text-white transition">News</a></li>
-                <!-- 나중에 다운로드 pdf 만들기  -->
                 <li><a href="" class="hover:text-white transition">CV</a></li>
             </ul>
         </div>
@@ -56,54 +55,52 @@
             
             <div class="text-center md:text-left flex flex-col items-center md:items-start w-full sticky top-24">
                 <div class="relative w-48 h-48 mb-6 group">
-                    <div class="absolute inset-0 bg-sky-500 rounded-full blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
-                    <img src="figs/naryun1.jpg" alt="Profile" class="relative w-full h-full object-cover rounded-full border-4 border-slate-800 shadow-2xl">
+                    <div class="absolute inset-0 bg-sky-200 rounded-full blur opacity-40 group-hover:opacity-60 transition duration-500"></div>
+                    <img src="figs/naryun1.jpg" alt="Profile" class="relative w-full h-full object-cover rounded-full border-4 border-white shadow-xl">
                 </div>
 
-                <!- profile ->
-                <h1 class="text-3xl font-bold text-slate-100">Naryun Woo</h1>
-                <p class="text-sky-400 font-medium mt-2">
+                <h1 class="text-3xl font-bold text-slate-900">Naryun Woo</h1>
+                <p class="text-sky-600 font-medium mt-2">
                     Graduated Researcher in 
-                    <a href="https://sites.google.com/view/cncslab-kwu/cncs-lab" target="_blank" class="underline decoration-sky-400/50 hover:text-sky-200 transition">
+                    <a href="https://sites.google.com/view/cncslab-kwu/cncs-lab" target="_blank" class="underline decoration-sky-400/50 hover:text-sky-700 transition">
                         CnCS Lab.
                     </a>
                 </p>
                 <p class="text-sm text-slate-500 mt-1">Kwangwoon University</p>
 
-                <!- My links ->
                 <div class="flex gap-4 mt-6 mb-8">
-                    <a href="mailto:mercy1234@kw.ac.kr" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-sky-500 hover:text-white transition shadow-lg">
+                    <a href="mailto:mercy1234@kw.ac.kr" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-sky-500 hover:text-white transition shadow-md hover:shadow-lg ring-1 ring-slate-200">
                         <i class="fa-solid fa-envelope fa-lg"></i>
                     </a>
-                    <a href="https://github.com/M3rcy1028" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-sky-500 hover:text-white transition shadow-lg">
+                    <a href="https://github.com/M3rcy1028" target="_blank" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-sky-500 hover:text-white transition shadow-md hover:shadow-lg ring-1 ring-slate-200">
                         <i class="fa-brands fa-github fa-lg"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/naryun-woo-217b5a394/" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-sky-500 hover:text-white transition shadow-lg">
+                    <a href="https://www.linkedin.com/in/naryun-woo-217b5a394/" target="_blank" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-sky-500 hover:text-white transition shadow-md hover:shadow-lg ring-1 ring-slate-200">
                         <i class="fa-brands fa-linkedin-in fa-lg"></i>
                     </a>
                 </div>
 
-                <div class="w-full border-t border-slate-800 pt-6">
-                    <h3 class="text-slate-200 font-bold mb-4">Research Interests</h3>
+                <div class="w-full border-t border-slate-200 pt-6">
+                    <h3 class="text-slate-900 font-bold mb-4">Research Interests</h3>
                     
                     <ul class="space-y-3">
-                        <li class="flex items-center gap-3 text-slate-400 bg-slate-800/30 p-3 rounded-lg border border-slate-700/50 hover:bg-slate-800 transition">
-                            <i class="fa-solid fa-key text-sky-400 w-6 text-center"></i>
+                        <li class="flex items-center gap-3 text-slate-600 bg-slate-50 p-3 rounded-lg border border-slate-200 hover:bg-white hover:shadow-md transition">
+                            <i class="fa-solid fa-key text-sky-500 w-6 text-center"></i>
                             <span class="text-xs font-bold">Authentication Protocol</span>
                         </li>
                     
-                        <li class="flex items-center gap-3 text-slate-400 bg-slate-800/30 p-3 rounded-lg border border-slate-700/50 hover:bg-slate-800 transition">
-                            <i class="fa-solid fa-atom text-sky-400 w-6 text-center"></i>
+                        <li class="flex items-center gap-3 text-slate-600 bg-slate-50 p-3 rounded-lg border border-slate-200 hover:bg-white hover:shadow-md transition">
+                            <i class="fa-solid fa-atom text-sky-500 w-6 text-center"></i>
                             <span class="text-xs font-bold">Post-Quantum Cryptography</span>
                         </li>
                     
-                        <li class="flex items-center gap-3 text-slate-400 bg-slate-800/30 p-3 rounded-lg border border-slate-700/50 hover:bg-slate-800 transition">
-                            <i class="fa-solid fa-user-shield text-sky-400 w-6 text-center"></i>
+                        <li class="flex items-center gap-3 text-slate-600 bg-slate-50 p-3 rounded-lg border border-slate-200 hover:bg-white hover:shadow-md transition">
+                            <i class="fa-solid fa-user-shield text-sky-500 w-6 text-center"></i>
                             <span class="text-xs font-bold">Zero-Trust Architecture</span>
                         </li>
                     
-                        <li class="flex items-center gap-3 text-slate-400 bg-slate-800/30 p-3 rounded-lg border border-slate-700/50 hover:bg-slate-800 transition">
-                            <i class="fa-solid fa-database text-sky-400 w-6 text-center"></i>
+                        <li class="flex items-center gap-3 text-slate-600 bg-slate-50 p-3 rounded-lg border border-slate-200 hover:bg-white hover:shadow-md transition">
+                            <i class="fa-solid fa-database text-sky-500 w-6 text-center"></i>
                             <span class="text-xs font-bold">Database System</span>
                         </li>
                     </ul>
@@ -113,95 +110,74 @@
             <div class="space-y-16">
                 
                 <section>
-                    <h2 class="text-3xl font-bold text-slate-100 mb-6">About me</h2>
-                    <div class="text-lg leading-relaxed text-slate-400 space-y-4">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-6">About me</h2>
+                    <div class="text-lg leading-relaxed text-slate-600 space-y-4">
                         <p>
-                            Hi, I’m senior in department of  Computer Information Engineering in Kwangwoon Univ.. I’m interested in Cryptography, Zero Trust Architecture and Database. 
+                            Hi, I’m senior in department of Computer Information Engineering in Kwangwoon Univ.. I’m interested in Cryptography, Zero Trust Architecture and Database. 
                         </p>
-                        <!-- <p>
-                            저는 주로 <span class="text-sky-400">Cyber Security</span>, <span class="text-sky-400">Blockchain</span>, 그리고 <span class="text-sky-400">Database Systems</span> 간의 융합 기술에 관심을 가지고 연구를 진행하고 있습니다. 이론적인 보안 모델을 넘어, 실제 시스템에 적용 가능하고 효율적인 인증 프로토콜을 설계하는 것을 목표로 합니다.
-                        </p> -->
                     </div>
                 </section>
-                <div class="grid md:grid-cols-2 gap-8">
-
-                    <!- Education ->
+                
+                <div class="grid md:grid-cols-2 gap-12">
                     <section>
-                        <!-- <h4 class="text-2xl font-bold text-slate-200 border-l-4 border-sky-500 pl-4 mb-8">Education</h4> -->
-                        <h2 class="text-slate-200 font-bold mb-4">Education</h2>
-                            <ul class="space-y-5">
-                                <li class="flex items-start gap-3">
-                                    <i class="fa-solid fa-graduation-cap text-slate-500 mt-1.5 text-sm"></i>
-                                    <div>
-                                        <h4 class="text-slate-200 font-bold leading-snug">
-                                            MS in Computer Engineering, <span class="text-slate-500 font-normal">2025.09 — Present</span>
-                                        </h4>
-                                        <p class="text-slate-400 text-sm mt-1">Kwangwoon University</p>
-                                    </div>
-                                </li>
-                        
-                                <li class="flex items-start gap-3">
-                                    <i class="fa-solid fa-graduation-cap text-slate-500 mt-1.5 text-sm"></i>
-                                    <div>
-                                        <h4 class="text-slate-200 font-bold leading-snug">
-                                            BS in Computer Info Engineering, <span class="text-slate-500 font-normal">2022.03 — 2025.08</span>
-                                        </h4>
-                                        <p class="text-slate-400 text-sm mt-1">Kwangwoon University</p>
-                                        <p class="text-sky-400 text-xs font-semibold mt-1">GPA 3.98 / 4.5</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        <!-- <div class="relative border-l border-slate-800 ml-3 space-y-10">
-                            <div class="ml-8 relative group">
-                                <span class="absolute -left-[41px] top-1.5 h-4 w-4 rounded-full bg-sky-500 border-4 border-slate-900 group-hover:scale-125 transition"></span>
-                                <h4 class="text-lg font-bold text-slate-200">MS in Computer Engineering</h4>
-                                <p class="text-slate-400">Kwangwoon University</p>
-                                <span class="text-sm text-slate-500 font-mono">2025.09 — Present</span>
-                            </div>
-                            <div class="ml-8 relative group">
-                                <span class="absolute -left-[41px] top-1.5 h-4 w-4 rounded-full bg-slate-600 border-4 border-slate-900 group-hover:scale-125 transition"></span>
-                                <h4 class="text-lg font-bold text-slate-200">BS in Computer Info Engineering</h4>
-                                <p class="text-slate-400">Kwangwoon University</p>
-                                <span class="text-sm text-slate-500 font-mono">2022.03 — 2025.08</span>
-                                <p class="mt-1 text-sky-400 text-sm font-semibold">GPA 3.98 / 4.5</p>
-                            </div>
-                        </div> -->
+                        <h2 class="text-xl font-bold text-slate-900 mb-6">Education</h2>
+                        <ul class="space-y-6">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-graduation-cap text-slate-400 mt-1.5 text-sm"></i>
+                                <div>
+                                    <h4 class="text-slate-800 font-bold leading-snug">
+                                        MS in Computer Engineering, <span class="text-slate-500 font-normal">2025 — Present</span>
+                                    </h4>
+                                    <p class="text-slate-500 text-sm mt-1">Kwangwoon University</p>
+                                </div>
+                            </li>
+
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-graduation-cap text-slate-400 mt-1.5 text-sm"></i>
+                                <div>
+                                    <h4 class="text-slate-800 font-bold leading-snug">
+                                        BS in Computer Info Engineering, <span class="text-slate-500 font-normal">2022 — 2025</span>
+                                    </h4>
+                                    <p class="text-slate-500 text-sm mt-1">Kwangwoon University</p>
+                                    <p class="text-sky-600 text-xs font-semibold mt-1">GPA 3.98 / 4.5</p>
+                                </div>
+                            </li>
+                        </ul>
                     </section>
 
-                    <!- rewards & honors ->
                     <section>
-                        <!-- <h4 class="text-2xl font-bold text-slate-200 border-l-4 border-sky-500 pl-4 mb-8">Honors & Awards</h4> -->
-                        <h2 class="text-slate-200 font-bold mb-4">Honors & Awards</h2>
+                        <h2 class="text-xl font-bold text-slate-900 mb-6">Honors & Awards</h2>
                         <div class="space-y-4">
-                            <div class="flex flex-col gap-1 bg-slate-800/30 hover:bg-slate-800 p-5 rounded-xl transition border border-transparent hover:border-sky-500/30">
-                                <span class="text-sm font-mono text-sky-400">2024.12</span>
+                            <div class="flex flex-col gap-1 bg-slate-50 hover:bg-white p-5 rounded-xl transition border border-slate-200 hover:shadow-md hover:border-sky-200">
+                                <span class="text-sm font-mono text-sky-600 font-semibold">2024.12</span>
                                 <div>
-                                    <h4 class="text-lg font-bold text-slate-200">Academic Excellence Scholarship</h4>
-                                    <p class="text-slate-400 text-sm mt-1">성적 우수 장학금 (Kwangwoon Univ.)</p>
+                                    <h4 class="text-lg font-bold text-slate-800">Academic Excellence Scholarship</h4>
+                                    <p class="text-slate-500 text-sm mt-1">성적 우수 장학금 (Kwangwoon Univ.)</p>
                                 </div>
                             </div>
-                            <div class="flex flex-col gap-1 bg-slate-800/30 hover:bg-slate-800 p-5 rounded-xl transition border border-transparent hover:border-sky-500/30">
+                            <div class="flex flex-col gap-1 bg-slate-50 hover:bg-white p-5 rounded-xl transition border border-slate-200 hover:shadow-md hover:border-sky-200">
                                 <span class="text-sm font-mono text-slate-500">2023.06</span>
                                 <div>
-                                    <h4 class="text-lg font-bold text-slate-200">Capstone Design Award</h4>
-                                    <p class="text-slate-400 text-sm mt-1">캡스톤 디자인 경진대회 은상 수상</p>
+                                    <h4 class="text-lg font-bold text-slate-800">Capstone Design Award</h4>
+                                    <p class="text-slate-500 text-sm mt-1">캡스톤 디자인 경진대회 은상 수상</p>
                                 </div>
                             </div>
                         </div>
                     </section>
 
-                </div> </div>
+                </div> 
+            </div>
         </section>
     </main>
 
-    <footer class="py-8 text-center text-sm text-slate-600 border-t border-slate-800/50 mt-20">
+    <footer class="py-8 text-center text-sm text-slate-400 border-t border-slate-200 mt-20">
         <p>© 2026 Naryun Woo.</p>
     </footer>
 
     <script>
         const spotlight = document.getElementById('spotlight');
         document.addEventListener('mousemove', (e) => {
-            spotlight.style.background = `radial-gradient(300px at ${e.clientX}px ${e.clientY}px, rgba(56, 189, 248, 0.15), transparent 80%)`;
+            spotlight.style.background = `radial-gradient(400px at ${e.clientX}px ${e.clientY}px, rgba(14, 165, 233, 0.08), transparent 80%)`;
         });
     </script>
 </body>
