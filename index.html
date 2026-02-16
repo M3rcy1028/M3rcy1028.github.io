@@ -11,7 +11,7 @@
         
         body { 
             font-family: 'Inter', 'Pretendard', sans-serif; 
-            background-color: #0f172a; 
+            background-color: #ffffff; <!--#0f172a;--> 
             color: #94a3b8; 
             padding-top: 80px;
         }
@@ -36,7 +36,7 @@
 
     <div class="fixed inset-0 z-30 pointer-events-none transition duration-300" id="spotlight" style="background: radial-gradient(600px at 50% 50%, rgba(56, 189, 248, 0.15), transparent 80%);"></div>
     <!-- Header bar -->
-    <nav class="fixed top-0 left-0 w-full bg-[#ffffff]/90 backdrop-blur-md text-white z-50 border-b border-slate-800 h-16 flex items-center">
+    <nav class="fixed top-0 left-0 w-full bg-[#0f172a]/90 backdrop-blur-md text-white z-50 border-b border-slate-800 h-16 flex items-center">
         <div class="max-w-screen-xl w-full mx-auto px-6 md:px-12 flex justify-between items-center">
             <a href="index.html" class="text-lg font-bold tracking-tight hover:text-sky-400 transition">Naryun Woo</a>
             <ul class="hidden md:flex gap-8 text-sm font-medium text-slate-300">
@@ -201,7 +201,7 @@
     <script>
         const spotlight = document.getElementById('spotlight');
         document.addEventListener('mousemove', (e) => {
-            spotlight.style.background = `radial-gradient(600px at ${e.clientX}px ${e.clientY}px, rgba(56, 189, 248, 0.15), transparent 80%)`;
+            spotlight.style.background = `radial-gradient(300px at ${e.clientX}px ${e.clientY}px, rgba(56, 189, 248, 0.15), transparent 80%)`;
         });
     </script>
 </body>
