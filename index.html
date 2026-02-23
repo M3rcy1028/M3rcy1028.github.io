@@ -41,7 +41,28 @@
             <a href="index.html" class="text-lg font-bold tracking-tight hover:text-sky-400 transition">Naryun Woo</a>
             <ul class="hidden md:flex gap-8 text-sm font-medium text-slate-300">
                 <li><a href="index.html" class="text-sky-400 font-bold">Home</a></li>
-                <li><a href="publications.html" class="hover:text-white transition">Publications</a></li>
+                <li class="relative group py-4">
+                    <a href="publications.html" class="text-sky-400 font-bold border-b-2 border-sky-400 pb-1 flex items-center gap-1">
+                        Publications <i class="fa-solid fa-chevron-down text-[10px] mt-0.5"></i>
+                    </a>
+                    
+                    <div class="absolute left-0 top-full pt-1 w-48 hidden group-hover:block z-50">
+                        <div class="bg-[#1e293b] rounded-md shadow-xl border border-slate-700 overflow-hidden">
+                            <ul class="py-1">
+                                <li>
+                                    <a href="publications.html#journal" class="block px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-700 hover:text-sky-400 transition">
+                                        Journal Papers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="publications.html#conference" class="block px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-700 hover:text-sky-400 transition">
+                                        Conference Papers
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
                 <li><a href="projects.html" class="hover:text-white transition">Projects</a></li>
                 <li><a href="news.html" class="hover:text-white transition">News</a></li>
                 <li><a href="" class="hover:text-white transition">CV</a></li>
