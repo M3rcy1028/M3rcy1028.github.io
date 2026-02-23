@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,47 +8,95 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Pretendard:wght@400;500;700&display=swap');
-        body { font-family: 'Inter', 'Pretendard', sans-serif; background-color: #0f172a; color: #94a3b8; padding-top: 80px; }
+        
+        body { 
+            font-family: 'Inter', 'Pretendard', sans-serif; 
+            background-color: #ffffff; /* 흰색 배경 */
+            color: #475569; /* slate-600 */
+            padding-top: 80px; 
+        }
     </style>
     <script>
-        tailwind.config = { theme: { extend: { colors: { sky: { 400: '#38bdf8', 500: '#0ea5e9' } } } } }
+        tailwind.config = { 
+            theme: { 
+                extend: { 
+                    colors: { 
+                        sky: { 400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7' } 
+                    } 
+                } 
+            } 
+        }
     </script>
 </head>
-<body class="selection:bg-sky-500 selection:text-white antialiased">
-    <div class="fixed inset-0 z-30 pointer-events-none transition duration-300" id="spotlight" style="background: radial-gradient(600px at 50% 50%, rgba(56, 189, 248, 0.15), transparent 80%);"></div>
+<body class="selection:bg-sky-200 selection:text-sky-900 antialiased">
+    
+    <div class="fixed inset-0 z-30 pointer-events-none transition duration-300" id="spotlight" style="background: radial-gradient(400px at 50% 50%, rgba(14, 165, 233, 0.05), transparent 80%);"></div>
 
-    <nav class="fixed top-0 left-0 w-full bg-sky-500 text-white z-50 shadow-lg h-16 flex items-center">
+    <nav class="fixed top-0 left-0 w-full bg-[#0f172a]/95 backdrop-blur-md text-white z-50 border-b border-slate-800 h-16 flex items-center shadow-sm">
         <div class="max-w-screen-xl w-full mx-auto px-6 md:px-12 flex justify-between items-center">
-            <a href="index.html" class="text-xl font-bold tracking-tight hover:opacity-90 transition">Naryun Woo</a>
-            <ul class="hidden md:flex gap-8 text-sm font-semibold">
-                <li><a href="index.html" class="hover:text-sky-100 transition">Home</a></li>
-                <li><a href="projects.html" class="hover:text-sky-100 transition">Projects</a></li>
-                <li><a href="publications.html" class="text-white border-b-2 border-white pb-1">Publications</a></li>
+            <a href="index.html" class="text-lg font-bold tracking-tight hover:text-sky-400 transition">Naryun Woo</a>
+            <ul class="hidden md:flex gap-8 text-sm font-medium text-slate-300">
+                <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+                <li><a href="publications.html" class="text-sky-400 font-bold border-b-2 border-sky-400 pb-1">Publications</a></li>
+                <li><a href="projects.html" class="hover:text-white transition">Projects</a></li>
+                <li><a href="news.html" class="hover:text-white transition">News</a></li>
+                <li><a href="" class="hover:text-white transition">CV</a></li>
             </ul>
         </div>
     </nav>
 
     <main class="max-w-3xl mx-auto px-6 py-12 md:py-20 space-y-24 relative z-40">
         <section>
-            <h3 class="text-2xl font-bold text-slate-200 mb-10 border-l-4 border-sky-500 pl-4">Publications</h3>
+            <h3 class="text-2xl font-bold text-slate-900 mb-10 border-l-4 border-sky-500 pl-4">Publications</h3>
+            
             <ul class="space-y-6">
                 <li class="group">
-                    <a href="#" class="block p-6 rounded-xl bg-slate-800/30 hover:bg-slate-800 border border-transparent hover:border-slate-700 transition">
-                        <span class="inline-block px-2 py-0.5 rounded text-xs font-bold bg-sky-500 text-white mb-2">SCI(E)</span>
-                        <h4 class="text-lg font-semibold text-slate-200 group-hover:text-sky-400 transition">
+                    <a href="https://ieeexplore.ieee.org/document/10858192/" target="_blank" class="block p-6 rounded-xl bg-slate-50 hover:bg-white border border-slate-200 hover:border-sky-300 hover:shadow-md transition">
+                        <div class="flex gap-2 mb-3">
+                            <span class="inline-block px-2 py-0.5 rounded text-xs font-bold bg-sky-500 text-white">SCI(E)</span>
+                            <span class="inline-block px-2 py-0.5 rounded text-xs font-bold bg-slate-700 text-white">Q1</span>
+                        </div>
+                        <h4 class="text-lg font-semibold text-slate-800 group-hover:text-sky-600 transition leading-snug">
+                            CESA: Chebyshev-Polynomials-Based Efficient and Secure Access Authentication Scheme for Both User Equipment and Massive Machine-Type-Communication Devices Over 5G Networks
+                        </h4>
+                        <p class="text-sm text-slate-600 mt-2 font-medium">
+                            <span class="text-sky-600 font-bold">Naryun Woo</span>, Taewoong Kang, Jihyeon Ryu
+                        </p>
+                        <p class="text-sm text-slate-500 mt-1 italic">
+                            IEEE Internet of Things Journal, 2025 (IF: 8.2)
+                        </p>
+                    </a>
+                </li>
+
+                <li class="group">
+                    <a href="https://ieeexplore.ieee.org/document/10460552/" target="_blank" class="block p-6 rounded-xl bg-slate-50 hover:bg-white border border-slate-200 hover:border-sky-300 hover:shadow-md transition">
+                        <div class="mb-3">
+                            <span class="inline-block px-2 py-0.5 rounded text-xs font-bold bg-sky-500 text-white">SCI(E)</span>
+                        </div>
+                        <h4 class="text-lg font-semibold text-slate-800 group-hover:text-sky-600 transition leading-snug">
                             Enhanced Lightweight Medical Sensor Networks Authentication Scheme Based on Blockchain
                         </h4>
-                        <p class="text-sm text-slate-500 mt-2">IEEE Access, 2024</p>
+                        <p class="text-sm text-slate-600 mt-2 font-medium">
+                            Taewoong Kang, <span class="text-sky-600 font-bold">Naryun Woo</span>, Jihyeon Ryu
+                        </p>
+                        <p class="text-sm text-slate-500 mt-1 italic">
+                            IEEE Access, 2024
+                        </p>
                     </a>
                 </li>
             </ul>
         </section>
     </main>
     
-    <footer class="py-8 text-center text-sm text-slate-600 border-t border-slate-800/50"><p>© 2026 Naryun Woo.</p></footer>
+    <footer class="py-8 text-center text-sm text-slate-400 border-t border-slate-200 mt-20">
+        <p>© 2026 Naryun Woo.</p>
+    </footer>
+
     <script>
         const spotlight = document.getElementById('spotlight');
-        document.addEventListener('mousemove', (e) => { spotlight.style.background = `radial-gradient(600px at ${e.clientX}px ${e.clientY}px, rgba(56, 189, 248, 0.15), transparent 80%)`; });
+        document.addEventListener('mousemove', (e) => { 
+            spotlight.style.background = `radial-gradient(400px at ${e.clientX}px ${e.clientY}px, rgba(14, 165, 233, 0.08), transparent 80%)`; 
+        });
     </script>
 </body>
 </html>
