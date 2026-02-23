@@ -21,7 +21,8 @@
             theme: { 
                 extend: { 
                     colors: { 
-                        sky: { 400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7' } 
+                        sky: { 400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7' },
+                        emerald: { 400: '#34d399', 500: '#10b981', 600: '#059669' }
                     } 
                 } 
             } 
@@ -45,11 +46,30 @@
         </div>
     </nav>
 
-    <main class="max-w-3xl mx-auto px-6 py-12 md:py-20 space-y-24 relative z-40">
+    <main class="max-w-3xl mx-auto px-6 py-12 md:py-20 space-y-20 relative z-40">
+        
         <section>
-            <h3 class="text-2xl font-bold text-slate-900 mb-10 border-l-4 border-sky-500 pl-4">Publications</h3>
+            <h3 class="text-2xl font-bold text-slate-900 mb-8 border-l-4 border-sky-500 pl-4">Journal Publications</h3>
             
             <ul class="space-y-6">
+                <li class="group">
+                    <a href="#" class="block p-6 rounded-xl bg-slate-50 hover:bg-white border border-slate-200 hover:border-sky-300 hover:shadow-md transition">
+                        <div class="flex gap-2 mb-3">
+                            <span class="inline-block px-2 py-0.5 rounded text-xs font-bold bg-sky-500 text-white">SCI(E)</span>
+                            <span class="inline-block px-2 py-0.5 rounded text-xs font-bold bg-slate-700 text-white">Q1</span>
+                        </div>
+                        <h4 class="text-lg font-semibold text-slate-800 group-hover:text-sky-600 transition leading-snug">
+                            LAEC: Lightweight Authentication Protocol for Energy-Efficient and Cost-Effective Communication in Wireless Sensor Network Environments
+                        </h4>
+                        <p class="text-sm text-slate-600 mt-2 font-medium">
+                            HyeonJun Yoo, Taewoong Kang, <span class="text-sky-600 font-bold">Naryun Woo</span>
+                        </p>
+                        <p class="text-sm text-slate-500 mt-1 italic">
+                            IEEE Sensors Journal, 2025
+                        </p>
+                    </a>
+                </li>
+
                 <li class="group">
                     <a href="https://ieeexplore.ieee.org/document/10858192/" target="_blank" class="block p-6 rounded-xl bg-slate-50 hover:bg-white border border-slate-200 hover:border-sky-300 hover:shadow-md transition">
                         <div class="flex gap-2 mb-3">
@@ -57,21 +77,22 @@
                             <span class="inline-block px-2 py-0.5 rounded text-xs font-bold bg-slate-700 text-white">Q1</span>
                         </div>
                         <h4 class="text-lg font-semibold text-slate-800 group-hover:text-sky-600 transition leading-snug">
-                            CESA: Chebyshev-Polynomials-Based Efficient and Secure Access Authentication Scheme for Both User Equipment and Massive Machine-Type-Communication Devices Over 5G Networks
+                            CESA: Chebyshev-Polynomials-based Efficient and Secure Access Authentication Scheme for both User Equipment and Massive Machine-Type-Communication Devices over 5G Networks
                         </h4>
                         <p class="text-sm text-slate-600 mt-2 font-medium">
                             <span class="text-sky-600 font-bold">Naryun Woo</span>, Taewoong Kang, Jihyeon Ryu
                         </p>
                         <p class="text-sm text-slate-500 mt-1 italic">
-                            IEEE Internet of Things Journal, 2025 (IF: 8.2)
+                            IEEE Internet of Things Journal, 2025
                         </p>
                     </a>
                 </li>
 
                 <li class="group">
                     <a href="https://ieeexplore.ieee.org/document/10460552/" target="_blank" class="block p-6 rounded-xl bg-slate-50 hover:bg-white border border-slate-200 hover:border-sky-300 hover:shadow-md transition">
-                        <div class="mb-3">
+                        <div class="flex gap-2 mb-3">
                             <span class="inline-block px-2 py-0.5 rounded text-xs font-bold bg-sky-500 text-white">SCI(E)</span>
+                            <span class="inline-block px-2 py-0.5 rounded text-xs font-bold bg-slate-700 text-white">Q2</span>
                         </div>
                         <h4 class="text-lg font-semibold text-slate-800 group-hover:text-sky-600 transition leading-snug">
                             Enhanced Lightweight Medical Sensor Networks Authentication Scheme Based on Blockchain
@@ -86,9 +107,34 @@
                 </li>
             </ul>
         </section>
+
+        <section>
+            <h3 class="text-2xl font-bold text-slate-900 mb-8 border-l-4 border-emerald-500 pl-4">Conference Publications</h3>
+            
+            <ul class="space-y-6">
+                <li class="group">
+                    <a href="#" class="block p-6 rounded-xl bg-slate-50 hover:bg-white border border-slate-200 hover:border-emerald-300 hover:shadow-md transition">
+                        <div class="flex gap-2 mb-3">
+                            <span class="inline-block px-2 py-0.5 rounded text-xs font-bold bg-emerald-500 text-white">Domestic Conference</span>
+                            <span class="inline-block px-2 py-0.5 rounded text-xs font-bold border border-emerald-500 text-emerald-600">Poster</span>
+                        </div>
+                        <h4 class="text-lg font-semibold text-slate-800 group-hover:text-emerald-600 transition leading-snug">
+                            A Survey on Hybrid Post-Quantum Cryptography Technology Trends Based on the RFC 9794 Classification
+                        </h4>
+                        <p class="text-sm text-slate-600 mt-2 font-medium">
+                            <span class="text-sky-600 font-bold">Naryun Woo</span>, Jihyeon Ryu
+                        </p>
+                        <p class="text-sm text-slate-500 mt-1 italic">
+                            CISC-W 2025 (Korea Institute of Information Security and Cryptology)
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
     </main>
     
-    <footer class="py-8 text-center text-sm text-slate-400 border-t border-slate-200 mt-20">
+    <footer class="py-8 text-center text-sm text-slate-400 border-t border-slate-200 mt-10">
         <p>© 2026 Naryun Woo.</p>
     </footer>
 
