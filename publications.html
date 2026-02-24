@@ -16,41 +16,43 @@
             padding-top: 80px; 
         }
 
-        /* --- Publication Template Styles --- */
-        .pub-card { @apply block p-5 rounded-xl bg-slate-50 border border-slate-200 transition hover:bg-white hover:shadow-md; }
-        .journal-card { @apply hover:border-sky-300; }
-        .conf-card { @apply hover:border-emerald-300; }
+        /* --- Publication Template Styles (Standard CSS for reliability) --- */
+        .pub-card { 
+            display: block;
+            padding: 1.25rem; /* p-5 */
+            border-radius: 0.75rem; /* rounded-xl */
+            background-color: #f8fafc; /* bg-slate-50 */
+            border: 1px solid #e2e8f0; /* border-slate-200 */
+            transition: all 0.3s ease;
+        }
+        .pub-card:hover {
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        
+        /* 저널/컨퍼런스 호버 테두리 색상 */
+        .journal-card:hover { border-color: #38bdf8; } /* sky-400 */
+        .conf-card:hover { border-color: #34d399; } /* emerald-400 */
 
-        .pub-title { @apply text-base font-semibold text-slate-800 transition leading-snug; }
-        .journal-hover { @apply group-hover:text-sky-600; }
-        .conf-hover { @apply group-hover:text-emerald-600; }
+        /* 텍스트 스타일 */
+        .pub-title { font-size: 1rem; font-weight: 600; color: #1e293b; line-height: 1.5; transition: color 0.2s; }
+        .journal-card:hover .pub-title { color: #0284c7; }
+        .conf-card:hover .pub-title { color: #059669; }
 
-        .pub-authors { @apply text-xs text-slate-600 mt-2 font-medium; }
-        .pub-info { @apply text-[11px] text-slate-500 mt-1 italic; }
-        .my-name { @apply text-sky-600 font-bold; }
+        .pub-authors { font-size: 0.75rem; color: #475569; margin-top: 0.5rem; font-weight: 500; }
+        .pub-info { font-size: 11px; color: #64748b; margin-top: 0.25rem; font-style: italic; }
+        .my-name { color: #0ea5e9; font-weight: 700; }
 
         /* --- Badge Styles --- */
-        .badge-base { @apply inline-block px-1.5 py-0.5 rounded text-[10px] font-bold; }
-        .badge-scie { @apply badge-base bg-sky-500 text-white; }
-        .badge-q1 { @apply badge-base bg-slate-700 text-white; }
-        .badge-q2 { @apply badge-base bg-slate-500 text-white; }
-        .badge-early { @apply badge-base bg-yellow-100 text-yellow-800 border border-yellow-200; }
-        .badge-domestic { @apply badge-base bg-emerald-500 text-white; }
-        .badge-poster { @apply badge-base border border-emerald-500 text-emerald-600; }
-        .badge-oral { @apply badge-base border border-emerald-600 bg-emerald-50 text-emerald-700; }
+        .badge-base { display: inline-block; padding: 0.125rem 0.375rem; border-radius: 0.25rem; font-size: 10px; font-weight: 700; }
+        .badge-scie { background-color: #0ea5e9; color: white; }
+        .badge-q1 { background-color: #334155; color: white; }
+        .badge-q2 { background-color: #64748b; color: white; }
+        .badge-early { background-color: #fefce8; color: #854d0e; border: 1px solid #fef08a; }
+        .badge-domestic { background-color: #10b981; color: white; }
+        .badge-poster { border: 1px solid #10b981; color: #059669; }
+        .badge-oral { border: 1px solid #059669; background-color: #ecfdf5; color: #047857; }
     </style>
-    <script>
-        tailwind.config = { 
-            theme: { 
-                extend: { 
-                    colors: { 
-                        sky: { 400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7' },
-                        emerald: { 400: '#34d399', 500: '#10b981', 600: '#059669' }
-                    } 
-                } 
-            } 
-        }
-    </script>
 </head>
 <body class="selection:bg-sky-200 selection:text-sky-900 antialiased">
     
@@ -61,13 +63,10 @@
         async function loadHeader() {
             try {
                 const response = await fetch('header.html');
-                if (!response.ok) throw new Error('헤더 파일을 찾을 수 없습니다.');
                 const data = await response.text();
                 document.getElementById('header-container').innerHTML = data;
                 highlightCurrentMenu();
-            } catch (error) {
-                console.error('헤더를 불러오는 중 오류가 발생했습니다:', error);
-            }
+            } catch (error) { console.error(error); }
         }
     
         function highlightCurrentMenu() {
@@ -78,10 +77,8 @@
                 if (link.id === 'logo') return; 
                 if (link.getAttribute('href') === currentPage) {
                     link.classList.add('text-amber-400', 'font-bold');
-                    link.classList.remove('text-slate-300');
                 } else {
                     link.classList.remove('text-amber-400', 'font-bold');
-                    link.classList.add('text-slate-300');
                 }
             });
         }
@@ -89,18 +86,17 @@
     </script>
     
     <main class="max-w-3xl mx-auto px-6 py-12 md:py-20 space-y-20 relative z-40">
-        
         <section id="journal" class="scroll-mt-24">
             <h3 class="text-xl font-bold text-slate-900 mb-8 border-l-4 border-sky-500 pl-4">Journal Publications</h3>
             <ul class="space-y-6">
                 <li class="group">
                     <a href="https://ieeexplore.ieee.org/document/11408191" class="pub-card journal-card">
                         <div class="flex gap-2 mb-2.5">
-                            <span class="badge-scie">SCI(E)</span>
-                            <span class="badge-q1">Q1</span>
-                            <span class="badge-early">Early Access</span>
+                            <span class="badge-base badge-scie">SCI(E)</span>
+                            <span class="badge-base badge-q1">Q1</span>
+                            <span class="badge-base badge-early">Early Access</span>
                         </div>
-                        <h4 class="pub-title journal-hover">A Lightweight RFID Authentication and Hash-Based Key Exchange Protocol for Secure Vehicular Cloud Computing</h4>
+                        <h4 class="pub-title">A Lightweight RFID Authentication and Hash-Based Key Exchange Protocol for Secure Vehicular Cloud Computing</h4>
                         <p class="pub-authors">Sungjoon Park†, <span class="my-name">Naryun Woo†</span>, Jihyeon Ryu</p>
                         <p class="pub-info">IEEE Internet of Things Journal, 23 Feburary 2026</p>
                     </a>
@@ -109,39 +105,15 @@
                 <li class="group">
                     <a href="https://ieeexplore.ieee.org/abstract/document/11077838" class="pub-card journal-card">
                         <div class="flex gap-2 mb-2.5">
-                            <span class="badge-scie">SCI(E)</span>
-                            <span class="badge-q1">Q1</span>
+                            <span class="badge-base badge-scie">SCI(E)</span>
+                            <span class="badge-base badge-q1">Q1</span>
                         </div>
-                        <h4 class="pub-title journal-hover">LAEC: Lightweight Authentication Protocol for Energy-Efficient and Cost-Effective Communication in Wireless Sensor Network Environments</h4>
+                        <h4 class="pub-title">LAEC: Lightweight Authentication Protocol for Energy-Efficient and Cost-Effective Communication in Wireless Sensor Network Environments</h4>
                         <p class="pub-authors">HyeonJun Yoo, Taewoong Kang, <span class="my-name">Naryun Woo</span>, Jihyeon Ryu</p>
                         <p class="pub-info">IEEE Sensors Journal, 15 August 2025</p>
                     </a>
                 </li>
-
-                <li class="group">
-                    <a href="https://ieeexplore.ieee.org/document/10858192/" target="_blank" class="pub-card journal-card">
-                        <div class="flex gap-2 mb-2.5">
-                            <span class="badge-scie">SCI(E)</span>
-                            <span class="badge-q1">Q1</span>
-                        </div>
-                        <h4 class="pub-title journal-hover">CESA: Chebyshev-Polynomials-based Efficient and Secure Access Authentication Scheme for both User Equipment and Massive Machine-Type-Communication Devices over 5G Networks</h4>
-                        <p class="pub-authors"><span class="my-name">Naryun Woo</span>, Taewoong Kang, Jihyeon Ryu</p>
-                        <p class="pub-info">IEEE Internet of Things Journal, 01 June 2025</p>
-                    </a>
-                </li>
-
-                <li class="group">
-                    <a href="https://ieeexplore.ieee.org/document/10460552/" target="_blank" class="pub-card journal-card">
-                        <div class="flex gap-2 mb-2.5">
-                            <span class="badge-scie">SCI(E)</span>
-                            <span class="badge-q2">Q2</span>
-                        </div>
-                        <h4 class="pub-title journal-hover">Enhanced Lightweight Medical Sensor Networks Authentication Scheme Based on Blockchain</h4>
-                        <p class="pub-authors">Taewoong Kang, <span class="my-name">Naryun Woo</span>, Jihyeon Ryu</p>
-                        <p class="pub-info">IEEE Access, 05 March 2024</p>
-                    </a>
-                </li>
-            </ul>
+                </ul>
         </section>
         
         <section id="conference" class="scroll-mt-24">
@@ -150,54 +122,18 @@
                 <li class="group">
                     <a href="https://www.manuscriptlink.com/society/kiisc/conference/ciscs2025" class="pub-card conf-card">
                         <div class="flex gap-2 mb-2.5">
-                            <span class="badge-domestic">Domestic Conference</span>
-                            <span class="badge-poster">Poster</span>
+                            <span class="badge-base badge-domestic">Domestic Conference</span>
+                            <span class="badge-base badge-poster">Poster</span>
                         </div>
-                        <h4 class="pub-title conf-hover">A Survey on Hybrid Post-Quantum Cryptography Technology Trends Based on the RFC 9794 Classification</h4>
+                        <h4 class="pub-title">A Survey on Hybrid Post-Quantum Cryptography Technology Trends Based on the RFC 9794 Classification</h4>
                         <p class="pub-authors"><span class="my-name">Naryun Woo</span>, Jihyeon Ryu</p>
                         <p class="pub-info">November 27-28. CISC-W 2025 (Korea Institute of Information Security and Cryptology)</p>
                     </a>
                 </li>
-
-                <li class="group">
-                    <a href="https://aiassociation.kr/Conference/ConferenceView.asp?AC=0&CODE=CC20250302&CpPage=304#CONF" class="pub-card conf-card">
-                        <div class="flex gap-2 mb-2.5">
-                            <span class="badge-domestic">Domestic Conference</span>
-                            <span class="badge-poster">Poster</span>
-                        </div>
-                        <h4 class="pub-title conf-hover">A Unified Multilingual Framework for Post-processing of Automatic Speech Recognition and Speaker Diarization Using LLMs</h4>
-                        <p class="pub-authors">Dasol Kim, <span class="my-name">Naryun Woo†</span>, Tae-Gwan Kim1, Sang-Ho Kim, Ki-Hoon Lee, Taeseok Kim</p>
-                        <p class="pub-info">August 7-9. CKAIA 2025 (Korean Artificial Intelligence Assosiation - Summer Conference)</p>
-                    </a>
-                </li>
-
-                <li class="group">
-                    <a href="https://www.manuscriptlink.com/society/kiisc/conference/ciscw2025" class="pub-card conf-card">
-                        <div class="flex gap-2 mb-2.5">
-                            <span class="badge-domestic">Domestic Conference</span>
-                            <span class="badge-poster">Poster</span>
-                        </div>
-                        <h4 class="pub-title conf-hover">A Federated Learning-Based Anomaly Detection Framework Using Logs and Packets in a Distributed SDP Environment</h4>
-                        <p class="pub-authors"><span class="my-name">Naryun Woo†</span>, Somi Lim†, Jihyeon Ryu</p>
-                        <p class="pub-info">June 24-25. CISC-S 2025 (Korea Institute of Information Security and Cryptology)</p>
-                    </a>
-                </li>
-
-                <li class="group">
-                    <a href="https://www.manuscriptlink.com/society/kiisc/conference/ciscs2024" class="pub-card conf-card">
-                        <div class="flex gap-2 mb-2.5">
-                            <span class="badge-domestic">Domestic Conference</span>
-                            <span class="badge-oral">Oral presentation</span>
-                        </div>
-                        <h4 class="pub-title conf-hover">Trends in Homomorphic Encryption Research</h4>
-                        <p class="pub-authors"><span class="my-name">Naryun Woo</span>, Jihyeon Ryu</p>
-                        <p class="pub-info">June 20-21. CISC-S 2024 (Korea Institute of Information Security and Cryptology)</p>
-                    </a>
-                </li>
-            </ul>
+                </ul>
         </section>
     </main>
-    
+
     <footer class="py-8 text-center text-sm text-slate-400 border-t border-slate-200 mt-10">
         <p>© 2026 Naryun Woo.</p>
     </footer>
