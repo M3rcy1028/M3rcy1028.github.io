@@ -53,14 +53,22 @@
         }
 
         function highlightCurrentMenu() {
-            const currentPage = window.location.pathname.split("/").pop();
-            const navLinks = document.querySelectorAll('#header-container a');
-            navLinks.forEach(link => {
-                if (link.getAttribute('href') === currentPage) {
-                    link.classList.add('text-sky-400', 'font-bold');
-                }
-            });
+    let currentPage = window.location.pathname.split("/").pop();
+    if (currentPage === "") currentPage = "index.html"; 
+
+    const navLinks = document.querySelectorAll('#header-container a');
+    
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href')
+        const isLogo = link.classList.contains('text-lg');
+
+        if (href === currentPage && !isLogo) {
+            link.classList.add('text-sky-400', 'font-bold');
+        } else {
+            link.classList.remove('text-sky-400', 'font-bold');
         }
+    });
+}
 
         loadHeader();
     </script>
