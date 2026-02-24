@@ -21,12 +21,13 @@
         /* --- Publication Template Styles (Standard CSS for reliability) --- */
         .pub-card { 
             display: block;
-            padding: 1.25rem; /* p-5 */
-            border-radius: 0.75rem; /* rounded-xl */
-            background-color: #f8fafc; /* bg-slate-50 */
-            border: 1px solid #e2e8f0; /* border-slate-200 */
+            padding: 0.8rem 1.25rem; /* 위아래는 0.8rem, 좌우는 1.25rem */
+            border-radius: 0.75rem;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
             transition: all 0.3s ease;
         }
+        
         .pub-card:hover {
             background-color: #ffffff;
             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -91,7 +92,7 @@
     <main class="w-full max-w-3xl mx-auto px-6 py-12 md:py-20 space-y-20 relative z-40">
         <section id="journal" class="scroll-mt-24">
             <h3 class="text-xl font-bold text-slate-900 mb-8 border-l-4 border-sky-500 pl-4">Journal Publications</h3>
-            <ul class="space-y-6">
+            <ul class="space-y-5">
                 <li class="group">
                     <a href="https://ieeexplore.ieee.org/document/11408191" class="pub-card journal-card">
                         <div class="flex flex-wrap gap-2 mb-2.5">
@@ -145,7 +146,7 @@
         
         <section id="conference" class="scroll-mt-24">
             <h3 class="text-xl font-bold text-slate-900 mb-8 border-l-4 border-emerald-500 pl-4">Conference Publications</h3>
-            <ul class="space-y-6">
+            <ul class="space-y-5">
                 <li class="group">
                     <a href="https://www.manuscriptlink.com/society/kiisc/conference/ciscs2025" class="pub-card conf-card">
                         <div class="flex gap-2 mb-2.5">
