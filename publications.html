@@ -18,6 +18,15 @@
             padding-top: 80px; 
         }
 
+        /* Publication Abbreviation */
+        .nav-pub-full { display: none; }
+        .nav-pub-short { display: inline; }
+    
+        @media (min-width: 380px) {
+            .nav-pub-full { display: inline; }
+            .nav-pub-short { display: none; }
+        }
+
         /* --- Publication Template Styles (Standard CSS for reliability) --- */
         .pub-card { 
             display: block;
@@ -32,11 +41,11 @@
             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
         }
         
-        /* 저널/컨퍼런스 호버 테두리 색상 */
+        /* hover outline */
         .journal-card:hover { border-color: #38bdf8; } /* sky-400 */
         .conf-card:hover { border-color: #34d399; } /* emerald-400 */
 
-        /* 텍스트 스타일 */
+        /* text style */
         .pub-title { font-size: 1rem; font-weight: 600; color: #1e293b; line-height: 1.5; transition: color 0.2s; }
         .journal-card:hover .pub-title { color: #0284c7; }
         .conf-card:hover .pub-title { color: #059669; }
