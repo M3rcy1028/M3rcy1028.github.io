@@ -34,11 +34,21 @@
         }
 
         function highlightCurrentMenu() {
-            const currentPage = window.location.pathname.split("/").pop();
+            let currentPage = window.location.pathname.split("/").pop();
+            if (currentPage === "") currentPage = "index.html"; 
+        
             const navLinks = document.querySelectorAll('#header-container a');
+            
             navLinks.forEach(link => {
-                if (link.getAttribute('href') === currentPage) {
+                const href = link.getAttribute('href');
+                
+                // 추가: id가 'logo'인 요소는 강조 로직에서 아예 제외합니다.
+                if (link.id === 'logo') return; 
+        
+                if (href === currentPage) {
                     link.classList.add('text-sky-400', 'font-bold');
+                } else {
+                    link.classList.remove('text-sky-400', 'font-bold');
                 }
             });
         }
