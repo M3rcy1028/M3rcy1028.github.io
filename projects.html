@@ -23,37 +23,39 @@
         async function loadHeader() {
             try {
                 const response = await fetch('header.html');
+                if (!response.ok) throw new Error('헤더 파일을 찾을 수 없습니다.');
                 const data = await response.text();
                 document.getElementById('header-container').innerHTML = data;
                 
-                // (선택사항) 현재 페이지에 맞춰 메뉴 활성화 스타일 추가 로직
+                // 헤더가 로드된 후 실행
                 highlightCurrentMenu();
             } catch (error) {
                 console.error('헤더를 불러오는 중 오류가 발생했습니다:', error);
             }
         }
-
+    
         function highlightCurrentMenu() {
             let currentPage = window.location.pathname.split("/").pop();
-            if (currentPage === "") currentPage = "index.html"; 
+            if (currentPage === "" || currentPage === "index.html") currentPage = "index.html"; 
         
             const navLinks = document.querySelectorAll('#header-container a');
             
             navLinks.forEach(link => {
                 const href = link.getAttribute('href');
                 
-                // 추가: id가 'logo'인 요소는 강조 로직에서 아예 제외합니다.
                 if (link.id === 'logo') return; 
         
                 if (href === currentPage) {
-                    link.classList.add('text-sky-400', 'font-bold');
+                    link.classList.add('text-amber-400', 'font-bold');
+                    link.classList.remove('text-slate-300');
                 } else {
-                    link.classList.remove('text-sky-400', 'font-bold');
+                    link.classList.remove('text-amber-400', 'font-bold');
+                    link.classList.add('text-slate-300');
                 }
             });
         }
-
-        loadHeader();
+    
+        loadHeader(); 
     </script>
 
     <main class="max-w-3xl mx-auto px-6 py-12 md:py-20 space-y-24 relative z-40">
