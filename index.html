@@ -36,42 +36,34 @@
 
     <div class="fixed inset-0 z-30 pointer-events-none transition duration-300" id="spotlight" style="background: radial-gradient(400px at 50% 50%, rgba(14, 165, 233, 0.05), transparent 80%);"></div>
 
-    <nav class="fixed top-0 left-0 w-full bg-[#0f172a]/95 backdrop-blur-md text-white z-50 border-b border-slate-800 h-16 flex items-center shadow-sm">
-        <div class="max-w-screen-xl w-full mx-auto px-6 md:px-12 flex justify-between items-center">
-            <a href="index.html" class="text-lg font-bold tracking-tight hover:text-sky-400 transition">Naryun Woo</a>
-            <ul class="hidden md:flex gap-8 text-sm font-medium text-slate-300 items-center">
+    <!-- Load Header file  -->
+    <div id="header-container"></div>
+    <script>
+        async function loadHeader() {
+            try {
+                const response = await fetch('header.html');
+                const data = await response.text();
+                document.getElementById('header-container').innerHTML = data;
                 
-                <li><a href="index.html" class="text-sky-400 font-bold border-b-2 border-sky-400 pb-1">Home</a></li>
-                
-                <li class="relative group py-4">
-                    <a href="publications.html" class="hover:text-white transition flex items-center gap-1">
-                        Publications <i class="fa-solid fa-chevron-down text-[10px] mt-0.5"></i>
-                    </a>
-                    
-                    <div class="absolute left-0 top-full pt-1 w-48 hidden group-hover:block z-50">
-                        <div class="bg-[#1e293b] rounded-md shadow-xl border border-slate-700 overflow-hidden">
-                            <ul class="py-1">
-                                <li>
-                                    <a href="publications.html#journal" class="block px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-700 hover:text-sky-400 transition">
-                                        Journal Papers
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="publications.html#conference" class="block px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-700 hover:text-sky-400 transition">
-                                        Conference Papers
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
+                // (선택사항) 현재 페이지에 맞춰 메뉴 활성화 스타일 추가 로직
+                highlightCurrentMenu();
+            } catch (error) {
+                console.error('헤더를 불러오는 중 오류가 발생했습니다:', error);
+            }
+        }
 
-                <li><a href="projects.html" class="hover:text-white transition">Projects</a></li>
-                <li><a href="news.html" class="hover:text-white transition">News</a></li>
-                <li><a href="" class="hover:text-white transition">CV</a></li>
-            </ul>
-        </div>
-    </nav>
+        function highlightCurrentMenu() {
+            const currentPage = window.location.pathname.split("/").pop();
+            const navLinks = document.querySelectorAll('#header-container a');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('text-sky-400', 'font-bold');
+                }
+            });
+        }
+
+        loadHeader();
+    </script>
     
     <main class="max-w-screen-xl mx-auto px-6 md:px-12 py-12 md:py-20 space-y-16 relative z-40">
         
