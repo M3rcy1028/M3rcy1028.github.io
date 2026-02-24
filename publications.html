@@ -11,10 +11,33 @@
         
         body { 
             font-family: 'Inter', 'Pretendard', sans-serif; 
-            background-color: #ffffff; /* 흰색 배경 */
-            color: #475569; /* slate-600 */
+            background-color: #ffffff;
+            color: #475569;
             padding-top: 80px; 
         }
+
+        /* --- Publication Template Styles --- */
+        .pub-card { @apply block p-5 rounded-xl bg-slate-50 border border-slate-200 transition hover:bg-white hover:shadow-md; }
+        .journal-card { @apply hover:border-sky-300; }
+        .conf-card { @apply hover:border-emerald-300; }
+
+        .pub-title { @apply text-base font-semibold text-slate-800 transition leading-snug; }
+        .journal-hover { @apply group-hover:text-sky-600; }
+        .conf-hover { @apply group-hover:text-emerald-600; }
+
+        .pub-authors { @apply text-xs text-slate-600 mt-2 font-medium; }
+        .pub-info { @apply text-[11px] text-slate-500 mt-1 italic; }
+        .my-name { @apply text-sky-600 font-bold; }
+
+        /* --- Badge Styles --- */
+        .badge-base { @apply inline-block px-1.5 py-0.5 rounded text-[10px] font-bold; }
+        .badge-scie { @apply badge-base bg-sky-500 text-white; }
+        .badge-q1 { @apply badge-base bg-slate-700 text-white; }
+        .badge-q2 { @apply badge-base bg-slate-500 text-white; }
+        .badge-early { @apply badge-base bg-yellow-100 text-yellow-800 border border-yellow-200; }
+        .badge-domestic { @apply badge-base bg-emerald-500 text-white; }
+        .badge-poster { @apply badge-base border border-emerald-500 text-emerald-600; }
+        .badge-oral { @apply badge-base border border-emerald-600 bg-emerald-50 text-emerald-700; }
     </style>
     <script>
         tailwind.config = { 
@@ -33,7 +56,6 @@
     
     <div class="fixed inset-0 z-30 pointer-events-none transition duration-300" id="spotlight" style="background: radial-gradient(400px at 50% 50%, rgba(14, 165, 233, 0.05), transparent 80%);"></div>
 
-    <!-- Load Header file  -->
     <div id="header-container"></div>
     <script>
         async function loadHeader() {
@@ -42,8 +64,6 @@
                 if (!response.ok) throw new Error('헤더 파일을 찾을 수 없습니다.');
                 const data = await response.text();
                 document.getElementById('header-container').innerHTML = data;
-                
-                // 헤더가 로드된 후 실행
                 highlightCurrentMenu();
             } catch (error) {
                 console.error('헤더를 불러오는 중 오류가 발생했습니다:', error);
@@ -53,15 +73,10 @@
         function highlightCurrentMenu() {
             let currentPage = window.location.pathname.split("/").pop();
             if (currentPage === "" || currentPage === "index.html") currentPage = "index.html"; 
-        
             const navLinks = document.querySelectorAll('#header-container a');
-            
             navLinks.forEach(link => {
-                const href = link.getAttribute('href');
-                
                 if (link.id === 'logo') return; 
-        
-                if (href === currentPage) {
+                if (link.getAttribute('href') === currentPage) {
                     link.classList.add('text-amber-400', 'font-bold');
                     link.classList.remove('text-slate-300');
                 } else {
@@ -70,171 +85,117 @@
                 }
             });
         }
-    
         loadHeader(); 
     </script>
     
     <main class="max-w-3xl mx-auto px-6 py-12 md:py-20 space-y-20 relative z-40">
         
         <section id="journal" class="scroll-mt-24">
-            <h3 class="text-2xl font-bold text-slate-900 mb-8 border-l-4 border-sky-500 pl-4">Journal Publications</h3>
-
-            <!-- Journal Paper -->
+            <h3 class="text-xl font-bold text-slate-900 mb-8 border-l-4 border-sky-500 pl-4">Journal Publications</h3>
             <ul class="space-y-6">
                 <li class="group">
-                    <a href="https://ieeexplore.ieee.org/document/11408191" class="block p-6 rounded-xl bg-slate-50 hover:bg-white border border-slate-200 hover:border-sky-300 hover:shadow-md transition">
-                        <div class="flex gap-2 mb-3">
-                            <span class="inline-block px-2 py-0.5 rounded text-xs font-bold bg-sky-500 text-white">SCI(E)</span>
-                            <span class="inline-block px-2 py-0.5 rounded text-xs font-bold bg-slate-700 text-white">Q1</span>
-                            <span class="inline-block px-2 py-0.5 rounded text-xs font-bold bg-yellow-100 text-yellow-800 border border-yellow-200">Early Access</span>
+                    <a href="https://ieeexplore.ieee.org/document/11408191" class="pub-card journal-card">
+                        <div class="flex gap-2 mb-2.5">
+                            <span class="badge-scie">SCI(E)</span>
+                            <span class="badge-q1">Q1</span>
+                            <span class="badge-early">Early Access</span>
                         </div>
-                        <h4 class="text-lg font-semibold text-slate-800 group-hover:text-sky-600 transition leading-snug">
-                            A Lightweight RFID Authentication and Hash-Based Key Exchange Protocol for Secure Vehicular Cloud Computing
-                        </h4>
-                        <p class="text-sm text-slate-600 mt-2 font-medium">
-                            Sungjoon Park†, <span class="text-sky-600 font-bold">Naryun Woo†</span>, Jihyeon Ryu
-                        </p>
-                        <p class="text-sm text-slate-500 mt-1 italic">
-                            IEEE Internet of Things Journal, 23 Feburary 2026
-                        </p>
+                        <h4 class="pub-title journal-hover">A Lightweight RFID Authentication and Hash-Based Key Exchange Protocol for Secure Vehicular Cloud Computing</h4>
+                        <p class="pub-authors">Sungjoon Park†, <span class="my-name">Naryun Woo†</span>, Jihyeon Ryu</p>
+                        <p class="pub-info">IEEE Internet of Things Journal, 23 Feburary 2026</p>
                     </a>
                 </li>
                 
                 <li class="group">
-                    <a href="https://ieeexplore.ieee.org/abstract/document/11077838" class="block p-6 rounded-xl bg-slate-50 hover:bg-white border border-slate-200 hover:border-sky-300 hover:shadow-md transition">
-                        <div class="flex gap-2 mb-3">
-                            <span class="inline-block px-2 py-0.5 rounded text-xs font-bold bg-sky-500 text-white">SCI(E)</span>
-                            <span class="inline-block px-2 py-0.5 rounded text-xs font-bold bg-slate-700 text-white">Q1</span>
+                    <a href="https://ieeexplore.ieee.org/abstract/document/11077838" class="pub-card journal-card">
+                        <div class="flex gap-2 mb-2.5">
+                            <span class="badge-scie">SCI(E)</span>
+                            <span class="badge-q1">Q1</span>
                         </div>
-                        <h4 class="text-lg font-semibold text-slate-800 group-hover:text-sky-600 transition leading-snug">
-                            LAEC: Lightweight Authentication Protocol for Energy-Efficient and Cost-Effective Communication in Wireless Sensor Network Environments
-                        </h4>
-                        <p class="text-sm text-slate-600 mt-2 font-medium">
-                            HyeonJun Yoo, Taewoong Kang, <span class="text-sky-600 font-bold">Naryun Woo</span>, Jihyeon Ryu
-                        </p>
-                        <p class="text-sm text-slate-500 mt-1 italic">
-                            IEEE Sensors Journal, 15 August 2025
-                        </p>
+                        <h4 class="pub-title journal-hover">LAEC: Lightweight Authentication Protocol for Energy-Efficient and Cost-Effective Communication in Wireless Sensor Network Environments</h4>
+                        <p class="pub-authors">HyeonJun Yoo, Taewoong Kang, <span class="my-name">Naryun Woo</span>, Jihyeon Ryu</p>
+                        <p class="pub-info">IEEE Sensors Journal, 15 August 2025</p>
                     </a>
                 </li>
 
                 <li class="group">
-                    <a href="https://ieeexplore.ieee.org/document/10858192/" target="_blank" class="block p-6 rounded-xl bg-slate-50 hover:bg-white border border-slate-200 hover:border-sky-300 hover:shadow-md transition">
-                        <div class="flex gap-2 mb-3">
-                            <span class="inline-block px-2 py-0.5 rounded text-xs font-bold bg-sky-500 text-white">SCI(E)</span>
-                            <span class="inline-block px-2 py-0.5 rounded text-xs font-bold bg-slate-700 text-white">Q1</span>
+                    <a href="https://ieeexplore.ieee.org/document/10858192/" target="_blank" class="pub-card journal-card">
+                        <div class="flex gap-2 mb-2.5">
+                            <span class="badge-scie">SCI(E)</span>
+                            <span class="badge-q1">Q1</span>
                         </div>
-                        <h4 class="text-lg font-semibold text-slate-800 group-hover:text-sky-600 transition leading-snug">
-                            CESA: Chebyshev-Polynomials-based Efficient and Secure Access Authentication Scheme for both User Equipment and Massive Machine-Type-Communication Devices over 5G Networks
-                        </h4>
-                        <p class="text-sm text-slate-600 mt-2 font-medium">
-                            <span class="text-sky-600 font-bold">Naryun Woo</span>, Taewoong Kang, Jihyeon Ryu
-                        </p>
-                        <p class="text-sm text-slate-500 mt-1 italic">
-                            IEEE Internet of Things Journal, 01 June 2025
-                        </p>
+                        <h4 class="pub-title journal-hover">CESA: Chebyshev-Polynomials-based Efficient and Secure Access Authentication Scheme for both User Equipment and Massive Machine-Type-Communication Devices over 5G Networks</h4>
+                        <p class="pub-authors"><span class="my-name">Naryun Woo</span>, Taewoong Kang, Jihyeon Ryu</p>
+                        <p class="pub-info">IEEE Internet of Things Journal, 01 June 2025</p>
                     </a>
                 </li>
 
                 <li class="group">
-                    <a href="https://ieeexplore.ieee.org/document/10460552/" target="_blank" class="block p-6 rounded-xl bg-slate-50 hover:bg-white border border-slate-200 hover:border-sky-300 hover:shadow-md transition">
-                        <div class="flex gap-2 mb-3">
-                            <span class="inline-block px-2 py-0.5 rounded text-xs font-bold bg-sky-500 text-white">SCI(E)</span>
-                            <span class="inline-block px-2 py-0.5 rounded text-xs font-bold bg-slate-700 text-white">Q2</span>
+                    <a href="https://ieeexplore.ieee.org/document/10460552/" target="_blank" class="pub-card journal-card">
+                        <div class="flex gap-2 mb-2.5">
+                            <span class="badge-scie">SCI(E)</span>
+                            <span class="badge-q2">Q2</span>
                         </div>
-                        <h4 class="text-lg font-semibold text-slate-800 group-hover:text-sky-600 transition leading-snug">
-                            Enhanced Lightweight Medical Sensor Networks Authentication Scheme Based on Blockchain
-                        </h4>
-                        <p class="text-sm text-slate-600 mt-2 font-medium">
-                            Taewoong Kang, <span class="text-sky-600 font-bold">Naryun Woo</span>, Jihyeon Ryu
-                        </p>
-                        <p class="text-sm text-slate-500 mt-1 italic">
-                            IEEE Access, 05 March 2024
-                        </p>
+                        <h4 class="pub-title journal-hover">Enhanced Lightweight Medical Sensor Networks Authentication Scheme Based on Blockchain</h4>
+                        <p class="pub-authors">Taewoong Kang, <span class="my-name">Naryun Woo</span>, Jihyeon Ryu</p>
+                        <p class="pub-info">IEEE Access, 05 March 2024</p>
                     </a>
                 </li>
             </ul>
         </section>
         
-        <!-- Conference Paper -->
         <section id="conference" class="scroll-mt-24">
-            <h3 class="text-2xl font-bold text-slate-900 mb-8 border-l-4 border-emerald-500 pl-4">Conference Publications</h3>
-            
+            <h3 class="text-xl font-bold text-slate-900 mb-8 border-l-4 border-emerald-500 pl-4">Conference Publications</h3>
             <ul class="space-y-6">
                 <li class="group">
-                    <a href="https://www.manuscriptlink.com/society/kiisc/conference/ciscs2025" class="block p-6 rounded-xl bg-slate-50 hover:bg-white border border-slate-200 hover:border-emerald-300 hover:shadow-md transition">
-                        <div class="flex gap-2 mb-3">
-                            <span class="inline-block px-2 py-0.5 rounded text-xs font-bold bg-emerald-500 text-white">Domestic Conference</span>
-                            <span class="inline-block px-2 py-0.5 rounded text-xs font-bold border border-emerald-500 text-emerald-600">Poster</span>
+                    <a href="https://www.manuscriptlink.com/society/kiisc/conference/ciscs2025" class="pub-card conf-card">
+                        <div class="flex gap-2 mb-2.5">
+                            <span class="badge-domestic">Domestic Conference</span>
+                            <span class="badge-poster">Poster</span>
                         </div>
-                        <h4 class="text-lg font-semibold text-slate-800 group-hover:text-emerald-600 transition leading-snug">
-                            A Survey on Hybrid Post-Quantum Cryptography Technology Trends Based on the RFC 9794 Classification
-                        </h4>
-                        <p class="text-sm text-slate-600 mt-2 font-medium">
-                            <span class="text-sky-600 font-bold">Naryun Woo</span>, Jihyeon Ryu
-                        </p>
-                        <p class="text-sm text-slate-500 mt-1 italic">
-                            November 27-28. CISC-W 2025 (Korea Institute of Information Security and Cryptology)
-                        </p>
+                        <h4 class="pub-title conf-hover">A Survey on Hybrid Post-Quantum Cryptography Technology Trends Based on the RFC 9794 Classification</h4>
+                        <p class="pub-authors"><span class="my-name">Naryun Woo</span>, Jihyeon Ryu</p>
+                        <p class="pub-info">November 27-28. CISC-W 2025 (Korea Institute of Information Security and Cryptology)</p>
                     </a>
                 </li>
-                
+
                 <li class="group">
-                    <a href="https://aiassociation.kr/Conference/ConferenceView.asp?AC=0&CODE=CC20250302&CpPage=304#CONF" class="block p-6 rounded-xl bg-slate-50 hover:bg-white border border-slate-200 hover:border-emerald-300 hover:shadow-md transition">
-                        <div class="flex gap-2 mb-3">
-                            <span class="inline-block px-2 py-0.5 rounded text-xs font-bold bg-emerald-500 text-white">Domestic Conference</span>
-                            <span class="inline-block px-2 py-0.5 rounded text-xs font-bold border border-emerald-500 text-emerald-600">Poster</span>
+                    <a href="https://aiassociation.kr/Conference/ConferenceView.asp?AC=0&CODE=CC20250302&CpPage=304#CONF" class="pub-card conf-card">
+                        <div class="flex gap-2 mb-2.5">
+                            <span class="badge-domestic">Domestic Conference</span>
+                            <span class="badge-poster">Poster</span>
                         </div>
-                        <h4 class="text-lg font-semibold text-slate-800 group-hover:text-emerald-600 transition leading-snug">
-                            A Unified Multilingual Framework for Post-processing of Automatic Speech Recognition and Speaker Diarization Using LLMs
-                        </h4>
-                        <p class="text-sm text-slate-600 mt-2 font-medium">
-                            Dasol Kim, <span class="text-sky-600 font-bold">Naryun Woo†</span>, Tae-Gwan Kim1, Sang-Ho Kim, Ki-Hoon Lee, Taeseok Kim
-                        </p>
-                        <p class="text-sm text-slate-500 mt-1 italic">
-                            August 7-9. CKAIA 2025 (Korean Artificial Intelligence Assosiation - Summer Conference)
-                        </p>
+                        <h4 class="pub-title conf-hover">A Unified Multilingual Framework for Post-processing of Automatic Speech Recognition and Speaker Diarization Using LLMs</h4>
+                        <p class="pub-authors">Dasol Kim, <span class="my-name">Naryun Woo†</span>, Tae-Gwan Kim1, Sang-Ho Kim, Ki-Hoon Lee, Taeseok Kim</p>
+                        <p class="pub-info">August 7-9. CKAIA 2025 (Korean Artificial Intelligence Assosiation - Summer Conference)</p>
                     </a>
                 </li>
-            
+
                 <li class="group">
-                    <a href="https://www.manuscriptlink.com/society/kiisc/conference/ciscw2025" class="block p-6 rounded-xl bg-slate-50 hover:bg-white border border-slate-200 hover:border-emerald-300 hover:shadow-md transition">
-                        <div class="flex gap-2 mb-3">
-                            <span class="inline-block px-2 py-0.5 rounded text-xs font-bold bg-emerald-500 text-white">Domestic Conference</span>
-                            <span class="inline-block px-2 py-0.5 rounded text-xs font-bold border border-emerald-500 text-emerald-600">Poster</span>
+                    <a href="https://www.manuscriptlink.com/society/kiisc/conference/ciscw2025" class="pub-card conf-card">
+                        <div class="flex gap-2 mb-2.5">
+                            <span class="badge-domestic">Domestic Conference</span>
+                            <span class="badge-poster">Poster</span>
                         </div>
-                        <h4 class="text-lg font-semibold text-slate-800 group-hover:text-emerald-600 transition leading-snug">
-                            A Federated Learning-Based Anomaly Detection Framework Using Logs and Packets in a Distributed SDP Environment
-                        </h4>
-                        <p class="text-sm text-slate-600 mt-2 font-medium">
-                            <span class="text-sky-600 font-bold">Naryun Woo†</span>, Somi Lim†, Jihyeon Ryu
-                        </p>
-                        <p class="text-sm text-slate-500 mt-1 italic">
-                            June 24-25. CISC-S 2025 (Korea Institute of Information Security and Cryptology)
-                        </p>
+                        <h4 class="pub-title conf-hover">A Federated Learning-Based Anomaly Detection Framework Using Logs and Packets in a Distributed SDP Environment</h4>
+                        <p class="pub-authors"><span class="my-name">Naryun Woo†</span>, Somi Lim†, Jihyeon Ryu</p>
+                        <p class="pub-info">June 24-25. CISC-S 2025 (Korea Institute of Information Security and Cryptology)</p>
                     </a>
                 </li>
-            
+
                 <li class="group">
-                    <a href="https://www.manuscriptlink.com/society/kiisc/conference/ciscs2024" class="block p-6 rounded-xl bg-slate-50 hover:bg-white border border-slate-200 hover:border-emerald-300 hover:shadow-md transition">
-                        <div class="flex gap-2 mb-3">
-                            <span class="inline-block px-2 py-0.5 rounded text-xs font-bold bg-emerald-500 text-white">Domestic Conference</span>
-                            <span class="inline-block px-2 py-0.5 rounded text-xs font-bold border border-emerald-500 text-emerald-600">Oral presentation</span>
+                    <a href="https://www.manuscriptlink.com/society/kiisc/conference/ciscs2024" class="pub-card conf-card">
+                        <div class="flex gap-2 mb-2.5">
+                            <span class="badge-domestic">Domestic Conference</span>
+                            <span class="badge-oral">Oral presentation</span>
                         </div>
-                        <h4 class="text-lg font-semibold text-slate-800 group-hover:text-emerald-600 transition leading-snug">
-                            Trends in Homomorphic Encryption Research
-                        </h4>
-                        <p class="text-sm text-slate-600 mt-2 font-medium">
-                            <span class="text-sky-600 font-bold">Naryun Woo</span>, Jihyeon Ryu
-                        </p>
-                        <p class="text-sm text-slate-500 mt-1 italic">
-                            June 20-21. CISC-S 2024 (Korea Institute of Information Security and Cryptology)
-                        </p>
+                        <h4 class="pub-title conf-hover">Trends in Homomorphic Encryption Research</h4>
+                        <p class="pub-authors"><span class="my-name">Naryun Woo</span>, Jihyeon Ryu</p>
+                        <p class="pub-info">June 20-21. CISC-S 2024 (Korea Institute of Information Security and Cryptology)</p>
                     </a>
                 </li>
             </ul>
         </section>
-
     </main>
     
     <footer class="py-8 text-center text-sm text-slate-400 border-t border-slate-200 mt-10">
