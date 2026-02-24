@@ -41,11 +41,9 @@
     <script>
         async function loadHeader() {
             const response = await fetch('header.html');
-            if (!response.ok) throw new Error('헤더 파일을 찾을 수 없습니다.');
             const data = await response.text();
             document.getElementById('header-container').innerHTML = data;
             
-            // 헤더가 로드된 후 실행
             highlightCurrentMenu();
             document.getElementById('main-content').style.opacity = '1';
         }
@@ -58,12 +56,9 @@
             
             navLinks.forEach(link => {
                 const href = link.getAttribute('href');
-                
-                // 로고는 강조 대상에서 제외
                 if (link.id === 'logo') return; 
         
                 if (href === currentPage) {
-                    // amber-400 (골드) 적용
                     link.classList.add('text-amber-400', 'font-bold');
                     link.classList.remove('text-slate-300');
                 } else {
@@ -73,12 +68,12 @@
             });
         }
     
-        loadHeader(); // 이제 정상적으로 호출됩니다.
+        loadHeader();
     </script>
     
-    <main class="max-w-screen-xl mx-auto px-6 md:px-12 py-12 md:py-20 space-y-16 relative z-40">
+    <main class="w-full max-w-screen-xl mx-auto px-6 md:px-12 py-12 md:py-20 space-y-16 relative z-40 overflow-hidden">
         
-        <section class="grid md:grid-cols-[300px_1fr] gap-12 items-start">
+        <section class="grid grid-cols-1 md:grid-cols-[300px_1fr] gap-8 md:gap-12 items-start">
             <!-- Profile -->
             <div class="text-center md:text-left flex flex-col items-center md:items-start w-full sticky top-24">
                 <div class="relative w-48 h-48 mb-6 group">
@@ -114,22 +109,22 @@
                     <h3 class="text-slate-900 font-bold mb-4">Research Interests</h3>
                     
                     <ul class="space-y-3">
-                        <li class="flex items-center gap-3 text-slate-600 bg-slate-50 p-3 rounded-lg border border-slate-200 hover:bg-white hover:shadow-md transition">
+                        <li class="flex flex-wrap items-center gap-3 text-slate-600 bg-slate-50 p-3 rounded-lg border border-slate-200 hover:bg-white hover:shadow-md transition">
                             <i class="fa-solid fa-key text-sky-500 w-6 text-center"></i>
                             <span class="text-xs font-bold">Authentication Protocol</span>
                         </li>
                     
-                        <li class="flex items-center gap-3 text-slate-600 bg-slate-50 p-3 rounded-lg border border-slate-200 hover:bg-white hover:shadow-md transition">
+                        <li class="flex flex-wrap items-center gap-3 text-slate-600 bg-slate-50 p-3 rounded-lg border border-slate-200 hover:bg-white hover:shadow-md transition">
                             <i class="fa-solid fa-atom text-sky-500 w-6 text-center"></i>
                             <span class="text-xs font-bold">Post-Quantum Cryptography</span>
                         </li>
                     
-                        <li class="flex items-center gap-3 text-slate-600 bg-slate-50 p-3 rounded-lg border border-slate-200 hover:bg-white hover:shadow-md transition">
+                        <li class="flex flex-wrap items-center gap-3 text-slate-600 bg-slate-50 p-3 rounded-lg border border-slate-200 hover:bg-white hover:shadow-md transition">
                             <i class="fa-solid fa-user-shield text-sky-500 w-6 text-center"></i>
                             <span class="text-xs font-bold">Zero-Trust Architecture</span>
                         </li>
                     
-                        <li class="flex items-center gap-3 text-slate-600 bg-slate-50 p-3 rounded-lg border border-slate-200 hover:bg-white hover:shadow-md transition">
+                        <li class="flex flex-wrap items-center gap-3 text-slate-600 bg-slate-50 p-3 rounded-lg border border-slate-200 hover:bg-white hover:shadow-md transition">
                             <i class="fa-solid fa-database text-sky-500 w-6 text-center"></i>
                             <span class="text-xs font-bold">Database System</span>
                         </li>
@@ -149,11 +144,11 @@
                 </section>
 
                 <!-- Education -->
-                <div class="grid md:grid-cols-2 gap-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
                     <section>
                         <h2 class="text-xl font-bold text-slate-900 mb-6">Education</h2>
                         <ul class="space-y-6">
-                            <li class="flex items-start gap-3">
+                            <li class="flex flex-wrap items-start gap-3">
                                 <i class="fa-solid fa-graduation-cap text-slate-400 mt-1.5 text-sm"></i>
                                 <div>
                                     <h5 class="text-slate-800 font-bold leading-snug">
@@ -165,7 +160,7 @@
                                 </div>
                             </li>
 
-                            <li class="flex items-start gap-3">
+                            <li class="flex flex-wrap items-start gap-3">
                                 <i class="fa-solid fa-graduation-cap text-slate-400 mt-1.5 text-sm"></i>
                                 <div>
                                     <h5 class="text-slate-800 font-bold leading-snug">
