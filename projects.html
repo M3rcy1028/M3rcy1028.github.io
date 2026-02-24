@@ -21,17 +21,12 @@
     <div id="header-container"></div>
     <script>
         async function loadHeader() {
-            try {
-                const response = await fetch('header.html');
-                if (!response.ok) throw new Error('헤더 파일을 찾을 수 없습니다.');
-                const data = await response.text();
-                document.getElementById('header-container').innerHTML = data;
-                
-                // 헤더가 로드된 후 실행
-                highlightCurrentMenu();
-            } catch (error) {
-                console.error('헤더를 불러오는 중 오류가 발생했습니다:', error);
-            }
+            const response = await fetch('header.html');
+            if (!response.ok) throw new Error('헤더 파일을 찾을 수 없습니다.');
+            const data = await response.text();
+            document.getElementById('header-container').innerHTML = data;
+            
+            highlightCurrentMenu();
         }
     
         function highlightCurrentMenu() {
