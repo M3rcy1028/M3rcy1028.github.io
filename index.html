@@ -20,16 +20,36 @@
         details > summary::-webkit-details-marker { display: none; }
 
         /* Honors & Awards Template */
-        .award-card { 
+        /* .award-card { 
             @apply block p-5 rounded-xl bg-slate-50 border border-slate-200 transition no-underline;
         }
         .award-card:hover {
             @apply bg-white shadow-md border-amber-400;
             cursor: pointer;
+        } */
+        .award-card {
+            display: block;
+            padding: 1.25rem;
+            border-radius: 0.75rem;
+            background-color: #f8fafc; /* bg-slate-50 */
+            border: 1px solid #e2e8f0; /* border-slate-200 */
+            transition: all 0.3s ease;
+            text-decoration: none !important;
         }
-        .award-date { @apply text-sm font-mono text-amber-600 font-semibold; }
+    
+        .award-card:hover {
+            background-color: #ffffff;
+            border-color: #fbbf24; /* amber-400 호버 시 금색 테두리 */
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+    
+        /* .award-date { @apply text-sm font-mono text-amber-600 font-semibold; }
         .award-title { @apply text-lg font-bold text-slate-800; }
-        .award-desc { @apply text-slate-500 text-sm mt-1; }
+        .award-desc { @apply text-slate-500 text-sm mt-1; } */
+        
+        .award-date { font-family: monospace; font-size: 0.875rem; color: #0ea5e9; font-weight: 600; }
+        .award-title { font-size: 1.125rem; font-weight: 700; color: #1e293b; margin-top: 0.25rem; }
+        .award-desc { font-size: 0.875rem; color: #64748b; margin-top: 0.25rem; line-height: 1.4; }
         
     </style>
     
@@ -186,17 +206,31 @@
                         <h2 class="text-xl font-bold text-slate-900 mb-6">Honors & Awards</h2>
                         <div class="space-y-4">
                     
+                            <div class="award-card">
+                                <span class="award-date">2024.12</span>
+                                <div>
+                                    <h4 class="award-title">Academic Excellence Scholarship</h4>
+                                    <p class="award-desc">성적 우수 장학금 (Kwangwoon Univ.)</p>
+                                </div>
+                            </div>
+                    
+                            <div class="award-card">
+                                <span class="award-date text-slate-500">2023.06</span>
+                                <div>
+                                    <h4 class="award-title">Capstone Design Award</h4>
+                                    <p class="award-desc">캡스톤 디자인 경진대회 은상 수상 (Kwangwoon Univ.)</p>
+                                </div>
+                            </div>
+                    
                             <a href="https://www-1.kw.ac.kr/ko/life/notice.jsp?BoardMode=view&DUID=39673&tpage=1&searchKey=3&searchVal=2022%ED%95%99%EB%85%84%EB%8F%84+1%ED%95%99%EA%B8%B0+%EA%B8%80%EC%93%B0%EA%B8%B0%EA%B2%BD%EC%A7%84%EB%8C%80%ED%9A%8C+%EC%88%98%EC%83%81%EC%9E%90&srCategoryId=" 
                                target="_blank" class="award-card group/award block">
-                                
                                 <div class="flex justify-between items-start mb-1">
                                     <span class="award-date text-slate-500">2022.06.16</span>
                                     <i class="fa-solid fa-arrow-up-right-from-square text-slate-300 group-hover/award:text-amber-500 transition-colors text-xs"></i>
                                 </div>
-                                
                                 <div>
                                     <h4 class="award-title group-hover/award:text-amber-600 transition-colors">
-                                        Bronze Prize, Academic Writing Contest: Report Category
+                                        Bronze Prize, Academic Writing Contest
                                     </h4>
                                     <div class="mt-2 space-y-1">
                                         <p class="text-[11px] text-slate-600 font-medium">
@@ -210,25 +244,20 @@
                             </a>
                     
                             <div class="award-card">
-                                <div class="flex justify-between items-start mb-1">
-                                    <span class="award-date text-slate-500">2022.06.08</span>
-                                </div>
+                                <span class="award-date text-slate-500">2022.06.08</span>
                                 <div>
                                     <h4 class="award-title">Creativity Award: ILSS</h4>
                                     <div class="mt-2 space-y-1">
-                                        <p class="text-[11px] text-slate-600 font-medium">
-                                            Improved Locker Security System
-                                        </p>
+                                        <p class="text-[11px] text-slate-600 font-medium">Improved Locker Security System</p>
                                         <p class="award-desc">
-                                            By College of Software Convergence, Kwangwoon University <br>
+                                            By College of Software Convergence, Kwangwoon University<br>
                                             <span class="text-[10px] font-medium text-slate-400 italic">Advised by Prof. Sangho Kim (Dept. of C.I.E.)</span>
                                         </p>
                                     </div>
                                 </div>
                             </div>
                     
-                        </div>
-                    </section>
+                        </div> </section>
                     
                     <!-- Activities -->
 
