@@ -1,81 +1,178 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naryun Woo | Projects</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Pretendard:wght@400;500;700&display=swap');
-        body { font-family: 'Inter', 'Pretendard', sans-serif; background-color: #0f172a; color: #94a3b8; padding-top: 80px; }
+        
+        body { font-family: 'Inter', 'Pretendard', sans-serif; padding-top: 80px; background-color: #ffffff; color: #475569; }
+        
+        /* 아코디언 관련 스타일 */
+        details > summary { list-style: none; cursor: pointer; }
+        details > summary::-webkit-details-marker { display: none; }
+        
+        .project-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            background-color: #f8fafc;
+            transition: all 0.3s ease;
+        }
+        .project-card:hover { border-color: #fbbf24; background-color: #ffffff; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+        
+        /* 펼쳐졌을 때 아이콘 회전 */
+        details[open] .fa-chevron-down { transform: rotate(180deg); color: #fbbf24; }
+        .fa-chevron-down { transition: transform 0.3s ease; }
     </style>
-    <script>
-        tailwind.config = { theme: { extend: { colors: { sky: { 400: '#38bdf8', 500: '#0ea5e9' } } } } }
-    </script>
 </head>
-<body class="selection:bg-sky-500 selection:text-white antialiased">
-    <div class="fixed inset-0 z-30 pointer-events-none transition duration-300" id="spotlight" style="background: radial-gradient(600px at 50% 50%, rgba(56, 189, 248, 0.15), transparent 80%);"></div>
-
-    <!-- Load Header file  -->
+<body class="selection:bg-sky-200 selection:text-sky-900 antialiased">
     <div id="header-container"></div>
+
+    <main class="w-full max-w-screen-xl mx-auto px-6 md:px-12 pt-8 pb-20 relative z-40">
+        <h1 class="text-3xl font-bold text-slate-900 mb-12 border-b border-slate-200 pb-4">Projects</h1>
+
+        <div class="space-y-20">
+            <section id="research">
+                <h2 class="text-xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+                    <i class="fa-solid fa-microscope text-sky-500"></i> Research Projects
+                </h2>
+                <div class="grid grid-cols-1 gap-6">
+                    <details class="project-card group">
+                        <summary class="p-6">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <span class="text-xs font-mono text-sky-600 font-bold">2025.01</span>
+                                    <h4 class="text-lg font-bold text-slate-800 mt-1">CESA: 5G Network Access Authentication Scheme [cite: 471]</h4>
+                                    <p class="text-sm text-slate-500 mt-1">Chebyshev-Polynomials-Based Efficient and Secure Access Authentication [cite: 471]</p>
+                                </div>
+                                <i class="fa-solid fa-chevron-down text-slate-300 mt-2"></i>
+                            </div>
+                        </summary>
+                        <div class="px-6 pb-6 text-sm leading-relaxed border-t border-slate-100 pt-4 bg-white/50 rounded-b-xl">
+                            <p class="mb-3">5G 네트워크에서 대규모 기기(mMTC)의 동시 접속 시 발생하는 시그널링 과부하와 보안 취약점을 해결하기 위한 경량 인증 프로토콜입니다. [cite: 474, 475]</p>
+                            <ul class="list-disc ml-5 space-y-1 text-slate-600">
+                                <li>Chebyshev Polynomial(체비쇼프 다항식) 기반의 경량 인증 알고리즘 설계 [cite: 483]</li>
+                                <li>기존 프로토콜 대비 통신 및 계산 비용 약 75.98% 절감 [cite: 487]</li>
+                                <li>ProVerif 및 Scyther 툴을 이용한 보안성 정형 검증 완료 [cite: 486]</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details class="project-card group">
+                        <summary class="p-6">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <span class="text-xs font-mono text-sky-600 font-bold">2025.03 - 2025.07</span>
+                                    <h4 class="text-lg font-bold text-slate-800 mt-1">LLM-based ASR·SD Integration Framework [cite: 53]</h4>
+                                    <p class="text-sm text-slate-500 mt-1">Post-processing Framework for Automatic Speech Recognition & Speaker Diarization [cite: 53]</p>
+                                </div>
+                                <i class="fa-solid fa-chevron-down text-slate-300 mt-2"></i>
+                            </div>
+                        </summary>
+                        <div class="px-6 pb-6 text-sm leading-relaxed border-t border-slate-100 pt-4 bg-white/50 rounded-b-xl">
+                            <p class="mb-3">독립적으로 동작하던 음성 인식(ASR)과 화자 분할(SD) 시스템의 불일치 문제를 LLM을 통해 통합 보정하는 프레임워크입니다. [cite: 55, 101]</p>
+                            <ul class="list-disc ml-5 space-y-1 text-slate-600">
+                                <li>TSWT(Time-aligned Speaker and Word Transfer) 알고리즘 설계 [cite: 105, 110]</li>
+                                <li>한국어 데이터셋에서 WER 2.68% 및 DER 24.62% 성능 개선 달성 </li>
+                                <li>2025 한국인공지능학회 하계학술대회 투고 [cite: 133]</li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
+            </section>
+
+            <section id="dev">
+                <h2 class="text-xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+                    <i class="fa-solid fa-code text-amber-500"></i> Development Projects
+                </h2>
+                <div class="grid grid-cols-1 gap-6">
+                    <details class="project-card group">
+                        <summary class="p-6">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <span class="text-xs font-mono text-amber-600 font-bold">2024.11 - 2024.12</span>
+                                    <h4 class="text-lg font-bold text-slate-800 mt-1">Green Market: Second-hand Web App [cite: 169]</h4>
+                                    <p class="text-sm text-slate-500 mt-1">Node.js, MySQL, JavaScript, CSS [cite: 173]</p>
+                                </div>
+                                <i class="fa-solid fa-chevron-down text-slate-300 mt-2"></i>
+                            </div>
+                        </summary>
+                        <div class="px-6 pb-6 text-sm leading-relaxed border-t border-slate-100 pt-4 bg-white/50 rounded-b-xl">
+                            <p class="mb-3">신뢰 기반의 안전한 중고 거래를 지원하는 웹 플랫폼으로, 사용자용 거래 기능과 관리자용 대시보드를 통합 구현했습니다. [cite: 171, 174]</p>
+                            <ul class="list-disc ml-5 space-y-1 text-slate-600">
+                                <li>Team Leader: 프로젝트 계획 수립, DB 스키마 설계 및 암·복호화 모듈 구현 [cite: 195, 197]</li>
+                                <li>관리자 콘솔: 회원/상품 관리, 유저 신고 내역 접수 및 통계 시각화 [cite: 221, 226, 228]</li>
+                                <li>실시간 채팅 기능 및 개인정보 보호를 위한 보안 기능 적용 [cite: 175, 176]</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details class="project-card group">
+                        <summary class="p-6">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <span class="text-xs font-mono text-amber-600 font-bold">2024.11 - 2024.12</span>
+                                    <h4 class="text-lg font-bold text-slate-800 mt-1">XAI Financial Analysis Model [cite: 232]</h4>
+                                    <p class="text-sm text-slate-500 mt-1">Python (Sklearn, SHAP, LIME, PyQt5) [cite: 41, 238]</p>
+                                </div>
+                                <i class="fa-solid fa-chevron-down text-slate-300 mt-2"></i>
+                            </div>
+                        </summary>
+                        <div class="px-6 pb-6 text-sm leading-relaxed border-t border-slate-100 pt-4 bg-white/50 rounded-b-xl">
+                            <p class="mb-3">재무제표 데이터를 분석하여 기업 수익률을 예측하고, XAI 기법을 통해 그 이유를 시각적으로 설명해주는 모델입니다. [cite: 236, 237]</p>
+                            <ul class="list-disc ml-5 space-y-1 text-slate-600">
+                                <li>SHAP 및 LIME 기법을 적용하여 딥러닝 모델의 판단 근거 제시 [cite: 238]</li>
+                                <li>PyQt 기반의 GUI 시스템 설계 및 캔들 차트(Candle Chart) 시각화 총괄 [cite: 245, 246]</li>
+                                <li>사용자 편의를 위한 캘린더 및 메모장 연동 시스템 구축 [cite: 243]</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details class="project-card group">
+                        <summary class="p-6">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <span class="text-xs font-mono text-amber-600 font-bold">2022.03 - 2022.06</span>
+                                    <h4 class="text-lg font-bold text-slate-800 mt-1">ILSS: Improved Locker Security System [cite: 393]</h4>
+                                    <p class="text-sm text-slate-500 mt-1">Arduino, Bluetooth, MIT App Inventor [cite: 51]</p>
+                                </div>
+                                <i class="fa-solid fa-chevron-down text-slate-300 mt-2"></i>
+                            </div>
+                        </summary>
+                        <div class="px-6 pb-6 text-sm leading-relaxed border-t border-slate-100 pt-4 bg-white/50 rounded-b-xl text-slate-600">
+                            <p class="mb-3 font-semibold text-sky-600">🏆 공학설계입문 작품전시회 창의상 수상 [cite: 394]</p>
+                            <p class="mb-3">아날로그 사물함의 보안 취약점을 해결하기 위해 모바일 앱과 연동되는 IoT 스마트 보안 시스템입니다. [cite: 396]</p>
+                            <ul class="list-disc ml-5 space-y-1">
+                                <li>Arduino 기반 원격 잠금 제어 및 센서를 통한 강제 개방 도난 감지 기능 [cite: 398]</li>
+                                <li>모바일 앱: 비밀번호 변경, 원격 사물함 제어, 카메라 연동 기능 제공 [cite: 399]</li>
+                                <li>실시간 알림 시스템 구현을 통한 보안성 및 사용자 편의성 극대화 [cite: 401, 402]</li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="py-8 text-center text-sm text-slate-400 border-t border-slate-200 mt-20">
+        <p>© 2026 Naryun Woo.</p>
+    </footer>
+
     <script>
         async function loadHeader() {
             const response = await fetch('header.html');
-            if (!response.ok) throw new Error('헤더 파일을 찾을 수 없습니다.');
             const data = await response.text();
             document.getElementById('header-container').innerHTML = data;
-            
-            highlightCurrentMenu();
         }
-    
-        function highlightCurrentMenu() {
-            let currentPage = window.location.pathname.split("/").pop();
-            if (currentPage === "" || currentPage === "index.html") currentPage = "index.html"; 
-        
-            const navLinks = document.querySelectorAll('#header-container a');
-            
-            navLinks.forEach(link => {
-                const href = link.getAttribute('href');
-                
-                if (link.id === 'logo') return; 
-        
-                if (href === currentPage) {
-                    link.classList.add('text-amber-400', 'font-bold');
-                    link.classList.remove('text-slate-300');
-                } else {
-                    link.classList.remove('text-amber-400', 'font-bold');
-                    link.classList.add('text-slate-300');
-                }
-            });
-        }
-    
-        loadHeader(); 
-    </script>
+        loadHeader();
 
-    <main class="max-w-3xl mx-auto px-6 py-12 md:py-20 space-y-24 relative z-40">
-        <section>
-            <h3 class="text-2xl font-bold text-slate-200 mb-10 border-l-4 border-sky-500 pl-4">Projects</h3>
-            <div class="space-y-12">
-                <div class="group relative bg-slate-800/50 p-6 rounded-xl hover:bg-slate-800 transition border border-slate-700/50 hover:border-sky-500/50">
-                    <div class="flex justify-between items-baseline mb-2">
-                        <h4 class="text-xl font-bold text-slate-200 group-hover:text-sky-400 transition">Green Market</h4>
-                        <span class="text-xs font-mono text-slate-500">2024.11 — 12</span>
-                    </div>
-                    <p class="text-slate-400 mb-4">중고장터 웹 애플리케이션 개발. 데이터베이스 설계 및 풀스택 연동을 담당.</p>
-                    <div class="flex gap-2 text-xs font-mono text-sky-300">
-                        <span class="bg-sky-500/10 px-2 py-1 rounded">JavaScript</span>
-                        <span class="bg-sky-500/10 px-2 py-1 rounded">SQL</span>
-                    </div>
-                </div>
-                </div>
-        </section>
-    </main>
-    
-    <footer class="py-8 text-center text-sm text-slate-600 border-t border-slate-800/50"><p>© 2026 Naryun Woo.</p></footer>
-    <script>
         const spotlight = document.getElementById('spotlight');
-        document.addEventListener('mousemove', (e) => { spotlight.style.background = `radial-gradient(600px at ${e.clientX}px ${e.clientY}px, rgba(56, 189, 248, 0.15), transparent 80%)`; });
+        document.addEventListener('mousemove', (e) => {
+            spotlight.style.background = `radial-gradient(200px at ${e.clientX}px ${e.clientY}px, rgba(14, 165, 233, 0.08), transparent 80%)`;
+        });
     </script>
 </body>
 </html>
