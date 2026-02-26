@@ -11,7 +11,7 @@
         
         body { font-family: 'Inter', 'Pretendard', sans-serif; padding-top: 80px; background-color: #ffffff; color: #475569; }
         
-        /* 아코디언 관련 스타일 */
+        /* Accordion Style */
         details > summary { list-style: none; cursor: pointer; }
         details > summary::-webkit-details-marker { display: none; }
         
@@ -21,9 +21,17 @@
             background-color: #f8fafc;
             transition: all 0.3s ease;
         }
-        .project-card:hover { border-color: #fbbf24; background-color: #ffffff; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+        .project-card:hover { 
+            border-color: #fbbf24; 
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); 
+        }
+        .project-title {
+        }
+        .project-desc {
+        }
         
-        /* 펼쳐졌을 때 아이콘 회전 */
+        /* expanded rotation icon */
         details[open] .fa-chevron-down { transform: rotate(180deg); color: #fbbf24; }
         .fa-chevron-down { transition: transform 0.3s ease; }
     </style>
@@ -136,21 +144,23 @@
                             <div class="flex justify-between items-start">
                                 <div>
                                     <span class="text-xs font-mono text-amber-600 font-bold">2022.03 - 2022.06</span>
-                                    <h4 class="text-lg font-bold text-slate-800 mt-1">ILSS: Improved Locker Security System [cite: 393]</h4>
-                                    <p class="text-sm text-slate-500 mt-1">Arduino, Bluetooth, MIT App Inventor [cite: 51]</p>
+                                    <p class="mb-3 font-semibold text-sky-600">🏆 공학설계입문 작품전시회 창의상 수상</p>
+                                    <h4 class="text-lg font-bold text-slate-800 mt-1">ILSS: Improved Locker Security System</h4>
+                                    <p class="text-sm text-slate-500 mt-1">Arduino, Bluetooth, MIT App Inventor</p>
                                 </div>
                                 <i class="fa-solid fa-chevron-down text-slate-300 mt-2"></i>
                             </div>
                         </summary>
                         <div class="px-6 pb-6 text-sm leading-relaxed border-t border-slate-100 pt-4 bg-white/50 rounded-b-xl text-slate-600">
-                            <p class="mb-3 font-semibold text-sky-600">🏆 공학설계입문 작품전시회 창의상 수상 [cite: 394]</p>
-                            <p class="mb-3">아날로그 사물함의 보안 취약점을 해결하기 위해 모바일 앱과 연동되는 IoT 스마트 보안 시스템입니다. [cite: 396]</p>
+                            <p class="mb-3">기존 아날로그식 사물함의 낮은 보안성과 불편한 관리 문제를 해결하기 위해 모바일과 연동된 IoT 기반 스마트 보안 시스템 개발</p>
                             <ul class="list-disc ml-5 space-y-1">
-                                <li>Arduino 기반 원격 잠금 제어 및 센서를 통한 강제 개방 도난 감지 기능 [cite: 398]</li>
-                                <li>모바일 앱: 비밀번호 변경, 원격 사물함 제어, 카메라 연동 기능 제공 [cite: 399]</li>
-                                <li>실시간 알림 시스템 구현을 통한 보안성 및 사용자 편의성 극대화 [cite: 401, 402]</li>
+                                <li>Arduino 및 Bluetooth 기반 원격 잠금 제어 및 센서를 통한 강제 개방 도난 감지 기능</li>
+                                <li>[모바일 앱] 비밀번호 변경, 원격 사물함 제어, 카메라로 주변 환경 확인 기능 제공</li>
+                                <li>실시간 알림 시스템 구현을 통한 보안성 및 사용자 편의성 극대화</li>
                             </ul>
                         </div>
+                        <!-- 내 역할 추가 -->
+                        <!-- 영상 링크 추가 -->
                     </details>
                 </div>
             </section>
