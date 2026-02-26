@@ -14,38 +14,42 @@
         /* Accordion Style */
         details > summary { list-style: none; cursor: pointer; }
         details > summary::-webkit-details-marker { display: none; }
-    
-        .project-title {
-        }
-        .project-desc {
-        }
-        .res-card {
+
+        /* Project Card Templates */
+        .project-card {
             border: 1px solid #e2e8f0;
             border-radius: 0.75rem;
             background-color: #f8fafc;
             transition: all 0.3s ease;
+            overflow: hidden;
         }
-        .res-card:hover { 
+        .project-card:hover { 
             border-color: #fbbf24; 
             background-color: #ffffff;
-             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            box-shadow: 0 4px 12px -2px rgb(0 0 0 / 0.08);
         }
 
-        .dev-card {
-            border: 1px solid #e2e8f0;
-            border-radius: 0.75rem;
-            background-color: #f8fafc;
-            transition: all 0.3s ease;
-        }
-        .dev-card:hover { 
-            border-color: #fbbf24; 
-            background-color: #ffffff;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); 
-        }
+        .project-date { font-family: monospace; font-size: 0.75rem; font-weight: 700; margin-bottom: 0.25rem; display: block; }
+        .res-date { color: #0284c7; } /* sky-600 */
+        .dev-date { color: #d97706; } /* amber-600 */
 
-        /* badge 추가 - 온고잉 표시용 / 연구책임자 , 참여연구원 등 표시 */
+        .project-title { font-size: 1.125rem; font-weight: 700; color: #1e293b; line-height: 1.3; }
+        .project-subtitle { font-size: 0.875rem; color: #64748b; margin-top: 0.25rem; }
         
-        /* expanded rotation icon */
+        /* Badge Style */
+        .badge-container { display: flex; gap: 0.5rem; margin-top: 0.75rem; flex-wrap: wrap; }
+        .p-badge { 
+            padding: 0.15rem 0.5rem; 
+            border-radius: 0.375rem; 
+            font-size: 0.65rem; 
+            font-weight: 700; 
+            text-transform: uppercase;
+        }
+        .badge-role { background-color: #f1f5f9; color: #475569; border: 1px solid #e2e8f0; }
+        .badge-award { background-color: #fefce8; color: #854d0e; border: 1px solid #fef08a; }
+        .badge-ongoing { background-color: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+
+        /* Icon Rotation */
         details[open] .fa-chevron-down { transform: rotate(180deg); color: #fbbf24; }
         .fa-chevron-down { transition: transform 0.3s ease; }
     </style>
@@ -57,53 +61,34 @@
         <h1 class="text-3xl font-bold text-slate-900 mb-12 border-b border-slate-200 pb-4">Projects</h1>
 
         <div class="space-y-20">
-            <<section id="research" class="scroll-mt-24">
+            <section id="research" class="scroll-mt-24">
                 <h2 class="text-xl font-bold text-slate-900 mb-8 flex items-center gap-3">
                     <i class="fa-solid fa-microscope text-sky-500"></i> Research Projects
                 </h2>
                 <div class="grid grid-cols-1 gap-6">
-                    <details class="res-card group">
+                    <details class="project-card group">
                         <summary class="p-6">
                             <div class="flex justify-between items-start">
                                 <div>
-                                    <span class="text-xs font-mono text-sky-600 font-bold">2025.01</span>
-                                    <h4 class="text-lg font-bold text-slate-800 mt-1">CESA: 5G Network Access Authentication Scheme [cite: 471]</h4>
-                                    <p class="text-sm text-slate-500 mt-1">Chebyshev-Polynomials-Based Efficient and Secure Access Authentication [cite: 471]</p>
+                                    <span class="project-date res-date">2025.01 [cite: 471]</span>
+                                    <h4 class="project-title">CESA: 5G Network Access Authentication Scheme</h4>
+                                    <p class="project-subtitle">Chebyshev-Polynomials-Based Efficient and Secure Access Authentication [cite: 471]</p>
+                                    <div class="badge-container">
+                                        <span class="p-badge badge-role">Main Researcher </span>
+                                    </div>
                                 </div>
                                 <i class="fa-solid fa-chevron-down text-slate-300 mt-2"></i>
                             </div>
                         </summary>
-                        <div class="px-6 pb-6 text-sm leading-relaxed border-t border-slate-100 pt-4 bg-white/50 rounded-b-xl">
-                            <p class="mb-3">5G 네트워크에서 대규모 기기(mMTC)의 동시 접속 시 발생하는 시그널링 과부하와 보안 취약점을 해결하기 위한 경량 인증 프로토콜입니다. [cite: 474, 475]</p>
+                        <div class="px-6 pb-6 text-sm leading-relaxed border-t border-slate-100 pt-4 bg-white/50">
+                            <p class="mb-3">5G 네트워크에서 mMTC 기기 접속 시 발생하는 시그널링 과부하 및 보안 취약점 해결을 위한 경량 프로토콜 연구입니다. [cite: 474, 475, 483]</p>
                             <ul class="list-disc ml-5 space-y-1 text-slate-600">
-                                <li>Chebyshev Polynomial(체비쇼프 다항식) 기반의 경량 인증 알고리즘 설계 [cite: 483]</li>
                                 <li>기존 프로토콜 대비 통신 및 계산 비용 약 75.98% 절감 [cite: 487]</li>
                                 <li>ProVerif 및 Scyther 툴을 이용한 보안성 정형 검증 완료 [cite: 486]</li>
                             </ul>
                         </div>
                     </details>
-
-                    <details class="res-card group">
-                        <summary class="p-6">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <span class="text-xs font-mono text-sky-600 font-bold">2025.03 - 2025.07</span>
-                                    <h4 class="text-lg font-bold text-slate-800 mt-1">LLM-based ASR·SD Integration Framework [cite: 53]</h4>
-                                    <p class="text-sm text-slate-500 mt-1">Post-processing Framework for Automatic Speech Recognition & Speaker Diarization [cite: 53]</p>
-                                </div>
-                                <i class="fa-solid fa-chevron-down text-slate-300 mt-2"></i>
-                            </div>
-                        </summary>
-                        <div class="px-6 pb-6 text-sm leading-relaxed border-t border-slate-100 pt-4 bg-white/50 rounded-b-xl">
-                            <p class="mb-3">독립적으로 동작하던 음성 인식(ASR)과 화자 분할(SD) 시스템의 불일치 문제를 LLM을 통해 통합 보정하는 프레임워크입니다. [cite: 55, 101]</p>
-                            <ul class="list-disc ml-5 space-y-1 text-slate-600">
-                                <li>TSWT(Time-aligned Speaker and Word Transfer) 알고리즘 설계 [cite: 105, 110]</li>
-                                <li>한국어 데이터셋에서 WER 2.68% 및 DER 24.62% 성능 개선 달성 </li>
-                                <li>2025 한국인공지능학회 하계학술대회 투고 [cite: 133]</li>
-                            </ul>
-                        </div>
-                    </details>
-                </div>
+                    </div>
             </section>
 
             <section id="dev" class="scroll-mt-24">
@@ -111,79 +96,77 @@
                     <i class="fa-solid fa-code text-amber-500"></i> Development Projects
                 </h2>
                 <div class="grid grid-cols-1 gap-6">
-                    <details class="dev-card group">
+                    <details class="project-card group">
                         <summary class="p-6">
                             <div class="flex justify-between items-start">
                                 <div>
-                                    <span class="text-xs font-mono text-amber-600 font-bold">2024.11 - 2024.12</span>
-                                    <h4 class="text-lg font-bold text-slate-800 mt-1">Green Market: Second-hand Web App [cite: 169]</h4>
-                                    <p class="text-sm text-slate-500 mt-1">Node.js, MySQL, JavaScript, CSS [cite: 173]</p>
+                                    <span class="project-date dev-date">2022.03 - 2022.06 [cite: 50, 507]</span>
+                                    <p class="text-[10px] font-bold text-sky-600 mb-0.5 flex items-center gap-1">
+                                        <i class="fa-solid fa-trophy text-[9px]"></i> Creativity Award [cite: 12, 394]
+                                    </p>
+                                    <h4 class="project-title">ILSS: Improved Locker Security System</h4>
+                                    <p class="project-subtitle">Arduino, Bluetooth, MIT App Inventor [cite: 51, 399]</p>
+                                    <div class="badge-container">
+                                        <span class="p-badge badge-role">Team Leader [cite: 403]</span>
+                                        <span class="p-badge badge-award">Award Winner </span>
+                                    </div>
                                 </div>
                                 <i class="fa-solid fa-chevron-down text-slate-300 mt-2"></i>
                             </div>
                         </summary>
-                        <div class="px-6 pb-6 text-sm leading-relaxed border-t border-slate-100 pt-4 bg-white/50 rounded-b-xl">
-                            <p class="mb-3">신뢰 기반의 안전한 중고 거래를 지원하는 웹 플랫폼으로, 사용자용 거래 기능과 관리자용 대시보드를 통합 구현했습니다. [cite: 171, 174]</p>
-                            <ul class="list-disc ml-5 space-y-1 text-slate-600">
-                                <li>Team Leader: 프로젝트 계획 수립, DB 스키마 설계 및 암·복호화 모듈 구현 [cite: 195, 197]</li>
-                                <li>관리자 콘솔: 회원/상품 관리, 유저 신고 내역 접수 및 통계 시각화 [cite: 221, 226, 228]</li>
-                                <li>실시간 채팅 기능 및 개인정보 보호를 위한 보안 기능 적용 [cite: 175, 176]</li>
-                            </ul>
+                        <div class="px-6 pb-6 text-sm leading-relaxed border-t border-slate-100 pt-4 bg-white/50">
+                            <p class="mb-3">IoT 기술을 활용하여 사물함의 보안성을 높이고 모바일 제어 기능을 제공하는 시스템입니다. [cite: 396, 398]</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                                    <p class="font-bold text-slate-700 mb-1 flex items-center gap-2">
+                                        <i class="fa-solid fa-user-gear text-xs text-sky-500"></i> My Role [cite: 403]
+                                    </p>
+                                    <ul class="text-xs space-y-1 text-slate-500">
+                                        <li>프로젝트 기획 및 전체 일정 관리 주도 [cite: 404]</li>
+                                        <li>MIT App Inventor 기반 안드로이드 앱 설계 및 개발 [cite: 405]</li>
+                                        <li>최종 결과물 시연 및 프로젝트 발표 수행 [cite: 406]</li>
+                                    </ul>
+                                </div>
+                                <div class="flex flex-col justify-center items-center bg-slate-50 p-3 rounded-lg border border-slate-100">
+                                    <p class="text-[11px] font-medium text-slate-500 mb-2">Demo Video</p>
+                                    <a href="https://youtu.be/-YKVk17KIV0" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-red-600 text-white rounded-full text-xs font-bold hover:bg-red-700 transition-colors shadow-sm">
+                                        <i class="fa-brands fa-youtube"></i> Watch on YouTube [cite: 417]
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </details>
 
-                    <details class="dev-card group">
+                    <details class="project-card group">
                         <summary class="p-6">
                             <div class="flex justify-between items-start">
                                 <div>
-                                    <span class="text-xs font-mono text-amber-600 font-bold">2024.11 - 2024.12</span>
-                                    <h4 class="text-lg font-bold text-slate-800 mt-1">XAI Financial Analysis Model [cite: 232]</h4>
-                                    <p class="text-sm text-slate-500 mt-1">Python (Sklearn, SHAP, LIME, PyQt5) [cite: 41, 238]</p>
+                                    <span class="project-date dev-date">2024.11 - 2024.12 [cite: 36, 179]</span>
+                                    <h4 class="project-title">Green Market: Second-hand Web App</h4>
+                                    <p class="project-subtitle">Node.js, MySQL, JavaScript, CSS [cite: 37, 173]</p>
+                                    <div class="badge-container">
+                                        <span class="p-badge badge-role">Team Leader [cite: 195]</span>
+                                    </div>
                                 </div>
                                 <i class="fa-solid fa-chevron-down text-slate-300 mt-2"></i>
                             </div>
                         </summary>
-                        <div class="px-6 pb-6 text-sm leading-relaxed border-t border-slate-100 pt-4 bg-white/50 rounded-b-xl">
-                            <p class="mb-3">재무제표 데이터를 분석하여 기업 수익률을 예측하고, XAI 기법을 통해 그 이유를 시각적으로 설명해주는 모델입니다. [cite: 236, 237]</p>
-                            <ul class="list-disc ml-5 space-y-1 text-slate-600">
-                                <li>SHAP 및 LIME 기법을 적용하여 딥러닝 모델의 판단 근거 제시 [cite: 238]</li>
-                                <li>PyQt 기반의 GUI 시스템 설계 및 캔들 차트(Candle Chart) 시각화 총괄 [cite: 245, 246]</li>
-                                <li>사용자 편의를 위한 캘린더 및 메모장 연동 시스템 구축 [cite: 243]</li>
+                        <div class="px-6 pb-6 text-sm leading-relaxed border-t border-slate-100 pt-4 bg-white/50">
+                            <p class="font-bold text-slate-700 mb-2">My Role [cite: 195]</p>
+                            <ul class="list-disc ml-5 space-y-1 text-slate-600 text-xs">
+                                <li>데이터베이스 스키마 설계 및 데이터 암·복호화 수행 [cite: 197]</li>
+                                <li>회원가입/로그인 및 관리자 기능(회원·게시판 제어) 구현 [cite: 199]</li>
+                                <li>프로젝트 계획 수립 및 전체 프로토타입 디자인 제작 [cite: 196, 198]</li>
                             </ul>
+                            <a href="https://youtu.be/RSHVBHfslwM" target="_blank" class="mt-4 inline-flex items-center gap-2 text-red-600 font-bold text-[10px] hover:underline">
+                                <i class="fa-brands fa-youtube"></i> Video Demo [cite: 202]
+                            </a>
                         </div>
-                    </details>
-
-                    <details class="dev-card group">
-                        <summary class="p-6">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <span class="text-xs font-mono text-amber-600 font-bold">2022.03 - 2022.06</span>
-                                    <p class="mb-3 font-semibold text-sky-600">🏆 공학설계입문 작품전시회 창의상 수상</p>
-                                    <h4 class="text-lg font-bold text-slate-800 mt-1">ILSS: Improved Locker Security System</h4>
-                                    <p class="text-sm text-slate-500 mt-1">Arduino, Bluetooth, MIT App Inventor</p>
-                                </div>
-                                <i class="fa-solid fa-chevron-down text-slate-300 mt-2"></i>
-                            </div>
-                        </summary>
-                        <div class="px-6 pb-6 text-sm leading-relaxed border-t border-slate-100 pt-4 bg-white/50 rounded-b-xl text-slate-600">
-                            <p class="mb-3">기존 아날로그식 사물함의 낮은 보안성과 불편한 관리 문제를 해결하기 위해 모바일과 연동된 IoT 기반 스마트 보안 시스템 개발</p>
-                            <ul class="list-disc ml-5 space-y-1">
-                                <li>Arduino 및 Bluetooth 기반 원격 잠금 제어 및 센서를 통한 강제 개방 도난 감지 기능</li>
-                                <li>[모바일 앱] 비밀번호 변경, 원격 사물함 제어, 카메라로 주변 환경 확인 기능 제공</li>
-                                <li>실시간 알림 시스템 구현을 통한 보안성 및 사용자 편의성 극대화</li>
-                            </ul>
-                        </div>
-                        <!-- 내 역할 추가 -->
-                        <!-- 영상 링크 추가 -->
                     </details>
                 </div>
             </section>
         </div>
     </main>
-
-    <footer class="py-8 text-center text-sm text-slate-400 border-t border-slate-200 mt-20">
-        <p>© 2026 Naryun Woo.</p>
-    </footer>
 
     <script>
         async function loadHeader() {
@@ -192,7 +175,6 @@
             document.getElementById('header-container').innerHTML = data;
         }
         loadHeader();
-
         const spotlight = document.getElementById('spotlight');
         document.addEventListener('mousemove', (e) => {
             spotlight.style.background = `radial-gradient(200px at ${e.clientX}px ${e.clientY}px, rgba(14, 165, 233, 0.08), transparent 80%)`;
