@@ -18,7 +18,7 @@
             padding-top: 80px; 
         }
         
-        /* --- Publication Template Styles (Standard CSS for reliability) --- */
+        /* --- Publication Template --- */
         .pub-card { 
             display: block;
             padding: 0.6rem 1.25rem; /* 위아래는 0.8rem, 좌우는 1.25rem */
@@ -55,6 +55,15 @@
         .badge-domestic { background-color: #10b981; color: white; }
         .badge-poster { border: 1px solid #10b981; color: #059669; }
         .badge-oral { border: 1px solid #059669; background-color: #ecfdf5; color: #047857; }
+
+        /* Patent Template */
+        .patent-card:hover { border-color: #818cf8; } /* indigo-400 */
+        .patent-card:hover .pub-title { color: #4f46e5; } /* indigo-600 */
+        
+        .badge-patent-kr { background-color: #4f46e5; color: white; } /* domestic */
+        .badge-patent-us { background-color: #6366f1; color: white; } /* united states */
+        .badge-software { background-color: #a855f7; color: white; } /* NTIS/SW */
+        .badge-status { border: 1px solid #818cf8; color: #4f46e5; background-color: #eef2ff; } /* status */
     </style>
 </head>
 <body class="selection:bg-sky-200 selection:text-sky-900 antialiased">
@@ -143,7 +152,8 @@
                 </li>
             </ul>
         </section>
-        
+
+        <!-- Conference -->
         <section id="conference" class="scroll-mt-24">
             <h3 class="text-xl font-bold text-slate-900 mb-8 border-l-4 border-emerald-500 pl-4">Conference Publications</h3>
             <ul class="space-y-5">
@@ -194,6 +204,62 @@
                         <p class="pub-info">June 20-21. CISC-S 2024 (Korea Institute of Information Security and Cryptology)</p>
                     </a>
                 </li>
+            </ul>
+        </section>
+
+        <!-- Patent -->
+        <section id="patent" class="scroll-mt-24">
+            <h3 class="text-xl font-bold text-slate-900 mb-8 border-l-4 border-indigo-500 pl-4">Patents & Software</h3>
+            <ul class="space-y-5">
+                
+                <li class="group">
+                    <div class="pub-card patent-card">
+                        <div class="flex flex-wrap gap-2 mb-1">
+                            <span class="badge-base badge-patent-kr">Korean Patent</span>
+                            <span class="badge-base badge-status">Application</span>
+                        </div>
+                        <h4 class="pub-title">METHOD FOR CLOUD-BASED LIGHTWEIGHT AUTHENTICATION IN WIRELESS SENSOR NETWORKS ENVIRONMENT</h4>
+                        <p class="pub-authors">Jihyeon Ryu, HyeonJun Yoo, Taewoong Kang, <span class="my-name">Naryun Woo</span></p>
+                        <p class="pub-info">No. 10-2025-0188594, 2 December 2025</p>
+                    </div>
+                </li>
+        
+                <li class="group">
+                    <div class="pub-card patent-card">
+                        <div class="flex flex-wrap gap-2 mb-1">
+                            <span class="badge-base badge-software">Software Registration</span>
+                            <span class="badge-base badge-status">NTIS</span>
+                        </div>
+                        <h4 class="pub-title">사용자 장비 및 대규모 통신 기기를 위한 효율적 안전 접근 인증 방법</h4>
+                        <p class="pub-authors"><span class="my-name">Naryun Woo</span>, Jihyeon Ryu, Taewoong Kang</p>
+                        <p class="pub-info">ID: 202510210007, RN: ASSET_0014453, 21 November 2025</p>
+                    </div>
+                </li>
+        
+                <li class="group">
+                    <div class="pub-card patent-card">
+                        <div class="flex flex-wrap gap-2 mb-1">
+                            <span class="badge-base badge-patent-us">United States Patent</span>
+                            <span class="badge-base badge-status">Application</span>
+                        </div>
+                        <h4 class="pub-title">EFFICIENT AND SECURE ACCESS AUTHENTICATION SYSTEM FOR USER EQUIPMENT AND MASSIVE MACHINE-TYPE COMMUNICATION DEVICE</h4>
+                        <p class="pub-authors">Jihyeon Ryu, <span class="my-name">Naryun Woo</span>, Taewoong Kang</p>
+                        <p class="pub-info">No. 19/357,276, 14 October 2025</p>
+                    </div>
+                </li>
+        
+                <li class="group">
+                    <div class="pub-card patent-card">
+                        <div class="flex flex-wrap gap-2 mb-1">
+                            <span class="badge-base badge-patent-kr">Korean Patent</span>
+                            <span class="badge-base badge-status">Application</span>
+                        </div>
+                        <h4 class="pub-title">Efficient and Secure Access Authentication System for User Equipment and Massive MTC Devices</h4>
+                        <p class="pub-authors">Jihyeon Ryu, <span class="my-name">Naryun Woo</span>, Taewoong Kang</p>
+                        <p class="pub-info">No. 10-2025-0040657, 28 March 2025</p>
+                    </div>
+                </li>
+        
             </ul>
         </section>
     </main>
