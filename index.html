@@ -20,23 +20,37 @@
         details > summary::-webkit-details-marker { display: none; }
 
         /* Honors & Awards Template */
+        .award-card:hover {
+            background-color: #ffffff;
+            border-color: #fbbf24; /* amber-400 */
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
         .award-card {
             display: block;
-            padding: 0.6rem 1.25rem;
+            padding: 0.4rem 1.25rem; 
             border-radius: 0.75rem;
-            background-color: #f8fafc; /* bg-slate-50 */
-            border: 1px solid #e2e8f0; /* border-slate-200 */
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
             transition: all 0.3s ease;
             text-decoration: none !important;
         }
-        .award-card:hover {
-            background-color: #ffffff;
-            border-color: #fbbf24; /* amber-400 호버 시 금색 테두리 */
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        .award-title { 
+            font-size: 0.875rem; 
+            font-weight: 700; 
+            color: #1e293b; 
+            margin-top: 0; 
+            margin-bottom: 0.1rem; 
+            line-height: 1.2;
         }
-        /* .award-date { font-family: monospace; font-size: 0.875rem; color: #0ea5e9; font-weight: 600; } */
-        .award-title { font-size: 0.875rem; font-weight: 700; color: #1e293b; margin-top: 0.25rem; }
-        .award-desc { font-size: 0.675rem; color: #64748b; margin-top: 0.25rem; line-height: 1.4; }
+        .award-desc { 
+            font-size: 0.675rem; 
+            color: #64748b; 
+            margin-top: 0.15rem;
+            line-height: 1.4; 
+        }
+        
+        /* .award-title { font-size: 0.875rem; font-weight: 700; color: #1e293b; margin-top: 0.1rem; }
+        .award-desc { font-size: 0.675rem; color: #64748b; margin-top: 0.25rem; line-height: 1.4; } */
         
     </style>
     
@@ -217,7 +231,7 @@
                                     <h4 class="award-title">Creativity Award</h4>
                                     <div class="mt-2 space-y-1">
                                         <p class="text-[11px] text-slate-600 font-medium">
-                                            <span class="text-sky-600 font-bold">Improved Locker Security System(ILSS)</span>
+                                            <span class="text-sky-600 font-bold">Improved Locker Security System (ILSS)</span>
                                         </p>
                                         <p class="award-desc">
                                             2022.06.08, by College of Software Convergence, Kwangwoon University<br>
