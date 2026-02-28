@@ -106,7 +106,128 @@
                     <i class="fa-solid fa-code text-slate-900"></i> Development Projects
                 </h2>
                 <div class="grid grid-cols-1 gap-6">
-
+                    <!-- LLM ASR/SD -->
+                    <details class="project-card group">
+                        <summary class="p-6">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <span class="project-date">2024.11 - 2024.12</span>
+                                    <h4 class="project-title">LLM 기반 ASR·SD를 동시에 개선하는 음성 후처리 통합 프레임워크</h4>
+                                    <p class="project-subtitle">Python, Google Colab</p>
+                                    <div class="badge-container">
+                                        <span class="p-badge badge-team">3 Members</span>
+                                    </div>
+                                </div>
+                                <i class="fa-solid fa-chevron-down text-slate-300 mt-2"></i>
+                            </div>
+                        </summary>
+                        <div class="px-6 pb-6 text-sm leading-relaxed border-t border-slate-100 pt-4 bg-white/50">
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                                    <p class="font-bold text-slate-700 mb-2 flex items-center gap-2">
+                                        <i class="fa-solid fa-circle-exclamation text-[12px] text-red-500"></i> Motivation
+                                    </p>
+                                    <p class="mb-4">기존 ASR과 SD 시스템은 독립 동작으로 인해 시간 불일치, 문맥오류, 비영어 성능 저하 문제가 존재함. 실제 서비스에서 요구되는 정확한 화자 구분 및 발화 타임스탬프 유지를 위해 통합 접근이 요구됨</p>
+                                </div>
+                                <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                                    <p class="font-bold text-slate-700 mb-1 flex items-center gap-2">
+                                        <i class="fa-solid fa-align-left text-[10px] text-sky-500"></i> Description
+                                    </p>
+                                    <ul class="text-xs space-y-1 text-slate-500 list-disc ml-4">
+                                        <li>Whisper + pyannote 기반 ASR/SD 결과를 LLM으로 통합 보정하는 구조 설계</li>
+                                        <li>TSWT(Time-aligned Speaker and Word Transfer) 알고리즘 설계로 단어 및 화자 라벨 수정 후에도 단어 단위 시간 정보를 유지</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                                    <p class="font-bold text-slate-700 mb-1 flex items-center gap-2">
+                                        <i class="fa-solid fa-chart-line text-[10px] text-sky-500"></i> Results
+                                    </p>
+                                    <ul class="text-xs space-y-1 text-slate-500 list-disc ml-4">
+                                        <li>한국어 WER 2.68% 개선, DER 24.62% 개선</li>
+                                        <li>영어 DER 2.49% 개선</li>
+                                        <li>2025 한국인공지능학회 하계학술대회 투고</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                                    <p class="font-bold text-slate-700 mb-1 flex items-center gap-2">
+                                        <i class="fa-solid fa-user-gear text-xs text-sky-500"></i> My Role (Team Leader)
+                                    </p>
+                                    <ul class="text-xs space-y-1 text-slate-500 list-disc ml-4">
+                                        <li>음성 및 영상 실험 데이터셋 조사, 분석, 통계</li>
+                                        <li>관련 연구 조사</li>
+                                        <li>TWST 알고리즘 설계</li>
+                                        <li>논문 작성 및 figure 생성</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                    
+                    <!-- green market -->
+                    <details class="project-card group">
+                        <summary class="p-6">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <span class="project-date">2024.11 - 2024.12</span>
+                                    <h4 class="project-title">Green Market : 중고장터 웹 애플리케이션</h4>
+                                    <p class="project-subtitle">Node.js, javascript, css, MySQL</p>
+                                    <div class="badge-container">
+                                        <span class="p-badge badge-team">3 Members</span>
+                                    </div>
+                                </div>
+                                <i class="fa-solid fa-chevron-down text-slate-300 mt-2"></i>
+                            </div>
+                        </summary>
+                        <div class="px-6 pb-6 text-sm leading-relaxed border-t border-slate-100 pt-4 bg-white/50">
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                                    <p class="font-bold text-slate-700 mb-2 flex items-center gap-2">
+                                        <i class="fa-solid fa-circle-exclamation text-[12px] text-red-500"></i> Motivation
+                                    </p>
+                                    <p class="mb-4">중고거래의 신뢰, 안전성 및 운영 효율 향상을 위해 사용자 및 관리자 기능을 분리한 플랫폼 필요</p>
+                                </div>
+                                <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                                    <p class="font-bold text-slate-700 mb-1 flex items-center gap-2">
+                                        <i class="fa-solid fa-align-left text-[10px] text-sky-500"></i> Description
+                                    </p>
+                                    <ul class="text-xs space-y-1 text-slate-500 list-disc ml-4">
+                                        <li>Node.js와 MySQL 기반으로 DB 스키마 설계 및 구축</li>
+                                        <li>회원, 상품, 거래 관리와 관리자 콘솔 구현</li>
+                                        <li>암호화 모듈 사용으로 사용자 개인정보 보호</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                                    <p class="font-bold text-slate-700 mb-1 flex items-center gap-2">
+                                        <i class="fa-solid fa-chart-line text-[10px] text-sky-500"></i> Results
+                                    </p>
+                                    <ul class="text-xs space-y-1 text-slate-500 list-disc ml-4">
+                                        <li>회원 : 상품거래, 후기 및 평점 작성, 회원 간 채팅</li>
+                                        <li>관리자 : 신고된 회원, 게시물/회원정보/문의글 관리 및 제어</li>
+                                    </ul>
+                                    <a href="https://youtu.be/RSHVBHfslwM?si=FuJjc5Ql2Wv0Y3qw" target="_blank" class="mt-4 inline-flex items-center gap-2 text-red-600 font-bold text-[10px] hover:underline">
+                                        <i class="fa-brands fa-youtube"></i>Demo Video
+                                    </a>
+                                    <a href="https://github.com/M3rcy1028/2024_DDV" target="_blank" class="mt-4 inline-flex items-center gap-2 text-black-600 font-bold text-[10px] hover:underline">
+                                        <i class="fa-brands fa-github"></i>Source Code
+                                    </a>
+                                </div>
+                                <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                                    <p class="font-bold text-slate-700 mb-1 flex items-center gap-2">
+                                        <i class="fa-solid fa-user-gear text-xs text-sky-500"></i> My Role (Team Leader)
+                                    </p>
+                                    <ul class="text-xs space-y-1 text-slate-500 list-disc ml-4">
+                                        <li>프로젝트 계획 수립, 피드백 및 회의 주최</li>
+                                        <li>데이터베이스 구축 및 데이터 수집, 데이터 암복호화 수행</li>
+                                        <li>웹 사이트 디자인 및 프로토타입 제작</li>
+                                        <li>회원가입/로그인, 아이디/비밀번호 찾기, 관리자 기능 구현</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                    
                     <!-- XAI 재무제표 -->
                     <details class="project-card group">
                         <summary class="p-6">
