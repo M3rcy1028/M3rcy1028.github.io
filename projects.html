@@ -75,15 +75,19 @@
         }
     
         function highlightCurrentMenu() {
-            let currentPage = window.location.pathname.split("/").pop();
-            if (currentPage === "" || currentPage === "index.html") currentPage = "index.html"; 
+            const currentPath = window.location.pathname;
             const navLinks = document.querySelectorAll('#header-container a');
+            
             navLinks.forEach(link => {
-                if (link.id === 'logo') return; 
-                if (link.getAttribute('href') === currentPage) {
+                const href = link.getAttribute('href');
+                if (!href || link.id === 'logo') return;
+        
+                if (currentPath.includes(href) && href !== "#") {
                     link.classList.add('text-amber-400', 'font-bold');
+                    link.classList.remove('text-slate-300');
                 } else {
                     link.classList.remove('text-amber-400', 'font-bold');
+                    link.classList.add('text-slate-300');
                 }
             });
         }
@@ -509,13 +513,11 @@
         </div>
     </main>
 
+    <footer class="py-8 text-center text-sm text-slate-400 border-t border-slate-200 mt-10">
+        <p>© 2026 Naryun Woo.</p>
+    </footer>
+
     <script>
-        async function loadHeader() {
-            const response = await fetch('header.html');
-            const data = await response.text();
-            document.getElementById('header-container').innerHTML = data;
-        }
-        loadHeader();
         const spotlight = document.getElementById('spotlight');
         document.addEventListener('mousemove', (e) => {
             spotlight.style.background = `radial-gradient(200px at ${e.clientX}px ${e.clientY}px, rgba(14, 165, 233, 0.08), transparent 80%)`;
