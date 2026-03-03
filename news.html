@@ -1,1 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naryun Woo | News</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Pretendard:wght@400;500;700&display=swap');
+        
+        body { font-family: 'Inter', 'Pretendard', sans-serif; padding-top: 80px; background-color: #ffffff; color: #475569; }
+        
+        /* News Item Style */
+        .news-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid #f1f5f9;
+            transition: all 0.2s ease;
+        }
+        .news-item:hover { background-color: #f8fafc; padding-left: 0.5rem; padding-right: 0.5rem; border-radius: 0.5rem; }
+        .news-date { font-family: monospace; font-size: 0.875rem; color: #94a3b8; min-width: 100px; shrink: 0; }
+        .news-content { font-size: 0.9375rem; line-height: 1.6; color: #334155; }
+        .news-tag { 
+            display: inline-block; 
+            font-size: 0.75rem; 
+            font-weight: 700; 
+            color: #0369a1; /* sky-700 */
+            background-color: #f0f9ff; 
+            padding: 0.1rem 0.5rem; 
+            border-radius: 0.25rem; 
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body class="selection:bg-sky-200 selection:text-sky-900 antialiased">
+    <div id="header-container"></div>
+    <div class="fixed inset-0 z-30 pointer-events-none transition duration-300" id="spotlight" style="background: radial-gradient(400px at 50% 50%, rgba(14, 165, 233, 0.05), transparent 80%);"></div>
 
+    <main class="w-full max-w-screen-xl mx-auto px-6 md:px-12 pt-8 pb-20 relative z-40">
+        <h1 class="text-3xl font-bold text-slate-900 mb-12 border-b border-slate-200 pb-4">News</h1>
+
+        <div class="space-y-2">
+            <div class="news-item">
+                <span class="news-date">2025.09.08</span>
+                <div class="news-content">
+                    <span class="news-tag">광운 Hot Issue</span>
+                    우나륜 학생(컴퓨터공학과), 2025년 이공분야 석사과정생 연구장려 지원사업 선정 [cite: 620]
+                    <a href="#" class="ml-2 text-sky-500 hover:text-amber-500 transition"><i class="fa-solid fa-link text-xs"></i></a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <span class="news-date">2025.07.30</span>
+                <div class="news-content">
+                    <span class="news-tag">최신연구성과</span>
+                    유현준, 강태웅, 우나륜 학생(컴퓨터정보공학부), 경량·고속 무선 센서 네트워크 인증 프로토콜 LAEC 개발 [cite: 623]
+                    <a href="#" class="ml-2 text-sky-500 hover:text-amber-500 transition"><i class="fa-solid fa-link text-xs"></i></a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <span class="news-date">2025.02.11</span>
+                <div class="news-content">
+                    <span class="news-tag">최신연구성과</span>
+                    우나륜, 강태웅 학생(컴퓨터정보공학부), 5G 네트워크에서 사용자 장비 및 대규모 기계형 통신 장치를 위한 효율적이고 안전한 접근 인증 방식 CESA 개발 [cite: 626, 627]
+                    <a href="https://www-1.kw.ac.kr/ko/life/notice.jsp?BoardMode=view&DUID=48174" target="_blank" class="ml-2 text-sky-500 hover:text-amber-500 transition"><i class="fa-solid fa-link text-xs"></i></a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-8 text-center text-sm text-slate-400 border-t border-slate-200 mt-20">
+        <p>© 2026 Naryun Woo.</p>
+    </footer>
+
+    <script>
+        async function loadHeader() {
+            const response = await fetch('header.html');
+            const data = await response.text();
+            document.getElementById('header-container').innerHTML = data;
+        }
+        loadHeader();
+
+        const spotlight = document.getElementById('spotlight');
+        document.addEventListener('mousemove', (e) => {
+            spotlight.style.background = `radial-gradient(200px at ${e.clientX}px ${e.clientY}px, rgba(14, 165, 233, 0.08), transparent 80%)`;
+        });
+    </script>
+</body>
+</html>
