@@ -63,6 +63,33 @@
 <body class="selection:bg-sky-200 selection:text-sky-900 antialiased">
     <div id="header-container"></div>
 
+    <script>
+        async function loadHeader() {
+            const response = await fetch('header.html');
+            if (!response.ok) throw new Error('헤더 파일을 찾을 수 없습니다.');
+            const data = await response.text();
+            document.getElementById('header-container').innerHTML = data;
+            
+            highlightCurrentMenu();
+            document.getElementById('main-content').style.opacity = '1';
+        }
+    
+        function highlightCurrentMenu() {
+            let currentPage = window.location.pathname.split("/").pop();
+            if (currentPage === "" || currentPage === "index.html") currentPage = "index.html"; 
+            const navLinks = document.querySelectorAll('#header-container a');
+            navLinks.forEach(link => {
+                if (link.id === 'logo') return; 
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('text-amber-400', 'font-bold');
+                } else {
+                    link.classList.remove('text-amber-400', 'font-bold');
+                }
+            });
+        }
+        loadHeader(); 
+    </script>
+
     <main class="w-full max-w-screen-xl mx-auto px-6 md:px-12 pt-8 pb-20 relative z-40">
         <div class="space-y-20">
             <section id="research" class="scroll-mt-24">
