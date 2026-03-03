@@ -106,10 +106,28 @@
     <script>
         async function loadHeader() {
             const response = await fetch('header.html');
+            if (!response.ok) throw new Error('헤더 파일을 찾을 수 없습니다.');
             const data = await response.text();
             document.getElementById('header-container').innerHTML = data;
+            
+            highlightCurrentMenu();
+            document.getElementById('main-content').style.opacity = '1';
         }
-        loadHeader();
+    
+        function highlightCurrentMenu() {
+            let currentPage = window.location.pathname.split("/").pop();
+            if (currentPage === "" || currentPage === "index.html") currentPage = "index.html"; 
+            const navLinks = document.querySelectorAll('#header-container a');
+            navLinks.forEach(link => {
+                if (link.id === 'logo') return; 
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('text-amber-400', 'font-bold');
+                } else {
+                    link.classList.remove('text-amber-400', 'font-bold');
+                }
+            });
+        }
+        loadHeader(); 
 
         const spotlight = document.getElementById('spotlight');
         document.addEventListener('mousemove', (e) => {
