@@ -77,11 +77,9 @@
         function highlightCurrentMenu() {
             const currentPath = window.location.pathname;
             const navLinks = document.querySelectorAll('#header-container a');
-            
             navLinks.forEach(link => {
                 const href = link.getAttribute('href');
                 if (!href || link.id === 'logo') return;
-        
                 if (currentPath.includes(href) && href !== "#") {
                     link.classList.add('text-amber-400', 'font-bold');
                     link.classList.remove('text-slate-300');
