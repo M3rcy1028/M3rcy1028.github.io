@@ -120,10 +120,11 @@
                             </div>
                         </summary>
                         <div class="px-6 pb-6 text-sm leading-relaxed border-t border-slate-100 pt-4 bg-white/50">
-                            <p class="mb-3">5G 네트워크에서 mMTC 기기 접속 시 발생하는 시그널링 과부하 및 보안 취약점 해결을 위한 경량 프로토콜 연구입니다. [cite: 474, 475, 483]</p>
+                            <p class="mb-3">국가망 보안체계(N2SF) 고도화를 위해 제로트러스트 SDP와 분산 이상탐지 기술을 통합하고, 양자 컴퓨터 위협에 대응하는 PQC 적용 시나리오 연구</p>
                             <ul class="list-disc ml-5 space-y-1 text-slate-600">
-                                <li>기존 프로토콜 대비 통신 및 계산 비용 약 75.98% 절감 [cite: 487]</li>
-                                <li>ProVerif 및 Scyther 툴을 이용한 보안성 정형 검증 완료 [cite: 486]</li>
+                                <li>AI 모델 기반 이상탐지 모델 및 데이터 프라이버시 보호를 위한 연합학습(FL) 프레임워크 제안</li>
+                                <li>RFC 9794 분류 체계 기반의 하이브리드 PQC 기술 동향 분석 및 국가망 단계적 적용 방향 수립</li>
+                                <li>CISC-S'26, CISC-W'26 등 국내 주요 정보보호 학술대회 논문 발표 및 게재</li>
                             </ul>
                         </div>
                     </details>
@@ -150,7 +151,8 @@
                                     <i class="fa-solid fa-fire-alt text-[12px] text-orange-500"></i> Motivation
                                 </p>
                                 <div class="bg-orange-50/50 border border-orange-100 p-3 rounded-lg text-slate-600 text-xs leading-normal">
-                                    양자컴퓨터 시대에 대비한 KpqC 알고리즘의 필요성이 증대되고 있으나, 자원이 제한된 IoT 및 임베디드 장비에서는 높은 연산 복잡도로 인해 성능 저하와 자원 초과 문제가 발생함[cite: 45, 46, 48]. 이에 실제 임베디드 보드에서의 구현 및 정량적 성능 분석을 통한 최적화 방안 도출이 시급함.
+                                    <li>양자컴퓨터 시대에 대비한 KpqC 알고리즘의 필요성이 증대되고 있으나, 자원이 제한된 IoT 및 임베디드 장비에서는 높은 연산 복잡도로 인해 성능 저하와 자원 초과 문제가 발생함. 이에 실제 임베디드 보드에서의 구현 및 정량적 성능 분석을 통한 최적화 방안 도출 필요성 증대</li>
+                                    <li>KpqC 전자서명 알고리즘 HAETAE의 레퍼런스 코드는 높은 메모리 점유율과 연산 부하로 인해 일반적인 Arduino 환경에서 실행되지 않는 문제가 발생</li>
                                 </div>
                             </div>
                     
@@ -160,10 +162,9 @@
                                         <i class="fa-solid fa-align-left text-[10px] text-sky-500"></i> Description
                                     </p>
                                     <ul class="text-xs space-y-1 text-slate-500 list-disc ml-4">
-                                        <li>KpqC 전자서명(DS) 알고리즘 HAETAE의 구조 및 연산 특성 분석</li>
-                                        <li>ESP32-S3 환경에서 KeyGen, Sign, Verify 전 과정 임베디드 포팅 및 구현</li>
-                                        <li>Wokwi 시뮬레이션 및 실물 보드를 활용한 하드웨어 실행 안정성 검증</li>
-                                        <li>함수 단위 디버그 로그 및 카운터 출력을 통한 연산 병목 구간 식별</li>
+                                        <li>대형 변수 및 버퍼의 Heap 영역 재배치를 통한 Stack Overflow 및 메모리 부족 해결</li>
+                                        <li>서명 생성 루프 구조 개선을 통해 Watchdog Timeout(Guru Meditation Error) 문제 해결</li>
+                                        <li>ESP32-S3 실물 보드 및 Wokwi 시뮬레이션을 통한 하드웨어 실행 안정성 검증</li>
                                     </ul>
                                 </div>
                     
@@ -172,8 +173,10 @@
                                         <i class="fa-solid fa-chart-line text-[10px] text-sky-500"></i> Results
                                     </p>
                                     <ul class="text-xs space-y-1 text-slate-600 list-disc ml-4">
-                                        <li>10회 반복 실험 결과, 모든 실험에서 서명 및 검증 성공(성공률 100%)</li>
-                                        <li>실제 하드웨어 환경에서 1회 수행 시 평균 약 0.208초 소요 확인</li>
+                                         <li><b>Key Generation:</b> 15.29 ms (약 366만 cycle)</li>
+                                        <li><b>Sign:</b> 214.32 ms (약 5,143만 cycle)</li>
+                                        <li><b>Verify:</b> 7.20 ms (약 172만 cycle)</li>
+                                        <li>1,000회 반복 실험을 통한 성공률 100% 및 성능 정량 분석 완료</li>
                                     </ul>
                                     <div class="mt-3 flex gap-3">
                                         <a href="https://youtu.be/x6oKfJWDhN8" target="_blank" class="text-red-600 font-bold text-[10px] hover:underline">
@@ -193,9 +196,8 @@
                         <summary class="p-6">
                             <div class="flex justify-between items-start">
                                 <div>
-                                    <span class="project-date">2025.04 ~ 2025.11</span>
-                                    <h4 class="project-title">사이버전장 보안위협 시나리오 기반 기계학습 알고리즘 개발</h4>
-                                    <p class="project-subtitle">Chebyshev-Polynomials-Based Efficient and Secure Access Authentication [cite: 471]</p>
+                                    <span class="project-date">2025.04 ~ 2025.12</span>
+                                    <h4 class="project-title">사이버 전장 보안 위협 시나리오 기반 기계학습 알고리즘 개발</h4>
                                     <div class="badge-container">
                                         <span class="p-badge badge-role">참여연구원</span>
                                         <span class="p-badge badge-fund">한국전자통신연구원</span>
@@ -205,11 +207,38 @@
                             </div>
                         </summary>
                         <div class="px-6 pb-6 text-sm leading-relaxed border-t border-slate-100 pt-4 bg-white/50">
-                            <p class="mb-3">5G 네트워크에서 mMTC 기기 접속 시 발생하는 시그널링 과부하 및 보안 취약점 해결을 위한 경량 프로토콜 연구입니다. [cite: 474, 475, 483]</p>
-                            <ul class="list-disc ml-5 space-y-1 text-slate-600">
-                                <li>기존 프로토콜 대비 통신 및 계산 비용 약 75.98% 절감 [cite: 487]</li>
-                                <li>ProVerif 및 Scyther 툴을 이용한 보안성 정형 검증 완료 [cite: 486]</li>
-                            </ul>
+                            <div class="mb-6">
+                                <p class="font-bold text-slate-700 mb-2 flex items-center gap-2">
+                                    <i class="fa-solid fa-microchip text-[12px] text-sky-500"></i> Research Overview
+                                </p>
+                                <div class="bg-sky-50/50 border border-sky-100 p-3 rounded-lg text-slate-600 text-xs leading-normal">
+                                    사이버 전장의 복잡한 위협 시나리오에 대응하기 위해 연합학습(FL) 기반의 이상 탐지와 SDP 개념을 통합하여, 데이터 공유 없이도 보안 정책을 동적으로 변경하는 분산 보안 프레임워크를 설계 및 구현
+                                </div>
+                            </div>
+                    
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                                    <p class="font-bold text-slate-700 mb-1 flex items-center gap-2">
+                                        <i class="fa-solid fa-gears text-[10px] text-slate-500"></i> Core Methodology
+                                    </p>
+                                    <ul class="text-xs space-y-1 text-slate-500 list-disc ml-4">
+                                        <li>로그 기반(Control Plane)과 패킷 기반(Data Plane) 이상 탐지를 통합한 다각적 분석 구조 설계</li>
+                                        <li>기존 FedAVG의 한계를 보완하기 위해 <b>Entropy 기반 분산 학습 모델</b>을 적용하여 학습 효율성 제고</li>
+                                        <li><b>Dempster-Shafer 증거 이론</b>을 활용하여 서로 다른 탐지 결과를 융합하고 최종 위험도 산출</li>
+                                    </ul>
+                                </div>
+                    
+                                <div class="bg-indigo-50/50 p-3 rounded-lg border border-indigo-100">
+                                    <p class="font-bold text-slate-700 mb-1 flex items-center gap-2">
+                                        <i class="fa-solid fa-check-double text-[10px] text-indigo-500"></i> Key Achievements
+                                    </p>
+                                    <ul class="text-xs space-y-1 text-slate-600 list-disc ml-4">
+                                        <li>실시간 위험도에 따라 <b>L0~L3 단계의 동적 접근 정책(Adaptive Policy)</b>을 자동 적용하는 환경 구현</li>
+                                        <li>UNSW-NB15 등 4종 데이터셋 실험 결과, <b>단일 모델 대비 최대 16.24%p F1-Score 향상</b> 달성</li>
+                                        <li>제안 모델(FedSAD)이 Fuzzers 등 변칙적인 공격군에 대해 매우 견고한 탐지 성능을 보임을 입증</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </details>
                     
@@ -239,7 +268,7 @@
                     </details> -->
 
                 <!--  -->
-                    <details class="project-card group">
+                    <!-- <details class="project-card group">
                         <summary class="p-6">
                             <div class="flex justify-between items-start">
                                 <div>
@@ -262,7 +291,7 @@
                             </ul>
                         </div>
                     </details>
-                    </div>
+                    </div> -->
             </section>
 
             <section id="dev" class="scroll-mt-24">
