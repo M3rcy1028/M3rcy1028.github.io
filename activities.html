@@ -33,7 +33,6 @@
 
     <div class="fixed inset-0 z-30 pointer-events-none transition duration-300" id="spotlight" style="background: radial-gradient(400px at 50% 50%, rgba(14, 165, 233, 0.05), transparent 80%);"></div>
 
-    <!-- 헤더 컨테이너 (인덱스와 동일하게 공통 헤더 로드) -->
     <div id="header-container"></div>
     <script>
         async function loadHeader() {
@@ -65,126 +64,60 @@
         loadHeader();
     </script>
     
-    <!-- 메인 레이아웃 그리드 (인덱스 헤더/프로필 좌측 배치 일치) -->
-    <main class="w-full max-w-screen-xl mx-auto px-6 md:px-12 pt-4 md:pt-8 pb-12 md:pb-20 space-y-16 relative z-40 overflow-hidden">
+    <main class="w-full max-w-screen-md mx-auto px-6 md:px-12 pt-4 md:pt-8 pb-12 md:pb-20 relative z-40 overflow-hidden">
         
-        <section class="grid grid-cols-1 md:grid-cols-[300px_1fr] gap-8 md:gap-12 items-start">
-            
-            <!-- [왼쪽 사이드바 - 인덱스 파일과 100% 동일한 프로필 헤더 부분] -->
-            <div class="text-center md:text-left flex flex-col items-center md:items-start w-full md:sticky md:top-6 mb-12 md:mb-0">
-    
-                <div class="relative w-48 h-48 mb-6 group">
-                    <div class="absolute inset-0 bg-sky-200 rounded-full blur opacity-40 group-hover:opacity-60 transition duration-500"></div>
-                    <img src="figs/naryun_img.jpg" alt="Profile" class="relative w-full h-full object-cover rounded-full border-4 border-[#0f172a] shadow-xl">
-                </div>
-            
-                <h1 class="text-3xl font-bold text-slate-900">Naryun Woo</h1>
-                <p class="text-sky-600 font-medium mt-2">
-                    Graduated Researcher in 
-                    <a href="https://sites.google.com/view/cncslab-kwu/cncs-lab" target="_blank" class="underline decoration-sky-400/50 hover:text-sky-700 transition">CnCS Lab.</a>
-                </p>
-                <p class="text-sm text-slate-500 mt-1">Kwangwoon University</p>
-    
-                <!-- 소셜 링크 세트 -->
-                <div class="flex gap-4 mt-6 mb-8">
-                    <a href="mailto:mercy1234@kw.ac.kr" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-sky-500 hover:text-white transition shadow-md hover:shadow-lg ring-1 ring-slate-200">
-                        <i class="fa-solid fa-envelope fa-lg"></i>
-                    </a>
-                    <a href="https://github.com/M3rcy1028" target="_blank" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-sky-500 hover:text-white transition shadow-md hover:shadow-lg ring-1 ring-slate-200">
-                        <i class="fa-brands fa-github fa-lg"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/naryun-woo-217b5a394/" target="_blank" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-sky-500 hover:text-white transition shadow-md hover:shadow-lg ring-1 ring-slate-200">
-                        <i class="fa-brands fa-linkedin-in fa-lg"></i>
-                    </a>
-                    <a href="https://scholar.google.com/citations?user=QVvMJ-QAAAAJ" target="_blank" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-sky-500 hover:text-white transition shadow-md hover:shadow-lg ring-1 ring-slate-200">
-                        <i class="fa-brands fa-google-scholar fa-lg"></i>
-                    </a>
-                </div>
-            
-                <!-- 연구 분야 카테고리 -->
-                <div class="w-full border-t border-slate-200 pt-6">
-                    <h3 class="text-slate-900 font-bold mb-4">Research Interests</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-center gap-3 text-slate-600 bg-slate-50 p-3 rounded-lg border border-slate-200 hover:bg-white hover:shadow-md transition break-words">
-                            <i class="fa-solid fa-key text-sky-500 w-6 shrink-0 text-center"></i>
-                            <span class="text-xs font-bold leading-tight">Authentication Protocol</span>
-                        </li>
-                        <li class="flex items-center gap-3 text-slate-600 bg-slate-50 p-3 rounded-lg border border-slate-200 hover:bg-white hover:shadow-md transition break-words">
-                            <i class="fa-solid fa-atom text-sky-500 w-6 shrink-0 text-center"></i>
-                            <span class="text-xs font-bold leading-tight">Post-Quantum Cryptography</span>
-                        </li>
-                        <li class="flex items-center gap-3 text-slate-600 bg-slate-50 p-3 rounded-lg border border-slate-200 hover:bg-white hover:shadow-md transition break-words">
-                            <i class="fa-solid fa-user-shield text-sky-500 w-6 shrink-0 text-center"></i>
-                            <span class="text-xs font-bold leading-tight">Zero-Trust Architecture</span>
-                        </li>
-                        <li class="flex items-center gap-3 text-slate-600 bg-slate-50 p-3 rounded-lg border border-slate-200 hover:bg-white hover:shadow-md transition break-words">
-                            <i class="fa-solid fa-database text-sky-500 w-6 shrink-0 text-center"></i>
-                            <span class="text-xs font-bold leading-tight">Database System</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- [오른쪽 본문 영역 - 요청하신 대외활동 전용 타임라인 구성] -->
-            <div class="space-y-12 pb-12">
-                <section>
+        <div class="space-y-12 pb-12">
+            <section>
+                <div class="border-b border-slate-100 pb-4 mb-8">
                     <h2 class="text-3xl font-bold text-slate-900 mb-2">Activities</h2>
-                    <p class="text-sm text-slate-500 mb-8">멘토링, 자치 활동 및 교내외 주요 대외 실적 연혁입니다.</p>
-                    
-                    <!-- 타임라인 메인 세로축 선 (스케치 매칭) -->
-                    <div class="relative pl-6 border-l-2 border-slate-200 ml-2 space-y-10">
+                    <p class="text-sm text-slate-500">멘토링, 자치 활동 및 교내외 주요 대외 실적 연혁입니다.</p>
+                </div>
+                
+                <div class="relative pl-6 border-l-2 border-slate-200 ml-2 space-y-10">
 
-                        <!-- [2024년 섹션] -->
-                        <div class="relative">
-                            <!-- 연도 포인트 마커 (최신 활동 하이라이팅 파란색) -->
-                            <div class="absolute -left-[31px] top-1.5 bg-sky-500 w-3 h-3 rounded-full border-2 border-white ring-4 ring-sky-100"></div>
-                            <h5 class="text-base font-bold text-sky-600 mb-4 tracking-wide">2024</h5>
-                            
-                            <!-- 세부 활동 (가지치기 구조) -->
-                            <div class="space-y-4 pl-1">
-                                <div class="relative pl-4 border-l border-slate-200 hover:border-sky-400 transition-colors py-0.5">
-                                    <span class="text-xs font-bold text-slate-800 block">09. ~ 12. 교내 전공 학습 멘토링 프로그램</span>
-                                    <span class="text-[11px] text-slate-500 block mt-1">컴퓨터 구조 및 C언어 프로그래밍 기초 주차별 학습 지도 및 실습 멘토 참여</span>
-                                </div>
-                                <div class="relative pl-4 border-l border-slate-200 hover:border-sky-400 transition-colors py-0.5">
-                                    <span class="text-xs font-bold text-slate-800 block">03. ~ 12. 소프트웨어융합대학 학생회 자치활동</span>
-                                    <span class="text-[11px] text-slate-500 block mt-1">기획부 소속 / 신입생 오리엔테이션 및 교내 해커톤 학술제 운영 지원</span>
-                                </div>
+                    <div class="relative">
+                        <div class="absolute -left-[31px] top-1.5 bg-sky-500 w-3 h-3 rounded-full border-2 border-white ring-4 ring-sky-100"></div>
+                        <h5 class="text-base font-bold text-sky-600 mb-4 tracking-wide">2024</h5>
+                        
+                        <div class="space-y-4 pl-1">
+                            <div class="relative pl-4 border-l border-slate-200 hover:border-sky-400 transition-colors py-0.5">
+                                <span class="text-xs font-bold text-slate-800 block">09. ~ 12. 교내 전공 학습 멘토링 프로그램</span>
+                                <span class="text-[11px] text-slate-500 block mt-1">컴퓨터 구조 및 C언어 프로그래밍 기초 주차별 학습 지도 및 실습 멘토 참여</span>
+                            </div>
+                            <div class="relative pl-4 border-l border-slate-200 hover:border-sky-400 transition-colors py-0.5">
+                                <span class="text-xs font-bold text-slate-800 block">03. ~ 12. 소프트웨어융합대학 학생회 자치활동</span>
+                                <span class="text-[11px] text-slate-500 block mt-1">기획부 소속 / 신입생 오리엔테이션 및 교내 해커톤 학술제 운영 지원</span>
                             </div>
                         </div>
-
-                        <!-- [2023년 섹션] -->
-                        <div class="relative">
-                            <!-- 연도 포인트 마커 -->
-                            <div class="absolute -left-[31px] top-1.5 bg-slate-400 w-3 h-3 rounded-full border-2 border-white ring-4 ring-slate-100"></div>
-                            <h5 class="text-base font-bold text-slate-500 mb-4 tracking-wide">2023</h5>
-                            
-                            <div class="space-y-4 pl-1">
-                                <div class="relative pl-4 border-l border-slate-200 hover:border-slate-400 transition-colors py-0.5">
-                                    <span class="text-xs font-bold text-slate-800 block">04. ~ 09. NACET 소모임 자치 활동</span>
-                                    <span class="text-[11px] text-slate-500 block mt-1">전공 학술 동아리 연계 연구 인프라 구축 및 스터디 프로젝트 진행</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- [2022년 섹션] -->
-                        <div class="relative">
-                            <!-- 연도 포인트 마커 -->
-                            <div class="absolute -left-[31px] top-1.5 bg-slate-400 w-3 h-3 rounded-full border-2 border-white ring-4 ring-slate-100"></div>
-                            <h5 class="text-base font-bold text-slate-500 mb-4 tracking-wide">2022</h5>
-                            
-                            <div class="space-y-4 pl-1">
-                                <div class="relative pl-4 border-l border-slate-200 hover:border-slate-400 transition-colors py-0.5">
-                                    <span class="text-xs font-bold text-slate-800 block">03. 광운대학교 컴퓨터정보공학부 입학</span>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
-                </section>
-            </div>
+
+                    <div class="relative">
+                        <div class="absolute -left-[31px] top-1.5 bg-slate-400 w-3 h-3 rounded-full border-2 border-white ring-4 ring-slate-100"></div>
+                        <h5 class="text-base font-bold text-slate-500 mb-4 tracking-wide">2023</h5>
+                        
+                        <div class="space-y-4 pl-1">
+                            <div class="relative pl-4 border-l border-slate-200 hover:border-slate-400 transition-colors py-0.5">
+                                <span class="text-xs font-bold text-slate-800 block">04. ~ 09. NACET 소모임 자치 활동</span>
+                                <span class="text-[11px] text-slate-500 block mt-1">전공 학술 동아리 연계 연구 인프라 구축 및 스터디 프로젝트 진행</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute -left-[31px] top-1.5 bg-slate-400 w-3 h-3 rounded-full border-2 border-white ring-4 ring-slate-100"></div>
+                        <h5 class="text-base font-bold text-slate-500 mb-4 tracking-wide">2022</h5>
+                        
+                        <div class="space-y-4 pl-1">
+                            <div class="relative pl-4 border-l border-slate-200 hover:border-slate-400 transition-colors py-0.5">
+                                <span class="text-xs font-bold text-slate-800 block">03. 광운대학교 컴퓨터정보공학부 입학</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
             
-        </section>
     </main>
 
     <footer class="py-8 text-center text-sm text-slate-400 border-t border-slate-200 mt-20">
