@@ -34,35 +34,38 @@
     <div id="header-container"></div>
     <div class="fixed inset-0 z-30 pointer-events-none transition duration-300" id="spotlight" style="background: radial-gradient(400px at 50% 50%, rgba(14, 165, 233, 0.05), transparent 80%);"></div>
 
-    <div id="header-container"></div>
     <script>
         async function loadHeader() {
+          try {
             const response = await fetch('header.html');
+            if (!response.ok) throw new Error('Header load failed');
             const data = await response.text();
             document.getElementById('header-container').innerHTML = data;
             highlightCurrentMenu();
+          } catch (error) {
+            console.error('Error loading header:', error);
+          }
         }
-    
+        
         function highlightCurrentMenu() {
-            let currentPage = window.location.pathname.split("/").pop();
-            if (currentPage === "" || currentPage === "index.html") currentPage = "index.html"; 
-        
-            const navLinks = document.querySelectorAll('#header-container a');
-            navLinks.forEach(link => {
-                const href = link.getAttribute('href');
-                if (link.id === 'logo') return; 
-        
-                if (href === currentPage) {
-                    link.classList.add('text-amber-400', 'font-bold');
-                    link.classList.remove('text-slate-300');
-                } else 
-                    link.classList.remove('text-amber-400', 'font-bold');
-                    link.classList.add('text-slate-300');
-                }
-            });
+          let currentPage = window.location.pathname.split("/").pop();
+          if (currentPage === "" || currentPage === "index.html") currentPage = "index.html";
+          
+          const navLinks = document.querySelectorAll('#header-container a');
+          navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (link.id === 'logo') return;
+            if (href === currentPage) {
+              link.classList.add('text-amber-400', 'font-bold');
+              link.classList.remove('text-slate-300');
+            } else {
+              link.classList.remove('text-amber-400', 'font-bold');
+              link.classList.add('text-slate-300');
+            }
+          });
         }
-    
-        loadHeader();
+        
+        document.addEventListener('DOMContentLoaded', loadHeader);
     </script>
     
     <main class="w-full max-w-screen-md mx-auto px-6 md:px-12 pt-4 md:pt-8 pb-12 md:pb-20 relative z-40 overflow-hidden">
